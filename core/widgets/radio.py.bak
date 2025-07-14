@@ -85,14 +85,3 @@ class Radio(AbstractWidget):
             return
         self.on_batch['feedback_lines'].colors[:] = color * 8
         self.logger.record_state(self.name, 'feedback_color', color)
-
-    def set_highlight(self, state: bool):
-        """Set the background color to highlight the radio"""
-        if state:
-            self.set_background_color((255, 255, 0))  # 黄色高亮
-        else:
-            self.set_background_color((30, 30, 30))   # 默认背景色（你可根据实际样式调整）
-
-    def set_background_color(self, color):
-        self.background_color = color
-        self.need_redraw = True  # 或类似逻辑，确保界面刷新

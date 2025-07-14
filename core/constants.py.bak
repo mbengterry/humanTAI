@@ -9,11 +9,6 @@ import configparser
 
 REPLAY_MODE = len(sys.argv) > 1 and sys.argv[1] == '-r'
 REPLAY_STRIP_PROPORTION = 0.08
-FONTSIZE = {
-    'SMALL': 12,
-    'NORMAL': 14,
-    'LARGE': 18
-}
 
 C = COLORS = dict(WHITE=(255, 255, 255, 255),
                   WHITE_TRANSLUCENT=(255, 255, 255, 235),

@@ -54,8 +54,8 @@ class Communications(AbstractPlugin):
                        radioprompt=str(), maxresponsedelay=20000,
                        promptlist=['NAV_1', 'NAV_2', 'COM_1', 'COM_2'], automaticsolver=False,
                        displayautomationstate=True, feedbackduration=1500,
-                       feedbacks=dict(positive=dict(active=True, color=C['GREEN']),
-                                      negative=dict(active=True, color=C['RED'])),
+                       feedbacks=dict(positive=dict(active=False, color=C['GREEN']),
+                                      negative=dict(active=False, color=C['RED'])),
                        keys=dict(selectradioup='UP', selectradiodown='DOWN',
                                  tunefrequencyup='RIGHT', tunefrequencydown='LEFT',
                                  validateresponse='ENTER'))
@@ -115,14 +115,6 @@ class Communications(AbstractPlugin):
         super().create_widgets()
         self.add_widget('callsign', Simpletext, container=self.task_container,
                        text=_('Callsign \t\t %s') % self.parameters['owncallsign'], y=0.9)
-        self.target_instruction = self.add_widget('target_instruction', Simpletext,
-            container=self.task_container,
-            color=(255, 255, 0, 255),     # 黄色文字
-            bgcolor=(255, 0, 0, 255),     # 红色背景
-            draw_order=5,
-            text='',  # 初始文字
-            y=0.025  # 放在较低的位置，避免遮挡其他控件
-        )
 
         active_index = randint(0, len(self.parameters['radios'])-1, self.alias, self.scenario_time)
         for pos, radio in self.parameters['radios'].items():
@@ -189,16 +181,6 @@ class Communications(AbstractPlugin):
         if destination == 'own':
             radio['targetfreq'] = random_frequency
             radio['is_prompting'] = True
-        self.target_instruction.set_text(
-            f"[{callsign}] Adjust {radio_name} to {random_frequency} MHz"
-        )
-
-        # 清除旧高亮
-        for _, r in self.parameters['radios'].items():
-            r['widget'].set_highlight(False)
-
-        # 设置新高亮
-        radio['widget'].set_highlight(True)
 
         sound_group = self.group_audio_files(callsign, radio_name, random_frequency)
 
@@ -206,11 +188,6 @@ class Communications(AbstractPlugin):
         self.player.queue(sound_group)
         self.player.play()
 
-    def set_highlight(self, state):
-        if state:
-            self.set_background_color((255, 255, 0))  # 黄色
-        else:
-            self.set_background_color((30, 30, 30))   # 默认色
 
     def get_rand_frequency(self, radio_n):
         return round(uniform(float(self.parameters['airbandminMhz']),
@@ -382,12 +359,6 @@ class Communications(AbstractPlugin):
                     radio['_feedbacktimer'] = None
                     radio['_feedbacktype'] = None
 
-                # 检查是否所有 radio 都已调到目标频率，如果是，则隐藏提示字幕
-        if all(
-            radio['targetfreq'] is None or radio['currentfreq'] == radio['targetfreq']
-            for radio in self.parameters['radios'].values()
-        ):
-            self.target_instruction.set_text('')
 
     def refresh_widgets(self):
         if not super().refresh_widgets():
@@ -502,16 +473,8 @@ class Communications(AbstractPlugin):
             if good_radio == True and deviation == 0:
                 self.disable_radio_target(responded_radio)
                 self.set_feedback(responded_radio, ft='positive')
-                self.target_instruction.set_text('')  
             else:
                 self.set_feedback(responded_radio, ft='negative')
-
-        if sdt == 'HIT':
-            self.target_instruction.set_text('✅ Correct! Well done.')
-        elif sdt == 'MISS':
-            self.target_instruction.set_text('❌ Missed. You didn’t tune in time.')
-        else:
-            self.target_instruction.set_text(f'⚠️ Incorrect. Deviation: {deviation} MHz')
 
 
     def set_feedback(self, radio, ft):

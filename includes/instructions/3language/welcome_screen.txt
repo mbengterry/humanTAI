@@ -1,0 +1,20 @@
+<h1>Introducing OpenMATB</h1>
+<p>OpenMATB is a simulation tool for studying human multitasking.
+Originally developed in 1992 by Comstock and Arnegard, it places participants in a dynamic environment where they must manage several tasks at once.
+
+This setup helps researchers explore how people handle complex, high-pressure situations and divide their attention effectively.</p>
+
+
+<h1>OpenMATB 介绍</h1>
+<p>OpenMATB 是一个用于研究人类多任务处理的仿真平台。它由 Comstock 和 Arnegard 于1992年开发，模拟了一个需要同时完成多个任务的动态环境。
+
+该工具有助于研究人员深入了解人类在复杂、高压情境中如何分配注意力与做出决策。</p>
+
+
+<h1>Vorstellung OpenMATB</h1>
+
+<h1> </h1>
+<p>OpenMATB ist ein Simulationswerkzeug zur Untersuchung von Multitasking beim Menschen.
+Es wurde 1992 von Comstock und Arnegard entwickelt und konfrontiert die Teilnehmer mit mehreren gleichzeitigen Aufgaben in einer dynamischen Umgebung.
+
+So können Forscher besser verstehen, wie Menschen unter komplexen Bedingungen ihre Aufmerksamkeit steuern und Entscheidungen treffen.</p>
