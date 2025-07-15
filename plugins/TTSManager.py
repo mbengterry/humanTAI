@@ -1,7 +1,7 @@
 import threading
 import queue
 import pyttsx3
-
+import platform
 class TTSManager:
     _instance = None
 
@@ -20,20 +20,28 @@ class TTSManager:
         self._initialized = True
 
     def _run(self):
-        engine = pyttsx3.init()
-        engine.setProperty('rate', 180)
-        engine.setProperty('volume', 0.75)
-        
-        engine.setProperty('voice', 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0')
-        # Set English voice
-
+        system = platform.system()
+        if system == "Windows":
+            engine = pyttsx3.init()
+            engine.setProperty('rate', 180)
+            engine.setProperty('volume', 0.75)
+            try:
+                engine.setProperty('voice', 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0')
+            except Exception:
+                pass
         while True:
             text = self.queue.get()
             if text is None:
                 break
             try:
-                engine.say(text)
-                engine.runAndWait()
+                if system == "Windows":
+                    engine.say(text)
+                    engine.runAndWait()
+                elif system == "Darwin":  # macOS
+                    import subprocess
+                    subprocess.run(["say", text])
+                else:
+                    print(f"TTS not supported on {system}")
             except Exception as e:
                 print("TTS thread error:", e)
 
