@@ -4,7 +4,7 @@ import pyttsx3
 
 def tts_process_main(queue):
     engine = pyttsx3.init()
-    engine.setProperty('rate', 150)
+    engine.setProperty('rate', 180)
     engine.setProperty('volume', 0.75)
     while True:
         text = queue.get()
