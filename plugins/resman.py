@@ -11,10 +11,9 @@ from core.window import Window
 from plugins.tts_manager import TTSProcessManager
 
 class Resman(AbstractPlugin):
-    def __init__(self, label='', taskplacement='bottommid', taskupdatetime=2000, tts_enabled=True):
+    def __init__(self, label='', taskplacement='bottommid', taskupdatetime=2000):
         super().__init__(_('Resources management'), taskplacement, taskupdatetime)
         self.tts_manager = TTSProcessManager()
-        self.tts_enabled = tts_enabled  # Set to False to disable TTS (sound)
 
         self.validation_dict = {
             'pumpcoloroff': validation.is_color,
@@ -334,8 +333,7 @@ class Resman(AbstractPlugin):
                         msg += " " + ", ".join([f"Press {k} to activate pump {k}" for k in activated]) + "."
                     if not deactivated and not activated:
                         msg += " No pump state changes needed."
-                    if self.tts_enabled:
-                        self.tts_manager.speak(msg)
+                    self.tts_manager.speak(msg)
                     this_tank['_tts_warned'] = True
                 elif too_high and not this_tank['_tts_warned']:
                     # Deactivate incoming, activate outgoing
@@ -358,8 +356,7 @@ class Resman(AbstractPlugin):
                         msg += " " + ", ".join([f"Press {k} to activate pump {k}" for k in activated]) + "."
                     if not deactivated and not activated:
                         msg += " No pump state changes needed."
-                    if self.tts_enabled:
-                        self.tts_manager.speak(msg)
+                    self.tts_manager.speak(msg)
                     this_tank['_tts_warned'] = True
                 elif not (too_low or too_high):
                     this_tank['_tts_warned'] = False

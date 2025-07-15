@@ -1,3 +1,4 @@
+
 import multiprocessing
 import pyttsx3
 
@@ -29,6 +30,10 @@ class TTSProcessManager:
     def _init(self):
         if getattr(self, '_initialized', False):
             return
+        # On Windows, multiprocessing requires the 'spawn' method and all process creation must be under __main__
+        import sys
+        if sys.platform == 'win32':
+            multiprocessing.set_start_method('spawn', force=True)
         from .tts_manager import tts_process_main  # Ensure correct import for multiprocessing
         self.queue = multiprocessing.Queue()
         self.process = multiprocessing.Process(target=tts_process_main, args=(self.queue,), daemon=True)
