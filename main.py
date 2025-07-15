@@ -30,7 +30,6 @@ class OpenMATB:
     def __init__(self):
         # The MATB window must be borderless (for non-fullscreen mode)
         Window(style=Window.WINDOW_STYLE_DIALOG, resizable = True)
-
         if REPLAY_MODE:
             ReplayScheduler()
         else:

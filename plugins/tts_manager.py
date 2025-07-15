@@ -1,12 +1,18 @@
 
 import multiprocessing
-import pyttsx3
 
 
 def tts_process_main(queue):
+    import pyttsx3
     engine = pyttsx3.init()
+     # Set English voice
+    for voice in engine.getProperty('voices'):
+        if 'en' in voice.languages[0].decode('utf-8') or 'English' in voice.name:
+            engine.setProperty('voice', voice.id)
+            break
     engine.setProperty('rate', 180)
     engine.setProperty('volume', 0.75)
+
     while True:
         text = queue.get()
         if text is None:

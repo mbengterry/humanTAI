@@ -14,12 +14,13 @@ from core.widgets.popup import PopUp
 from core.constants import FONTSIZE as F
 
 from plugins.tts_manager import TTSProcessManager
+from plugins.TTSManager import TTSManager
 
 
 
 
 # Use this singleton, but do NOT instantiate at import time
-tts_manager = TTSProcessManager()
+tts_manager = TTSManager()
 
 class Sysmon(AbstractPlugin):
     def __init__(self, label='', taskplacement='topleft', taskupdatetime=200):

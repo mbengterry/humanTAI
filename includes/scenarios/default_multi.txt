@@ -75,5 +75,5 @@
 0:00:50;scheduling;stop
 
 # Display a questionnaire
-0:01:00;genericscales;filename;newquestion.txt
-0:01:00;genericscales;start
+0:00:50;genericscales;filename;newquestion.txt
+0:00:50;genericscales;start
