@@ -1,0 +1,11 @@
+<h1>Task overview</h1>
+
+<p>The challenge is to handle all tasks at the same time.
+You must monitor instruments, respond to messages, and manage controls — all simultaneously.</p>
+
+
+<p>你的挑战是同时完成所有任务。
+你需要同时监控仪表、处理语音信息并操作控制系统。</p>
+
+<p>Die Herausforderung besteht darin, alle Aufgaben gleichzeitig zu erledigen.
+Du musst Instrumente überwachen, Funknachrichten beantworten und das System gleichzeitig steuern.</p>

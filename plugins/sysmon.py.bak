@@ -5,13 +5,11 @@ import pyglet
 from core.pseudorandom import choice, sample
 from core.container import Container
 from core.constants import COLORS as C
-from core.widgets import Scale, Light,Simpletext
+from core.widgets import Scale, Light
 from plugins.abstractplugin import AbstractPlugin
 from core import validation
 from pyglet.media import Player
-import pyglet
-from core.widgets.popup import PopUp
-from core.constants import FONTSIZE as F
+
 
 from plugins.tts_manager import TTSProcessManager
 
@@ -137,17 +135,6 @@ class Sysmon(AbstractPlugin):
                                              label=light['name'],
                                              color=self.determine_light_color(light))
 
-        self.add_widget(
-            'alert',
-            Simpletext,
-            container=self.task_container,
-            text='',
-            color=(255, 255, 0, 255),     # 黄色文字
-            bgcolor=(255, 0, 0, 255),     # 红色背景
-            draw_order=5,
-            x=0.5,
-            y=0.025    # 靠近底部    
-        )
 
     def compute_next_plugin_state(self):
         if not super().compute_next_plugin_state():
@@ -216,39 +203,12 @@ class Sysmon(AbstractPlugin):
             # Hide the feedback
             else:
                 scale['widget'].set_feedback_visibility(False)
-             # 🆕 文字状态显示
-            label_text = f"{scale['name']}  {'abnormal' if scale['_onfailure'] else 'normal'}"
-            scale['widget'].set_label(label_text)
 
         for light_n, light in self.parameters['lights'].items():
             light['widget'].set_color(self.determine_light_color(light))
-            
-            # 🆕 Light状态文本提示
-            state_text = f"{light['name']}  {'open' if light['on'] else 'close'}"
-            light['widget'].set_label(state_text)
 
         for gauge in self.get_all_gauges():
-            if 'default' not in gauge:
-                gauge['widget'].set_label(gauge['name'])
-
-       # 清除旧提示
-        self.widgets['sysmon_alert'].set_text("")
-
-        # 灯光状态检查提示
-        f5 = self.parameters['lights']['1']
-        f6 = self.parameters['lights']['2']
-        if not f5['on']:
-            self.widgets['sysmon_alert'].set_text("F5 should always turned on as green，press F5 to fix！")
-            self.widgets['sysmon_alert'].set_color((255, 255, 0, 255))  # 黄色文字
-        elif f6['on']:
-            self.widgets['sysmon_alert'].set_text("F6 should keep shut off without red light，press F6 to fix！")
-            self.widgets['sysmon_alert'].set_color((255, 255, 0, 255))  # 黄色文字
-        # 刻度极限检查
-        for scale_id, scale in self.parameters['scales'].items():
-            widget = self.widgets.get(f'sysmon_scale_{scale["name"]}')
-            if widget:
-                if widget.value < 0.15 or widget.value > 0.85:
-                    self.widgets['sysmon_alert'].set_text(f"{scale['name']}reach the limit，press{scale['key']}to fix！")
+            gauge['widget'].set_label(gauge['name'])
 
 
     def determine_light_color(self, light):

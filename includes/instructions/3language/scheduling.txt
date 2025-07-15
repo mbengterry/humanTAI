@@ -1,0 +1,22 @@
+<h1>Task Overview: Planner and Automation</h1>
+
+<p>In the top-right corner of the screen, you’ll see a planner.
+It shows when each task (marked with a capital letter) is active, using a timeline.</p>
+
+<p>Use the planner to manage your attention and distribute your effort wisely.</p>
+
+
+<h1>任务总览：任务计划与自动化系统</h1>
+
+<p>在屏幕右上角，你会看到一个任务计划器。
+它通过时间线显示每个任务（用大写字母表示）处于活动状态的时间段。</p>
+
+<p>请利用计划器合理安排注意力和精力分配。</p>
+
+
+<h1>Aufgabenübersicht: Planer und Automatisierung</h1>
+<h1></h1>
+<p>Oben rechts auf dem Bildschirm findest du einen Planer.
+Er zeigt anhand einer Zeitleiste, wann welche Aufgabe (durch Großbuchstaben gekennzeichnet) aktiv ist.</p>
+
+<p>Nutze den Planer, um deinen Fokus und deine Energie besser einzuteilen.</p>

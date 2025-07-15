@@ -1,0 +1,18 @@
+<h1>Task overview Communication Task</h1>
+
+<p>You will hear short voice messages with instructions to change radio frequencies.
+Only follow the messages that mention your callsign.
+Ignore all other messages that are meant for someone else.</p>
+
+<h1>通信任务</h1>
+
+<p>你会听到一些关于调整无线电频率的语音指令。
+只需要执行包含你呼号的指令。
+忽略其他发给别人的信息。</p>
+
+<h1>Kommunikationsaufgabe</h1>
+<h1>2</h1>
+
+<p>Du hörst kurze Sprachnachrichten mit Anweisungen zur Funkfrequenz.
+Folge nur den Nachrichten, die dein Rufzeichen enthalten.
+Ignoriere alle anderen Nachrichten.</p>

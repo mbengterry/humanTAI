@@ -11,10 +11,9 @@ from core.window import Window
 from plugins.tts_manager import TTSProcessManager
 
 class Resman(AbstractPlugin):
-    def __init__(self, label='', taskplacement='bottommid', taskupdatetime=2000, tts_enabled=True):
+    def __init__(self, label='', taskplacement='bottommid', taskupdatetime=2000):
         super().__init__(_('Resources management'), taskplacement, taskupdatetime)
         self.tts_manager = TTSProcessManager()
-        self.tts_enabled = tts_enabled  # Set to False to disable TTS (sound)
 
         self.validation_dict = {
             'pumpcoloroff': validation.is_color,
@@ -86,9 +85,9 @@ class Resman(AbstractPlugin):
         self.keys = {'NUM_1','NUM_2','NUM_3','NUM_4','NUM_5','NUM_6','NUM_7', 'NUM_8'}
 
         new_par = dict(automaticsolver=False, displayautomationstate=True, pumpcoloroff=C['WHITE'],
-                       pumpcoloron=C['GREEN'], pumpcolorfailure=C['GREY'], toleranceradius=250,
+                       pumpcoloron=C['GREEN'], pumpcolorfailure=C['RED'], toleranceradius=250,
                        statuslocation='bottomright', displaystatus=True,
-                       tolerancecolor=C['GREEN'], tolerancecoloroutside=C['RED'],
+                       tolerancecolor=C['BLACK'], tolerancecoloroutside=C['BLACK'],
 
                         tank=dict(a=dict(level=2500, max=4000, target=2500, depletable=True,
                                          lossperminute=800, _infoside='left'),
@@ -334,8 +333,7 @@ class Resman(AbstractPlugin):
                         msg += " " + ", ".join([f"Press {k} to activate pump {k}" for k in activated]) + "."
                     if not deactivated and not activated:
                         msg += " No pump state changes needed."
-                    if self.tts_enabled:
-                        self.tts_manager.speak(msg)
+                    self.tts_manager.speak(msg)
                     this_tank['_tts_warned'] = True
                 elif too_high and not this_tank['_tts_warned']:
                     # Deactivate incoming, activate outgoing
@@ -358,8 +356,7 @@ class Resman(AbstractPlugin):
                         msg += " " + ", ".join([f"Press {k} to activate pump {k}" for k in activated]) + "."
                     if not deactivated and not activated:
                         msg += " No pump state changes needed."
-                    if self.tts_enabled:
-                        self.tts_manager.speak(msg)
+                    self.tts_manager.speak(msg)
                     this_tank['_tts_warned'] = True
                 elif not (too_low or too_high):
                     this_tank['_tts_warned'] = False
