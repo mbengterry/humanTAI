@@ -508,8 +508,10 @@ class Communications(AbstractPlugin):
 
         if sdt == 'HIT':
             self.target_instruction.set_text('✅ Correct! Well done.')
+            self.player.play(load(str(self.sound_path.joinpath('success.wav')), streaming=False))
         elif sdt == 'MISS':
             self.target_instruction.set_text('❌ Missed. You didn’t tune in time.')
+            self.player.play(load(str(self.sound_path.joinpath('alarm.wav')), streaming=False))
         else:
             self.target_instruction.set_text(f'⚠️ Incorrect. Deviation: {deviation} MHz')
 

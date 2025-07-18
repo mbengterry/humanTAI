@@ -11,11 +11,15 @@ from core.window import Window
 from plugins.tts_manager import TTSProcessManager
 from plugins.TTSManager import TTSManager
 from plugins.TTSManager import TTSManager
+from pyglet.media import Player
+import pyglet
 
 class Resman(AbstractPlugin):
     def __init__(self, label='', taskplacement='bottommid', taskupdatetime=2000):
         super().__init__(_('Resources management'), taskplacement, taskupdatetime)
         self.tts_manager = TTSManager()
+        from pyglet.media import Player
+        self.player = Player()
 
         self.validation_dict = {
             'pumpcoloroff': validation.is_color,
@@ -305,6 +309,7 @@ class Resman(AbstractPlugin):
                 if '_tts_warned' not in this_tank:
                     this_tank['_tts_warned'] = False
                 if too_low and not this_tank['_tts_warned']:
+                    print(f'[Resman] Playing sound sequence for tank {this_tank}this_tank(too low): {deactivated} deactivated, {activated} activatedthis_tank')
                     # Deactivate outgoing, activate incoming
                     outgoing_pumps = [v for p, v in pumps.items() if v['_fromtank'] == tank_l and v['state'] != 'failure']
                     incoming_pumps = [v for p, v in pumps.items() if v['_totank'] == tank_l and v['state'] != 'failure']
@@ -328,14 +333,41 @@ class Resman(AbstractPlugin):
                     if too_low_a and too_low_b:
                         deactivated = [k for k in deactivated if k not in ['7', '8']]
                         activated = [k for k in activated if k not in ['7', '8']]
-                    msg = f"Tank {tank_l.upper()} is too low. "
-                    if deactivated:
-                        msg += " " + ", ".join([f"Press {k} to deactivate pump {k}" for k in deactivated]) + "."
-                    if activated:
-                        msg += " " + ", ".join([f"Press {k} to activate pump {k}" for k in activated]) + "."
-                    if not deactivated and not activated:
-                        msg += " No pump state changes needed."
-                    self.tts_manager.speak(msg)
+                    # --- Sound feedback ---
+                    
+                    print(f'[Resman] Playing sound sequence for tank {this_tank} (too low): {deactivated} deactivated, {activated} activatedthis_tank')
+                    if self.player.playing:
+                        print("[Resman] Sound sequence is already playing, skipping new sequence.")
+                        return
+                    self.player.pause()
+                    self.player.next_source()  # Clear any previous queue
+                    sound_sequence = [
+                        'includes/sounds/english/male/tank.wav',
+                        f'includes/sounds/english/male/{tank_l.lower()}.wav',
+                        'includes/sounds/english/male/too_low.wav'
+                    ]
+                    for k in deactivated:
+                        sound_sequence.append('includes/sounds/english/male/normalized/press.wav')
+                        sound_sequence.append(f'includes/sounds/english/male/{k}.wav')
+                        sound_sequence.append('includes/sounds/english/male/deactivate.wav')
+                    for k in activated:
+                        sound_sequence.append('includes/sounds/english/male/normalized/press.wav')
+                        sound_sequence.append(f'includes/sounds/english/male/{k}.wav')
+                        sound_sequence.append('includes/sounds/english/male/activate.wav')
+                    sound_sequence.append('includes/sounds/english/male/normalized/resolve.wav')
+                    print(f"[Resman] Playing sound sequence: {sound_sequence}")
+                    for sound_path in sound_sequence:
+                        if os.path.exists(sound_path):
+                            print(f"[Resman] Found sound file: {sound_path}")
+                            try:
+                                source = pyglet.media.load(sound_path, streaming=False)
+                                self.player.queue(source)
+                            except Exception as e:
+                                print(f"[Resman] Error loading sound {sound_path}: {e}")
+                        else:
+                            print(f"[Resman] Sound file not found: {sound_path}")
+                    self.player.play()
+                    # --- End sound feedback ---
                     this_tank['_tts_warned'] = True
                 elif too_high and not this_tank['_tts_warned']:
                     # Deactivate incoming, activate outgoing
@@ -351,14 +383,40 @@ class Resman(AbstractPlugin):
                         if pump['state'] != 'on':
                             pump['state'] = 'on'
                             activated.append(pump['key'][-1])
-                    msg = f"Tank {tank_l.upper()} is too high. "
-                    if deactivated:
-                        msg += " " + ", ".join([f"Press {k} to deactivate pump {k}" for k in deactivated]) + "."
-                    if activated:
-                        msg += " " + ", ".join([f"Press {k} to activate pump {k}" for k in activated]) + "."
-                    if not deactivated and not activated:
-                        msg += " No pump state changes needed."
-                    self.tts_manager.speak(msg)
+                    # --- Sound feedback ---
+                    import os
+                    if self.player.playing:
+                        print("[Resman] Sound sequence is already playing, skipping new sequence.")
+                        return
+                    self.player.pause()
+                    self.player.next_source()  # Clear any previous queue
+                    sound_sequence = [
+                        'includes/sounds/english/male/tank.wav',
+                        f'includes/sounds/english/male/{tank_l.lower()}.wav',
+                        'includes/sounds/english/male/too_high.wav'
+                    ]
+                    for k in deactivated:
+                        sound_sequence.append('includes/sounds/english/male/normalized/press.wav')
+                        sound_sequence.append(f'includes/sounds/english/male/{k}.wav')
+                        sound_sequence.append('includes/sounds/english/male/deactivate.wav')
+                    for k in activated:
+                        sound_sequence.append('includes/sounds/english/male/normalized/press.wav')
+                        sound_sequence.append(f'includes/sounds/english/male/{k}.wav')
+                        sound_sequence.append('includes/sounds/english/male/activate.wav')
+                    sound_sequence.append('includes/sounds/english/male/normalized/resolve.wav')
+                    print(f"[Resman] Playing sound sequence: {sound_sequence}")
+                    for sound_path in sound_sequence:
+                        if os.path.exists(sound_path):
+                            print(f"[Resman] Found sound file: {sound_path}")
+                            try:
+                                source = pyglet.media.load(sound_path, streaming=False)
+                                self.player.queue(source)
+                            except Exception as e:
+                                print(f"[Resman] Error loading sound {sound_path}: {e}")
+                        else:
+                            print(f"[Resman] Sound file not found: {sound_path}")
+                    self.player.play()
+                    # --- End sound feedback ---
                     this_tank['_tts_warned'] = True
                 elif not (too_low or too_high):
                     this_tank['_tts_warned'] = False

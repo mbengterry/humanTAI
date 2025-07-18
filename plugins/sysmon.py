@@ -276,11 +276,45 @@ class Sysmon(AbstractPlugin):
         delay = self.parameters['automaticsolverdelay'] if self.parameters['automaticsolver'] \
             else self.parameters['alerttimeout']
         gauge['_failuretimer'] = delay
-        # --- Non-blocking TTS via process ---
+
+       
+        #gauge_name = gauge['name']
+        #tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {gauge_name} to resolve.") """
+    
+        import os
         gauge_name = gauge['name']
-        tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {gauge_name} to resolve.")
+        letter = gauge_name[0].lower()
+        number = gauge_name[1]
+        sound_sequence = [
+            'includes/sounds/english/male/normalized/failure.wav',
+            f'includes/sounds/english/male/{letter}.wav',
+            f'includes/sounds/english/male/{number}.wav',
+            'includes/sounds/english/male/normalized/press.wav',
+            f'includes/sounds/english/male/{letter}.wav',
+            f'includes/sounds/english/male/{number}.wav',
+            'includes/sounds/english/male/normalized/resolve.wav'
+        ]
+        if not hasattr(self, 'player'):
+            from pyglet.media import Player
+            self.player = Player()
+        if self.player.playing:
+            print("[Sysmon] Sound sequence is already playing, skipping new sequence.")
+            return
+        self.player.pause()
+        self.player.next_source()  # Clear previous queue
+        print(f"[Sysmon] Playing sound sequence: {sound_sequence}")
+        for sound_path in sound_sequence:
+            if os.path.exists(sound_path):
+                print(f"[Sysmon] Found sound file: {sound_path}")
+                try:
+                    source = pyglet.media.load(sound_path, streaming=False)
+                    self.player.queue(source)
+                except Exception as e:
+                    print(f"[Sysmon] Error loading sound {sound_path}: {e}")
+            else:
+                print(f"[Sysmon] Sound file not found: {sound_path}")
+        self.player.play()
         # --- End of dynamic sound loading ---
-        # (Legacy sound code remains commented for reference)
 
 
 
