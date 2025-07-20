@@ -9,6 +9,7 @@ from csv import DictWriter
 from core.constants import PATHS, REPLAY_MODE
 from core.utils import find_the_first_available_session_number, find_the_last_session_number
 
+
 class Logger:
     def __init__(self):
         self.datetime = datetime.now()
@@ -17,6 +18,7 @@ class Logger:
         self.maxfloats = 6  # Time logged at microsecond precision
         self.session_id = None
         self.lsl = None
+        self.user_name = None
 
         self.session_id = find_the_first_available_session_number()
         self.mode = 'w'
@@ -28,10 +30,23 @@ class Logger:
         self.queue = list()
 
         if not REPLAY_MODE:
-            self.path = PATHS['SESSIONS'].joinpath(self.datetime.strftime("%Y-%m-%d"),
-                                f'{self.session_id}_{self.datetime.strftime("%y%m%d_%H%M%S")}.csv')
+            self._set_path()
             self.path.parent.mkdir(parents=True, exist_ok=True)
             self.open()
+
+    def set_user_name(self, user_name):
+        self.user_name = user_name
+        self._set_path()
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        self.open()
+
+    def _set_path(self):
+        # Use user_name in file name if provided
+        if self.user_name:
+            file_name = f'{self.session_id}_{self.user_name}_{self.datetime.strftime("%y%m%d_%H%M%S")}.csv'
+        else:
+            file_name = f'{self.session_id}_{self.datetime.strftime("%y%m%d_%H%M%S")}.csv'
+        self.path = PATHS['SESSIONS'].joinpath(self.datetime.strftime("%Y-%m-%d"), file_name)
 
     # TODO: see if we can/should merge record_* methods into one
     def record_event(self, event):

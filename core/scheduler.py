@@ -15,16 +15,21 @@ from core.window import Window
 from core.scenario import Scenario
 from core.joystick import joystick
 
+
 class Scheduler:
     """
     This class manages events execution.
     """
 
-    def __init__(self):
+    def __init__(self, user_name=None):
         logger.log_manual_entry(open('VERSION', 'r').read().strip(), key='version')
 
         self.clock = Clock('main')
         self.scenario_time = 0
+
+        # Pass user_name to logger if provided
+        if user_name:
+            logger.set_user_name(user_name)
 
         # Create the event loop
         self.clock.schedule(self.update)

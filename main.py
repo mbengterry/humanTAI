@@ -26,15 +26,21 @@ from core.constants import REPLAY_MODE
 from core.window import Window
 
 
+import argparse
+
 class OpenMATB:
-    def __init__(self):
+    def __init__(self, user_name=None):
         # The MATB window must be borderless (for non-fullscreen mode)
         Window(style=Window.WINDOW_STYLE_DIALOG, resizable = True)
         if REPLAY_MODE:
             ReplayScheduler()
         else:
-            Scheduler()
+            Scheduler(user_name=user_name)
+
 
 if __name__ == '__main__':
-    app = OpenMATB()
+    parser = argparse.ArgumentParser(description='OpenMATB main entry')
+    parser.add_argument('--user', type=str, default=None, help='User name for output file naming')
+    args = parser.parse_args()
+    app = OpenMATB(user_name=args.user)
  
