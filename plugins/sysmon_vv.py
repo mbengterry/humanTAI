@@ -12,6 +12,7 @@ from pyglet.media import Player
 import pyglet
 from core.widgets.popup import PopUp
 from core.constants import FONTSIZE as F
+from plugins import tts_manager
 
 
 
@@ -24,6 +25,7 @@ class Sysmon_vv(AbstractPlugin):
     def __init__(self, label='', taskplacement='bottommid', taskupdatetime=200):
         super().__init__('System monitoring', taskplacement, taskupdatetime)
         self._wrong_failure_given = False  # Track if wrong recommendation has been given
+        self.tts_manager = tts_manager.TTSProcessManager()
 
         self.validation_dict = {
             'alerttimeout': validation.is_positive_integer,
@@ -299,9 +301,9 @@ class Sysmon_vv(AbstractPlugin):
                 wrong_key = random.choice(wrong_choices)
                 self._wrong_failure_given = True
         if wrong_key:
-            tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {wrong_key} to resolve.")
+            self.tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {wrong_key} to resolve.")
         else:
-            tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {gauge_name} to resolve.")
+            self.tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {gauge_name} to resolve.")
 
 
 
