@@ -22,6 +22,8 @@ tts_manager = TTSProcessManager()
 class Sysmon_vocal(AbstractPlugin):
     def __init__(self, label='', taskplacement='bottommid', taskupdatetime=200):
         super().__init__('System monitoring', taskplacement, taskupdatetime)
+        self._wrong_failure_given = False  # Track if wrong recommendation has been given
+        self.tts_manager = TTSProcessManager()
 
         self.validation_dict = {
             'alerttimeout': validation.is_positive_integer,
@@ -235,7 +237,8 @@ class Sysmon_vocal(AbstractPlugin):
         delay = self.parameters['automaticsolverdelay'] if self.parameters['automaticsolver'] \
             else self.parameters['alerttimeout']
         gauge['_failuretimer'] = delay
-       # TTS feedback for gauge failure
+
+        # TTS feedback for gauge failure
         gauge_name = gauge['name']
         keys = list(self.keys) if hasattr(self, 'keys') else ['F1', 'F2', 'F3', 'F4', 'F5', 'F6']
         correct_key = gauge.get('key', gauge_name)
