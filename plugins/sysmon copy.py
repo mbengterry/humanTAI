@@ -13,17 +13,18 @@ import pyglet
 from core.widgets.popup import PopUp
 from core.constants import FONTSIZE as F
 
+from plugins.tts_manager import TTSProcessManager
+from plugins.TTSManager import TTSManager
 
 
 
 
 # Use this singleton, but do NOT instantiate at import time
-
+tts_manager = TTSManager()
 
 class Sysmon(AbstractPlugin):
-    def __init__(self, label='', taskplacement='bottommid', taskupdatetime=200):
+    def __init__(self, label='', taskplacement='topleft', taskupdatetime=200):
         super().__init__('System monitoring', taskplacement, taskupdatetime)
-        self._wrong_failure_given = False  # Track if wrong recommendation has been given
 
         self.validation_dict = {
             'alerttimeout': validation.is_positive_integer,
@@ -233,29 +234,22 @@ class Sysmon(AbstractPlugin):
 
        # 清除旧提示
         self.widgets['sysmon_alert'].set_text("")
-        # === 合并多个提示信息 ===
-        alert_lines = []
 
         # 灯光状态检查提示
         f5 = self.parameters['lights']['1']
         f6 = self.parameters['lights']['2']
         if not f5['on']:
-            alert_lines.append("Press F5!")
-        if f6['on']:
-            alert_lines.append("Press F6!")
-
-        # 刻度失败状态检查
-        for scale_id, scale in self.parameters['scales'].items():
-            if scale.get('_onfailure', False):
-                alert_lines.append(f"Press {scale['key']}!")
-
-        # 显示所有合并后的字幕
-        if alert_lines:
-            full_alert_text = ", ".join(alert_lines)
-            self.widgets['sysmon_alert'].set_text(full_alert_text)
+            self.widgets['sysmon_alert'].set_text("F5 should always turned on as green，press F5 to fix！")
             self.widgets['sysmon_alert'].set_color((255, 255, 0, 255))  # 黄色文字
-        else:
-            self.widgets['sysmon_alert'].set_text("")
+        elif f6['on']:
+            self.widgets['sysmon_alert'].set_text("F6 should keep shut off without red light，press F6 to fix！")
+            self.widgets['sysmon_alert'].set_color((255, 255, 0, 255))  # 黄色文字
+        # 刻度极限检查
+        for scale_id, scale in self.parameters['scales'].items():
+            widget = self.widgets.get(f'sysmon_scale_{scale["name"]}')
+            if widget:
+                if widget.value < 0.15 or widget.value > 0.85:
+                    self.widgets['sysmon_alert'].set_text(f"{scale['name']}reach the limit，press{scale['key']}to fix！")
 
 
     def determine_light_color(self, light):
@@ -283,9 +277,44 @@ class Sysmon(AbstractPlugin):
             else self.parameters['alerttimeout']
         gauge['_failuretimer'] = delay
 
-
+       
+        #gauge_name = gauge['name']
+        #tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {gauge_name} to resolve.") """
+    
+        import os
+        gauge_name = gauge['name']
+        letter = gauge_name[0].lower()
+        number = gauge_name[1]
+        sound_sequence = [
+            'includes/sounds/english/male/normalized/failure.wav',
+            f'includes/sounds/english/male/{letter}.wav',
+            f'includes/sounds/english/male/{number}.wav',
+            'includes/sounds/english/male/normalized/press.wav',
+            f'includes/sounds/english/male/{letter}.wav',
+            f'includes/sounds/english/male/{number}.wav',
+            'includes/sounds/english/male/normalized/resolve.wav'
+        ]
+        if not hasattr(self, 'player'):
+            from pyglet.media import Player
+            self.player = Player()
+        if self.player.playing:
+            print("[Sysmon] Sound sequence is already playing, skipping new sequence.")
+            return
+        self.player.pause()
+        self.player.next_source()  # Clear previous queue
+        print(f"[Sysmon] Playing sound sequence: {sound_sequence}")
+        for sound_path in sound_sequence:
+            if os.path.exists(sound_path):
+                print(f"[Sysmon] Found sound file: {sound_path}")
+                try:
+                    source = pyglet.media.load(sound_path, streaming=False)
+                    self.player.queue(source)
+                except Exception as e:
+                    print(f"[Sysmon] Error loading sound {sound_path}: {e}")
+            else:
+                print(f"[Sysmon] Sound file not found: {sound_path}")
+        self.player.play()
         # --- End of dynamic sound loading ---
-        # (Legacy sound code remains commented for reference)
 
 
 
