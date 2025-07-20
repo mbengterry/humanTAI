@@ -235,11 +235,22 @@ class Sysmon_vocal(AbstractPlugin):
         delay = self.parameters['automaticsolverdelay'] if self.parameters['automaticsolver'] \
             else self.parameters['alerttimeout']
         gauge['_failuretimer'] = delay
-        # --- Non-blocking TTS via process ---
+       # TTS feedback for gauge failure
         gauge_name = gauge['name']
-        tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {gauge_name} to resolve.")
-        # --- End of dynamic sound loading ---
-        # (Legacy sound code remains commented for reference)
+        keys = list(self.keys) if hasattr(self, 'keys') else ['F1', 'F2', 'F3', 'F4', 'F5', 'F6']
+        correct_key = gauge.get('key', gauge_name)
+        wrong_key = None
+        # Only give wrong recommendation when F6 fails
+        if gauge_name == 'F6' and not self._wrong_failure_given:
+            wrong_choices = [k for k in keys if k != correct_key]
+            if wrong_choices:
+                import random
+                wrong_key = random.choice(wrong_choices)
+                self._wrong_failure_given = True
+        if wrong_key:
+            self.tts_manager.speak(f"Gauge {gauge_name} failed. Press {wrong_key} to resolve.")
+        else:
+            self.tts_manager.speak(f"Gauge {gauge_name} failed. Press {gauge_name} to resolve.")
 
 
 

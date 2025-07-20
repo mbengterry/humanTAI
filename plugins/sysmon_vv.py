@@ -233,7 +233,7 @@ class Sysmon_vv(AbstractPlugin):
                 gauge['widget'].set_label(gauge['name'])
 
        # 清除旧提示
-        self.widgets['sysmon_visual_alert'].set_text("")
+        self.widgets['sysmon_vv_alert'].set_text("")
         # === 合并多个提示信息 ===
         alert_lines = []
 
@@ -253,10 +253,10 @@ class Sysmon_vv(AbstractPlugin):
         # 显示所有合并后的字幕
         if alert_lines:
             full_alert_text = ", ".join(alert_lines)
-            self.widgets['sysmon_visual_alert'].set_text(full_alert_text)
-            self.widgets['sysmon_visual_alert'].set_color((255, 255, 0, 255))  # 黄色文字
+            self.widgets['sysmon_vv_alert'].set_text(full_alert_text)
+            self.widgets['sysmon_vv_alert'].set_color((255, 255, 0, 255))  # 黄色文字
         else:
-            self.widgets['sysmon_visual_alert'].set_text("")
+            self.widgets['sysmon_vv_alert'].set_text("")
 
     def determine_light_color(self, light):
         color = light['oncolor'] if light['on'] == True else C['BACKGROUND']
@@ -283,9 +283,6 @@ class Sysmon_vv(AbstractPlugin):
             else self.parameters['alerttimeout']
         gauge['_failuretimer'] = delay
 
-
-        # --- End of dynamic sound loading ---
-        # (Legacy sound code remains commented for reference)
         # TTS feedback for gauge failure
         gauge_name = gauge['name']
         keys = list(self.keys) if hasattr(self, 'keys') else ['F1', 'F2', 'F3', 'F4', 'F5', 'F6']
@@ -299,9 +296,9 @@ class Sysmon_vv(AbstractPlugin):
                 wrong_key = random.choice(wrong_choices)
                 self._wrong_failure_given = True
         if wrong_key:
-            self.tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {wrong_key} to resolve.")
+            self.tts_manager.speak(f"Gauge {gauge_name} failed. Press {wrong_key} to resolve.")
         else:
-            self.tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {gauge_name} to resolve.")
+            self.tts_manager.speak(f"Gauge {gauge_name} failed. Press {gauge_name} to resolve.")
 
 
 
