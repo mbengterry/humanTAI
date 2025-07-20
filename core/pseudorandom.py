@@ -10,7 +10,7 @@ from rstr import xeger as rstrxeger
 
 
 SESSION_ID = logger.session_id if REPLAY_MODE == False else find_the_last_session_number()
-plugins_using_seed = ['communications', 'sysmon'] 		# Used to convert a plugin alias into 
+plugins_using_seed = ['communications','communications_visual','communications_vocal','communications_vv','sysmon','sysmon_visual','sysmon_vocal','sysmon_vv'] 		# Used to convert a plugin alias into 
 														# a unique integer
 
 def plugin_alias_to_int(plugin_alias):

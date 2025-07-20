@@ -10,7 +10,7 @@ from core import validation
 from core.window import Window
 
 
-class Resman(AbstractPlugin):
+class Resman_visual(AbstractPlugin):
     def __init__(self, label='', taskplacement='topleft', taskupdatetime=2000):
         super().__init__(_('Resources management'), taskplacement, taskupdatetime)
 
@@ -335,8 +335,10 @@ class Resman(AbstractPlugin):
             if this_tank['_is_in_tolerance'] is False:
                 too_high = this_tank['level'] > this_tank['target']
                 too_low = this_tank['level'] < this_tank['target']
+
+                subtitle_line = f"{tank_l.upper()} level too {'high' if too_high else 'low'}"
                 action_lines = []
-                subtitle_line=''
+
                 # 找出所有影响该 tank 的泵
                 for pump_n, pump in pumps.items():
                     if pump['state'] == 'failure':
@@ -344,24 +346,29 @@ class Resman(AbstractPlugin):
                     # ✅ 流入控制：进入当前水箱的泵
                     if pump['_totank'] == tank_l:
                         if too_high and pump['state'] == 'on':
-                            action_lines.append(f"press {pump_n}")  # 关闭它
+                            action_lines.append(f"press {pump_n} to deactivate pump {pump_n}")  # 关闭它
                         elif too_low and pump['state'] == 'off':
-                            action_lines.append(f"press {pump_n}")  # 打开它
+                            action_lines.append(f"press {pump_n} to activate pump {pump_n}")  # 打开它
 
                     # ✅ 流出控制：从当前水箱流出的泵
                     if pump['_fromtank'] == tank_l:
                         if too_high and pump['state'] == 'off':
-                            action_lines.append(f"press {pump_n}")  # 打开它
+                            action_lines.append(f"press {pump_n} to activate pump {pump_n}")  # 打开它
                         elif too_low and pump['state'] == 'on':
-                            action_lines.append(f"press {pump_n}")  # 关闭它
+                            action_lines.append(f"press {pump_n} to deactivate pump {pump_n}")  # 关闭它
+                            
                 if action_lines:
-                    subtitle_line = "! ".join(action_lines)
+                    subtitle_line += ": " + ", ".join(action_lines)
+
                 subtitle_msgs.append(subtitle_line)
 
-        if subtitle_msgs:
-            self.set_subtitle("! ".join(subtitle_msgs), color=(255, 255, 0, 255))
-        else:
-            self.set_subtitle('', color=C['BLACK'])  # 清除提示
+            # 显示或隐藏字幕
+            # 🆕 合并所有字幕信息
+            all_msgs = subtitle_msgs + failure_msgs + status_change_msgs
+            if all_msgs:
+                self.set_subtitle(", ".join(all_msgs), color=(255, 255, 0, 255))
+            else:
+                self.set_subtitle('', color=C['BLACK'])  # 清除提示
 
 
 

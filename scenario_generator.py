@@ -30,7 +30,6 @@ from core.constants import PATHS
 from core.window import Window
 from plugins import *
 
-
 # Constants #
 EVENTS_REFRACTORY_DURATION = 1 # Delay before the next event is allowed (in seconds)
 DIFFICULTY_MIN = 0.25
@@ -52,8 +51,19 @@ win.set_visible(False)
 # Useful to manipulate parameters #
 plugins = {'track':Track(win, silent=True),
            'sysmon':Sysmon(win),
-           'communications':Communications(win),
-           'resman':Resman(win)}
+           'sysmon_visual':Sysmon_visual(win),
+            'sysmon_vocal':Sysmon_vocal(win),
+            'sysmon_vv':Sysmon_vv(win),
+              
+            'communications':Communications(win),
+           'communications_visual':Communications_visual(win),
+            'communications_vocal':Communications_vocal(win),
+           'communications_vv':Communications_vv(win),
+           
+           'resman':Resman(win),
+           'resman_vocal':Resman_vocal(win),
+           'resman_visual':Resman_visual(win),
+           'resman_vv':Resman_vv(win)}
 
 
 def part_duration_sec(duration_sec, part_left, duration_list=list()):
@@ -153,7 +163,8 @@ def add_scenario_phase(scenario_lines, task_difficulty_tuples, start_sec):
     end_sec = start_sec + STEP_DURATION_SEC
 
     # If a plugin is active and not desired, pause and hide it
-    for plugin_name in ['sysmon', 'tracking', 'communications', 'resman']:
+    for plugin_name in ['sysmon', 'tracking', 'communications', 'resman', 'sysmon_visual', 'resman_visual',
+                        'communications_visual', 'sysmon_vocal', 'resman_vocal', 'communications_vocal', 'sysmon_vv', 'resman_vv', 'communications_vv']:
         task_state = get_task_current_state(scenario_lines, plugin_name)
         if (task_state in ['start', 'resume']
                 and plugin_name not in [p for (p, d) in task_difficulty_tuples]):
@@ -181,7 +192,7 @@ def add_scenario_phase(scenario_lines, task_difficulty_tuples, start_sec):
         # Minimum difficulty = no failure at all
         # Maximum difficulty = ratio failure such that there is always a failure in either lights
         # or scales (taking EVENTS_REFRACTORY_DURATION into account)
-        if plugin_name == 'sysmon':
+        if plugin_name in ['sysmon', 'sysmon_visual', 'sysmon_vocal', 'sysmon_vv']:
             print('System monitoring | computing events')
             # Failure duration sec takes into account the event refractory duration
             failure_duration_sec = plugin.parameters['alerttimeout'] / 1000 + EVENTS_REFRACTORY_DURATION
@@ -222,7 +233,7 @@ def add_scenario_phase(scenario_lines, task_difficulty_tuples, start_sec):
         # the zone of tolerance.
         # Minimum difficulty = maximum tolerance radius
         # Maximum difficulty = null tolerance radius
-        elif plugin_name == 'track':
+        elif plugin_name=='track':
             print('Tracking | computing events')
             scenario_lines.append(Event(start_line, start_sec, plugin_name,
                                          ['targetproportion', 1 - difficulty]))
@@ -231,7 +242,8 @@ def add_scenario_phase(scenario_lines, task_difficulty_tuples, start_sec):
         # and the signal to noise ratio (target versus distracting communications).
         # Minimum difficulty = no communications
         # Maximum difficulty = quasi-permanent communications
-        elif plugin_name == 'communications':
+        elif plugin_name in ['communications', 'communications_visual',
+                             'communications_vocal', 'communications_vv']:
             print('Communications | computing events')
             # print('Communications | average duration of instructions:', end=" ")
             # averaged_duration_sec = round(plugin.get_averaged_prompt_duration())
@@ -270,7 +282,7 @@ def add_scenario_phase(scenario_lines, task_difficulty_tuples, start_sec):
         # Minimum difficulty = No leak
         # Maximum difficulty = Maximum possible (given the resources that are available)
 
-        elif plugin_name == 'resman':
+        elif plugin_name in ['resman', 'resman_visual', 'resman_vocal', 'resman_vv']:
             print('Resources management | computing events')
             pumps = plugin.parameters['pump']
             # First, compute the maximum leak level tolerated
@@ -326,7 +338,13 @@ def main():
 
         start_time_sec = i * STEP_DURATION_SEC
         phase_tuples = (('track', current_difficulty),('sysmon', current_difficulty),
-                        ('communications', current_difficulty),('resman', current_difficulty))
+                        ('communications', current_difficulty),('resman', current_difficulty),
+                        ('sysmon_visual', current_difficulty), ('resman_visual', current_difficulty),
+                        ('communications_visual', current_difficulty),
+                        ('sysmon_vocal', current_difficulty), ('resman_vocal', current_difficulty),
+                        ('communications_vocal', current_difficulty),
+                        ('sysmon_vv', current_difficulty), ('resman_vv', current_difficulty),
+                        ('communications_vv', current_difficulty))
         scenario_lines = add_scenario_phase(scenario_lines, phase_tuples, start_time_sec)
 
     # Stop all tasks at the very end

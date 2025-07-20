@@ -20,7 +20,7 @@ from core.constants import FONTSIZE as F
 # Use this singleton, but do NOT instantiate at import time
 
 
-class Sysmon(AbstractPlugin):
+class Sysmon_visual(AbstractPlugin):
     def __init__(self, label='', taskplacement='bottommid', taskupdatetime=200):
         super().__init__('System monitoring', taskplacement, taskupdatetime)
 
@@ -231,7 +231,7 @@ class Sysmon(AbstractPlugin):
                 gauge['widget'].set_label(gauge['name'])
 
        # 清除旧提示
-        self.widgets['sysmon_alert'].set_text("")
+        self.widgets['sysmon_visual_alert'].set_text("")
         # === 合并多个提示信息 ===
         alert_lines = []
 
@@ -239,22 +239,23 @@ class Sysmon(AbstractPlugin):
         f5 = self.parameters['lights']['1']
         f6 = self.parameters['lights']['2']
         if not f5['on']:
-            alert_lines.append("Press F5!")
+            alert_lines.append("F5 should always be green. Press F5 to fix!")
         if f6['on']:
-            alert_lines.append("Press F6!")
+            alert_lines.append("F6 should be off. Press F6 to fix!")
 
         # 刻度失败状态检查
         for scale_id, scale in self.parameters['scales'].items():
             if scale.get('_onfailure', False):
-                alert_lines.append(f"Press {scale['key']}!")
+                alert_lines.append(f"{scale['name']} is abnormal. Press {scale['key']} to fix!")
 
         # 显示所有合并后的字幕
         if alert_lines:
             full_alert_text = ", ".join(alert_lines)
-            self.widgets['sysmon_alert'].set_text(full_alert_text)
-            self.widgets['sysmon_alert'].set_color((255, 255, 0, 255))  # 黄色文字
+            self.widgets['sysmon_visual_alert'].set_text(full_alert_text)
+            self.widgets['sysmon_visual_alert'].set_color((255, 255, 0, 255))  # 黄色文字
         else:
-            self.widgets['sysmon_alert'].set_text("")
+            self.widgets['sysmon_visual_alert'].set_text("")
+            
 
 
     def determine_light_color(self, light):

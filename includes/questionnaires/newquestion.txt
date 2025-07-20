@@ -1,12 +1,16 @@
 <title>Questionnaire example
-EQ1;The system explained its decision clearly.;Very Low/Very High;0/100/50
-EQ2;I understood why the system made this recommendation.;Very Low/Very High;0/100/50
-EQ3;The explanation was relevant to the task at hand.;Very Low/Very High;0/100/50
+EQ1;The system explained its decision clearly.;Very Low/Very High;0/10/5
+EQ2;I understood why the system made this recommendation.;Very Low/Very High;0/10/5
+EQ3;The explanation was relevant to the task at hand.;Very Low/Very High;0/10/5
 
-T1;I trust the system’s ability to make correct decisions.;Very Low/Very High;0/100/50
-T2;I would rely on this system in a real-world scenario.;Very Low/Very High;0/100/50
-T3;I believe the system is reliable even when I don’t fully understand it.;Very Low/Very High;0/100/50
+<newpage>
+<title>Questionnaire example2
+T1;I trust the system’s ability to make correct decisions.;Very Low/Very High;0/10/5
+T2;I would rely on this system in a real-world scenario.;Very Low/Very High;0/10/5
+T3;I believe the system is reliable even when I don’t fully understand it.;Very Low/Very High;0/10/5
 
-CL1;I found the explanations mentally demanding.;Very Low/Very High;0/100/50
-CL2;I had enough time to process the explanation.;Very Low/Very High;0/100/50
-CL3;I felt overwhelmed by the amount of information.;Very Low/Very High;0/100/50
+<newpage>
+<title>Questionnaire example3
+CL1;I found the explanations mentally demanding.;Very Low/Very High;0/10/5
+CL2;I had enough time to process the explanation.;Very Low/Very High;0/10/5
+CL3;I felt overwhelmed by the amount of information.;Very Low/Very High;0/10/5

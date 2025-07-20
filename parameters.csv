@@ -179,5 +179,397 @@ labstreaminglayer,streamsession,Should the whole session log be streamed through
 labstreaminglayer,pauseatstart,"Should a pause screen be proposed at LSL start, to allow the user to add the stream in the LabRecorder?",(boolean),False
 parallelport,trigger,"Set this parameter with a 8-bit integer (1-256), to change the parallel port state",(positive integer),0
 parallelport,delayms,Delay (ms) before the parallel port is set back to its default value (0),(positive integer),5
-generictrigger,state,"Set the state of the trigger",(string),""
-
+generictrigger,state,Set the state of the trigger,(string),
+sysmon_visual,title,"Title of the task, displayed if the plugin is visible",(string),System monitoring
+sysmon_vocal,title,"Title of the task, displayed if the plugin is visible",(string),System monitoring
+sysmon_vv,title,"Title of the task, displayed if the plugin is visible",(string),System monitoring
+sysmon_visual,taskplacement,Task location in a 3x2 canvas,"`topleft`, `topmid`, `topright`, `bottomleft`, `bottommid`, `bottomright`, `fullscreen`",topleft
+sysmon_vocal,taskplacement,Task location in a 3x2 canvas,"`topleft`, `topmid`, `topright`, `bottomleft`, `bottommid`, `bottomright`, `fullscreen`",topleft
+sysmon_vv,taskplacement,Task location in a 3x2 canvas,"`topleft`, `topmid`, `topright`, `bottomleft`, `bottommid`, `bottomright`, `fullscreen`",topleft
+sysmon_visual,taskupdatetime,Delay between plugin updates (ms),(positive integer),200
+sysmon_vocal,taskupdatetime,Delay between plugin updates (ms),(positive integer),200
+sysmon_vv,taskupdatetime,Delay between plugin updates (ms),(positive integer),200
+sysmon_visual,alerttimeout,Maximum duration of a failure (ms),(positive integer),10000
+sysmon_vocal,alerttimeout,Maximum duration of a failure (ms),(positive integer),10000
+sysmon_vv,alerttimeout,Maximum duration of a failure (ms),(positive integer),10000
+sysmon_visual,automaticsolver,"When True, any failure will be automatically corrected after an `automaticsolverdelay` duration",(boolean),False
+sysmon_vocal,automaticsolver,"When True, any failure will be automatically corrected after an `automaticsolverdelay` duration",(boolean),False
+sysmon_vv,automaticsolver,"When True, any failure will be automatically corrected after an `automaticsolverdelay` duration",(boolean),False
+sysmon_visual,automaticsolverdelay,"Delay (ms) between a failure onset and its automatic correction, if `automaticsolver` == True",(positive integer),1000
+sysmon_vocal,automaticsolverdelay,"Delay (ms) between a failure onset and its automatic correction, if `automaticsolver` == True",(positive integer),1000
+sysmon_vv,automaticsolverdelay,"Delay (ms) between a failure onset and its automatic correction, if `automaticsolver` == True",(positive integer),1000
+sysmon_visual,displayautomationstate,"If True, the current automation state (MANUAL vs AUTO ON) of the task is displayed.",(boolean),True
+sysmon_vocal,displayautomationstate,"If True, the current automation state (MANUAL vs AUTO ON) of the task is displayed.",(boolean),True
+sysmon_vv,displayautomationstate,"If True, the current automation state (MANUAL vs AUTO ON) of the task is displayed.",(boolean),True
+sysmon_visual,allowanykey,"If True, the subject can use any system monitoring key, to signal a failure. For instance, he or she could use the F2 key to signal a failure for the F4 gauge.",(boolean),False
+sysmon_vocal,allowanykey,"If True, the subject can use any system monitoring key, to signal a failure. For instance, he or she could use the F2 key to signal a failure for the F4 gauge.",(boolean),False
+sysmon_vv,allowanykey,"If True, the subject can use any system monitoring key, to signal a failure. For instance, he or she could use the F2 key to signal a failure for the F4 gauge.",(boolean),False
+sysmon_visual,feedbackduration,"Duration (ms) of feedbacks, if enabled",(positive integer),1500
+sysmon_vocal,feedbackduration,"Duration (ms) of feedbacks, if enabled",(positive integer),1500
+sysmon_vv,feedbackduration,"Duration (ms) of feedbacks, if enabled",(positive integer),1500
+sysmon_visual,feedbacks-positive-active,Is the positive feedback (correct response) enabled?,(boolean),True
+sysmon_vocal,feedbacks-positive-active,Is the positive feedback (correct response) enabled?,(boolean),True
+sysmon_vv,feedbacks-positive-active,Is the positive feedback (correct response) enabled?,(boolean),True
+sysmon_visual,feedbacks-positive-color,Color of the positive feedback if enabled,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",green
+sysmon_vocal,feedbacks-positive-color,Color of the positive feedback if enabled,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",green
+sysmon_vv,feedbacks-positive-color,Color of the positive feedback if enabled,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",green
+sysmon_visual,feedbacks-negative-active,Is the negative feedback (correct response) enabled?,(boolean),True
+sysmon_vocal,feedbacks-negative-active,Is the negative feedback (correct response) enabled?,(boolean),True
+sysmon_vv,feedbacks-negative-active,Is the negative feedback (correct response) enabled?,(boolean),True
+sysmon_visual,feedbacks-negative-color,Color of the negative feedback if enabled,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",red
+sysmon_vocal,feedbacks-negative-color,Color of the negative feedback if enabled,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",red
+sysmon_vv,feedbacks-negative-color,Color of the negative feedback if enabled,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",red
+sysmon_visual,lights-1-name,Name of the first (left) light,(string),F5
+sysmon_vocal,lights-1-name,Name of the first (left) light,(string),F5
+sysmon_vv,lights-1-name,Name of the first (left) light,(string),F5
+sysmon_visual,lights-1-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_vocal,lights-1-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_vv,lights-1-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_visual,lights-1-default,Which is the default state (no failure) of this light?,`on` or `off`,on
+sysmon_vocal,lights-1-default,Which is the default state (no failure) of this light?,`on` or `off`,on
+sysmon_vv,lights-1-default,Which is the default state (no failure) of this light?,`on` or `off`,on
+sysmon_visual,lights-1-oncolor,Color of the light when it is `on`,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",green
+sysmon_vocal,lights-1-oncolor,Color of the light when it is `on`,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",green
+sysmon_vv,lights-1-oncolor,Color of the light when it is `on`,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",green
+sysmon_visual,lights-1-key,Keyboard key to resolve a failure,(keyboard key),F5
+sysmon_vocal,lights-1-key,Keyboard key to resolve a failure,(keyboard key),F5
+sysmon_vv,lights-1-key,Keyboard key to resolve a failure,(keyboard key),F5
+sysmon_visual,lights-1-on,Current state of the light,(boolean),True
+sysmon_vocal,lights-1-on,Current state of the light,(boolean),True
+sysmon_vv,lights-1-on,Current state of the light,(boolean),True
+sysmon_visual,lights-2-name,Name of the second (right) light,(string),F6
+sysmon_vocal,lights-2-name,Name of the second (right) light,(string),F6
+sysmon_vv,lights-2-name,Name of the second (right) light,(string),F6
+sysmon_visual,lights-2-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_vocal,lights-2-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_vv,lights-2-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_visual,lights-2-default,Which is the default state (no failure) of this light?,`on` or `off`,off
+sysmon_vocal,lights-2-default,Which is the default state (no failure) of this light?,`on` or `off`,off
+sysmon_vv,lights-2-default,Which is the default state (no failure) of this light?,`on` or `off`,off
+sysmon_visual,lights-2-oncolor,Color of the light when it is `on`,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",red
+sysmon_vocal,lights-2-oncolor,Color of the light when it is `on`,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",red
+sysmon_vv,lights-2-oncolor,Color of the light when it is `on`,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",red
+sysmon_visual,lights-2-key,Keyboard key to resolve a failure,(keyboard key),F6
+sysmon_vocal,lights-2-key,Keyboard key to resolve a failure,(keyboard key),F6
+sysmon_vv,lights-2-key,Keyboard key to resolve a failure,(keyboard key),F6
+sysmon_visual,lights-2-on,Current state of the light,(boolean),False
+sysmon_vocal,lights-2-on,Current state of the light,(boolean),False
+sysmon_vv,lights-2-on,Current state of the light,(boolean),False
+sysmon_visual,scales-1-name,Name of the scale #1,(string),F1
+sysmon_vocal,scales-1-name,Name of the scale #1,(string),F1
+sysmon_vv,scales-1-name,Name of the scale #1,(string),F1
+sysmon_visual,scales-1-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_vocal,scales-1-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_vv,scales-1-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_visual,scales-1-side,"To which side trigger the failure? (0:random, 1:up, -1:down)","-1, 0, 1",0
+sysmon_vocal,scales-1-side,"To which side trigger the failure? (0:random, 1:up, -1:down)","-1, 0, 1",0
+sysmon_vv,scales-1-side,"To which side trigger the failure? (0:random, 1:up, -1:down)","-1, 0, 1",0
+sysmon_visual,scales-1-key,Keyboard key to resolve a failure,(keyboard key),F1
+sysmon_vocal,scales-1-key,Keyboard key to resolve a failure,(keyboard key),F1
+sysmon_vv,scales-1-key,Keyboard key to resolve a failure,(keyboard key),F1
+sysmon_visual,scales-2-name,Name of the scale #2,(string),F2
+sysmon_vocal,scales-2-name,Name of the scale #2,(string),F2
+sysmon_vv,scales-2-name,Name of the scale #2,(string),F2
+sysmon_visual,scales-2-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_vocal,scales-2-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_vv,scales-2-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_visual,scales-2-side,"To which side trigger the failure? (0:random, 1:up, -1:down)","-1, 0, 1",0
+sysmon_vocal,scales-2-side,"To which side trigger the failure? (0:random, 1:up, -1:down)","-1, 0, 1",0
+sysmon_vv,scales-2-side,"To which side trigger the failure? (0:random, 1:up, -1:down)","-1, 0, 1",0
+sysmon_visual,scales-2-key,Keyboard key to resolve a failure,(keyboard key),F2
+sysmon_vocal,scales-2-key,Keyboard key to resolve a failure,(keyboard key),F2
+sysmon_vv,scales-2-key,Keyboard key to resolve a failure,(keyboard key),F2
+sysmon_visual,scales-3-name,Name of the scale #3,(string),F3
+sysmon_vocal,scales-3-name,Name of the scale #3,(string),F3
+sysmon_vv,scales-3-name,Name of the scale #3,(string),F3
+sysmon_visual,scales-3-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_vocal,scales-3-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_vv,scales-3-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_visual,scales-3-side,"To which side trigger the failure? (0:random, 1:up, -1:down)","-1, 0, 1",0
+sysmon_vocal,scales-3-side,"To which side trigger the failure? (0:random, 1:up, -1:down)","-1, 0, 1",0
+sysmon_vv,scales-3-side,"To which side trigger the failure? (0:random, 1:up, -1:down)","-1, 0, 1",0
+sysmon_visual,scales-3-key,Keyboard key to resolve a failure,(keyboard key),F3
+sysmon_vocal,scales-3-key,Keyboard key to resolve a failure,(keyboard key),F3
+sysmon_vv,scales-3-key,Keyboard key to resolve a failure,(keyboard key),F3
+sysmon_visual,scales-4-name,Name of the scale #4,(string),F4
+sysmon_vocal,scales-4-name,Name of the scale #4,(string),F4
+sysmon_vv,scales-4-name,Name of the scale #4,(string),F4
+sysmon_visual,scales-4-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_vocal,scales-4-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_vv,scales-4-failure,Set this to True if you want to trigger a failure,(boolean),False
+sysmon_visual,scales-4-side,"To which side trigger the failure? (0:random, 1:up, -1:down)","-1, 0, 1",0
+sysmon_vocal,scales-4-side,"To which side trigger the failure? (0:random, 1:up, -1:down)","-1, 0, 1",0
+sysmon_vv,scales-4-side,"To which side trigger the failure? (0:random, 1:up, -1:down)","-1, 0, 1",0
+sysmon_visual,scales-4-key,Keyboard key to resolve a failure,(keyboard key),F4
+sysmon_vocal,scales-4-key,Keyboard key to resolve a failure,(keyboard key),F4
+sysmon_vv,scales-4-key,Keyboard key to resolve a failure,(keyboard key),F4
+communications_visual,title,"Title of the task, displayed if the plugin is visible",(string),Communications
+communications_vocal,title,"Title of the task, displayed if the plugin is visible",(string),Communications
+communications_vv,title,"Title of the task, displayed if the plugin is visible",(string),Communications
+communications_visual,taskplacement,Task location in a 3x2 canvas,"`topleft`, `topmid`, `topright`, `bottomleft`, `bottommid`, `bottomright`, `fullscreen`",bottomleft
+communications_vocal,taskplacement,Task location in a 3x2 canvas,"`topleft`, `topmid`, `topright`, `bottomleft`, `bottommid`, `bottomright`, `fullscreen`",bottomleft
+communications_vv,taskplacement,Task location in a 3x2 canvas,"`topleft`, `topmid`, `topright`, `bottomleft`, `bottommid`, `bottomright`, `fullscreen`",bottomleft
+communications_visual,taskupdatetime,Delay between plugin updates (ms),(positive integer),80
+communications_vocal,taskupdatetime,Delay between plugin updates (ms),(positive integer),80
+communications_vv,taskupdatetime,Delay between plugin updates (ms),(positive integer),80
+communications_visual,automaticsolver,"When True, the target frequency is automatically set by an automation",(boolean),False
+communications_vocal,automaticsolver,"When True, the target frequency is automatically set by an automation",(boolean),False
+communications_vv,automaticsolver,"When True, the target frequency is automatically set by an automation",(boolean),False
+communications_visual,displayautomationstate,"If True, the current automation state (MANUAL vs AUTO ON) of the task is displayed.",(boolean),True
+communications_vocal,displayautomationstate,"If True, the current automation state (MANUAL vs AUTO ON) of the task is displayed.",(boolean),True
+communications_vv,displayautomationstate,"If True, the current automation state (MANUAL vs AUTO ON) of the task is displayed.",(boolean),True
+communications_visual,callsignregex,Regular expression pattern for callsign generation,(regular expression),[A-Z][A-Z][A-Z]\d\d\d
+communications_vocal,callsignregex,Regular expression pattern for callsign generation,(regular expression),[A-Z][A-Z][A-Z]\d\d\d
+communications_vv,callsignregex,Regular expression pattern for callsign generation,(regular expression),[A-Z][A-Z][A-Z]\d\d\d
+communications_visual,owncallsign,"Callsign of the subject. If empty, automatically generated according to callsignregex",(string),(empty)
+communications_vocal,owncallsign,"Callsign of the subject. If empty, automatically generated according to callsignregex",(string),(empty)
+communications_vv,owncallsign,"Callsign of the subject. If empty, automatically generated according to callsignregex",(string),(empty)
+communications_visual,othercallsignnumber,Number of irrelevant distracting callsigns,(positive integer),5
+communications_vocal,othercallsignnumber,Number of irrelevant distracting callsigns,(positive integer),5
+communications_vv,othercallsignnumber,Number of irrelevant distracting callsigns,(positive integer),5
+communications_visual,othercallsign,"List of distracting callsigns. If empty, automatically generated according to callsignregex and othercallsignnumber",(list of string),(empty)
+communications_vocal,othercallsign,"List of distracting callsigns. If empty, automatically generated according to callsignregex and othercallsignnumber",(list of string),(empty)
+communications_vv,othercallsign,"List of distracting callsigns. If empty, automatically generated according to callsignregex and othercallsignnumber",(list of string),(empty)
+communications_visual,airbandminMhz,"Minimum radio frequency, in Mhz",(positive float),108.0
+communications_vocal,airbandminMhz,"Minimum radio frequency, in Mhz",(positive float),108.0
+communications_vv,airbandminMhz,"Minimum radio frequency, in Mhz",(positive float),108.0
+communications_visual,airbandmaxMhz,"Maximum radio frequency, in Mhz",(positive float),137.0
+communications_vocal,airbandmaxMhz,"Maximum radio frequency, in Mhz",(positive float),137.0
+communications_vv,airbandmaxMhz,"Maximum radio frequency, in Mhz",(positive float),137.0
+communications_visual,airbandminvariationMhz,Minimum frequency variation of the target radio,(positive integer),5
+communications_vocal,airbandminvariationMhz,Minimum frequency variation of the target radio,(positive integer),5
+communications_vv,airbandminvariationMhz,Minimum frequency variation of the target radio,(positive integer),5
+communications_visual,airbandmaxvariationMhz,Maximum frequency variation of the target radio,(positive integer),6
+communications_vocal,airbandmaxvariationMhz,Maximum frequency variation of the target radio,(positive integer),6
+communications_vv,airbandmaxvariationMhz,Maximum frequency variation of the target radio,(positive integer),6
+communications_visual,voiceidiom,Voice idiom. The corresponding folder must be present in the Sound directory,`english` or `french`,french
+communications_vocal,voiceidiom,Voice idiom. The corresponding folder must be present in the Sound directory,`english` or `french`,french
+communications_vv,voiceidiom,Voice idiom. The corresponding folder must be present in the Sound directory,`english` or `french`,french
+communications_visual,voicegender,Voice gender. The corresponding folder must be present in the selected idiom directory,`male` or `female`,female
+communications_vocal,voicegender,Voice gender. The corresponding folder must be present in the selected idiom directory,`male` or `female`,female
+communications_vv,voicegender,Voice gender. The corresponding folder must be present in the selected idiom directory,`male` or `female`,female
+communications_visual,radioprompt,Use it to trigger either a target (own) or a distractor (other) prompt [own or other]. Initially empty. Will be emptied at the end of the prompt,`own` or `other`,(empty)
+communications_vocal,radioprompt,Use it to trigger either a target (own) or a distractor (other) prompt [own or other]. Initially empty. Will be emptied at the end of the prompt,`own` or `other`,(empty)
+communications_vv,radioprompt,Use it to trigger either a target (own) or a distractor (other) prompt [own or other]. Initially empty. Will be emptied at the end of the prompt,`own` or `other`,(empty)
+communications_visual,promptlist,"List of radio labels, in their order of appearance. Each corresponding file must be available in the sound folder. This list is used both for target and distractors radio lists.",(list of string),"[NAV1, NAV2, COM1, COM2]"
+communications_vocal,promptlist,"List of radio labels, in their order of appearance. Each corresponding file must be available in the sound folder. This list is used both for target and distractors radio lists.",(list of string),"[NAV1, NAV2, COM1, COM2]"
+communications_vv,promptlist,"List of radio labels, in their order of appearance. Each corresponding file must be available in the sound folder. This list is used both for target and distractors radio lists.",(list of string),"[NAV1, NAV2, COM1, COM2]"
+communications_visual,maxresponsedelay,Maximum response delay (ms),(positive integer),20000
+communications_vocal,maxresponsedelay,Maximum response delay (ms),(positive integer),20000
+communications_vv,maxresponsedelay,Maximum response delay (ms),(positive integer),20000
+communications_visual,feedbackduration,Duration (ms) of the feedbacks when enabled,(positive integer),1500
+communications_vocal,feedbackduration,Duration (ms) of the feedbacks when enabled,(positive integer),1500
+communications_vv,feedbackduration,Duration (ms) of the feedbacks when enabled,(positive integer),1500
+communications_visual,feedbacks-positive-active,Is the positive feedback (correct response) enabled?,(boolean),False
+communications_vocal,feedbacks-positive-active,Is the positive feedback (correct response) enabled?,(boolean),False
+communications_vv,feedbacks-positive-active,Is the positive feedback (correct response) enabled?,(boolean),False
+communications_visual,feedbacks-positive-color,Color of the positive feedback if enabled,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",green
+communications_vocal,feedbacks-positive-color,Color of the positive feedback if enabled,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",green
+communications_vv,feedbacks-positive-color,Color of the positive feedback if enabled,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",green
+communications_visual,feedbacks-negative-active,Is the negative feedback (correct response) enabled?,(boolean),False
+communications_vocal,feedbacks-negative-active,Is the negative feedback (correct response) enabled?,(boolean),False
+communications_vv,feedbacks-negative-active,Is the negative feedback (correct response) enabled?,(boolean),False
+communications_visual,feedbacks-negative-color,Color of the negative feedback if enabled,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",red
+communications_vocal,feedbacks-negative-color,Color of the negative feedback if enabled,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",red
+communications_vv,feedbacks-negative-color,Color of the negative feedback if enabled,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",red
+resman_visual,title,"Title of the task, displayed if the plugin is visible",(string),Resources management
+resman_vocal,title,"Title of the task, displayed if the plugin is visible",(string),Resources management
+resman_vv,title,"Title of the task, displayed if the plugin is visible",(string),Resources management
+resman_visual,taskplacement,Task location in a 3x2 canvas,"`topleft`, `topmid`, `topright`, `bottomleft`, `bottommid`, `bottomright`, `fullscreen`",bottommid
+resman_vocal,taskplacement,Task location in a 3x2 canvas,"`topleft`, `topmid`, `topright`, `bottomleft`, `bottommid`, `bottomright`, `fullscreen`",bottommid
+resman_vv,taskplacement,Task location in a 3x2 canvas,"`topleft`, `topmid`, `topright`, `bottomleft`, `bottommid`, `bottomright`, `fullscreen`",bottommid
+resman_visual,taskupdatetime,Delay between plugin updates (ms),(positive integer),2000
+resman_vocal,taskupdatetime,Delay between plugin updates (ms),(positive integer),2000
+resman_vv,taskupdatetime,Delay between plugin updates (ms),(positive integer),2000
+resman_visual,automaticsolver,"When True, the target frequency is automatically set by an automation",(boolean),False
+resman_vocal,automaticsolver,"When True, the target frequency is automatically set by an automation",(boolean),False
+resman_vv,automaticsolver,"When True, the target frequency is automatically set by an automation",(boolean),False
+resman_visual,displayautomationstate,"If True, the current automation state (MANUAL vs AUTO ON) of the task is displayed.",(boolean),True
+resman_vocal,displayautomationstate,"If True, the current automation state (MANUAL vs AUTO ON) of the task is displayed.",(boolean),True
+resman_vv,displayautomationstate,"If True, the current automation state (MANUAL vs AUTO ON) of the task is displayed.",(boolean),True
+resman_visual,toleranceradius,Radius of the tolerance area (0=do not display tolerance area),(integer),250
+resman_vocal,toleranceradius,Radius of the tolerance area (0=do not display tolerance area),(integer),250
+resman_vv,toleranceradius,Radius of the tolerance area (0=do not display tolerance area),(integer),250
+resman_visual,tolerancecolor,Color of the tolerance area when volume is inside it,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",black
+resman_vocal,tolerancecolor,Color of the tolerance area when volume is inside it,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",black
+resman_vv,tolerancecolor,Color of the tolerance area when volume is inside it,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",black
+resman_visual,tolerancecoloroutside,Color of the tolerance area when volume is outside it,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",black
+resman_vocal,tolerancecoloroutside,Color of the tolerance area when volume is outside it,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",black
+resman_vv,tolerancecoloroutside,Color of the tolerance area when volume is outside it,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",black
+resman_visual,pumpcoloroff,Color of the pump when its state is `off`,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",white
+resman_vocal,pumpcoloroff,Color of the pump when its state is `off`,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",white
+resman_vv,pumpcoloroff,Color of the pump when its state is `off`,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",white
+resman_visual,pumpcoloron,Color of the pump when its state is `on`,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",green
+resman_vocal,pumpcoloron,Color of the pump when its state is `on`,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",green
+resman_vv,pumpcoloron,Color of the pump when its state is `on`,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",green
+resman_visual,pumpcolorfailure,Color of the pump when its state is `failure`,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",red
+resman_vocal,pumpcolorfailure,Color of the pump when its state is `failure`,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",red
+resman_vv,pumpcolorfailure,Color of the pump when its state is `failure`,"`white`, `black`, `green`, `red`, `background`, `lightgrey`, `grey`, `blue`",red
+resman_visual,displaystatus,Should the pump status be displayed in a specific panel?,(boolean),True
+resman_vocal,displaystatus,Should the pump status be displayed in a specific panel?,(boolean),True
+resman_vv,displaystatus,Should the pump status be displayed in a specific panel?,(boolean),True
+resman_visual,statuslocation,Placement where to display the pump status,"`topleft`, `topmid`, `topright`, `bottomleft`, `bottommid`, `bottomright`, `fullscreen`",bottomright
+resman_vocal,statuslocation,Placement where to display the pump status,"`topleft`, `topmid`, `topright`, `bottomleft`, `bottommid`, `bottomright`, `fullscreen`",bottomright
+resman_vv,statuslocation,Placement where to display the pump status,"`topleft`, `topmid`, `topright`, `bottomleft`, `bottommid`, `bottomright`, `fullscreen`",bottomright
+resman_visual,tank-a-level,Current level of this tank,(integer),2500
+resman_vocal,tank-a-level,Current level of this tank,(integer),2500
+resman_vv,tank-a-level,Current level of this tank,(integer),2500
+resman_visual,tank-a-max,Maximum level of this tank,(integer),4000
+resman_vocal,tank-a-max,Maximum level of this tank,(integer),4000
+resman_vv,tank-a-max,Maximum level of this tank,(integer),4000
+resman_visual,tank-a-target,Target level of this tank,(integer),2500
+resman_vocal,tank-a-target,Target level of this tank,(integer),2500
+resman_vv,tank-a-target,Target level of this tank,(integer),2500
+resman_visual,tank-a-depletable,Is this tank depletable (False=infinite resource),(boolean),True
+resman_vocal,tank-a-depletable,Is this tank depletable (False=infinite resource),(boolean),True
+resman_vv,tank-a-depletable,Is this tank depletable (False=infinite resource),(boolean),True
+resman_visual,tank-a-lossperminute,Volume lost (leak) in a minute,(positive integer),800
+resman_vocal,tank-a-lossperminute,Volume lost (leak) in a minute,(positive integer),800
+resman_vv,tank-a-lossperminute,Volume lost (leak) in a minute,(positive integer),800
+resman_visual,tank-b-level,Current level of this tank,(integer),2500
+resman_vocal,tank-b-level,Current level of this tank,(integer),2500
+resman_vv,tank-b-level,Current level of this tank,(integer),2500
+resman_visual,tank-b-max,Maximum level of this tank,(integer),4000
+resman_vocal,tank-b-max,Maximum level of this tank,(integer),4000
+resman_vv,tank-b-max,Maximum level of this tank,(integer),4000
+resman_visual,tank-b-target,Target level of this tank,(integer),2500
+resman_vocal,tank-b-target,Target level of this tank,(integer),2500
+resman_vv,tank-b-target,Target level of this tank,(integer),2500
+resman_visual,tank-b-depletable,Is this tank depletable (False=infinite resource),(boolean),True
+resman_vocal,tank-b-depletable,Is this tank depletable (False=infinite resource),(boolean),True
+resman_vv,tank-b-depletable,Is this tank depletable (False=infinite resource),(boolean),True
+resman_visual,tank-b-lossperminute,Volume lost (leak) in a minute,(positive integer),800
+resman_vocal,tank-b-lossperminute,Volume lost (leak) in a minute,(positive integer),800
+resman_vv,tank-b-lossperminute,Volume lost (leak) in a minute,(positive integer),800
+resman_visual,tank-c-level,Current level of this tank,(integer),1000
+resman_vocal,tank-c-level,Current level of this tank,(integer),1000
+resman_vv,tank-c-level,Current level of this tank,(integer),1000
+resman_visual,tank-c-max,Maximum level of this tank,(integer),2000
+resman_vocal,tank-c-max,Maximum level of this tank,(integer),2000
+resman_vv,tank-c-max,Maximum level of this tank,(integer),2000
+resman_visual,tank-c-target,Target level of this tank,(integer),(empty)
+resman_vocal,tank-c-target,Target level of this tank,(integer),(empty)
+resman_vv,tank-c-target,Target level of this tank,(integer),(empty)
+resman_visual,tank-c-depletable,Is this tank depletable (False=infinite resource),(boolean),True
+resman_vocal,tank-c-depletable,Is this tank depletable (False=infinite resource),(boolean),True
+resman_vv,tank-c-depletable,Is this tank depletable (False=infinite resource),(boolean),True
+resman_visual,tank-c-lossperminute,Volume lost (leak) in a minute,(positive integer),0
+resman_vocal,tank-c-lossperminute,Volume lost (leak) in a minute,(positive integer),0
+resman_vv,tank-c-lossperminute,Volume lost (leak) in a minute,(positive integer),0
+resman_visual,tank-d-level,Current level of this tank,(integer),1000
+resman_vocal,tank-d-level,Current level of this tank,(integer),1000
+resman_vv,tank-d-level,Current level of this tank,(integer),1000
+resman_visual,tank-d-max,Maximum level of this tank,(integer),2000
+resman_vocal,tank-d-max,Maximum level of this tank,(integer),2000
+resman_vv,tank-d-max,Maximum level of this tank,(integer),2000
+resman_visual,tank-d-target,Target level of this tank,(integer),(empty)
+resman_vocal,tank-d-target,Target level of this tank,(integer),(empty)
+resman_vv,tank-d-target,Target level of this tank,(integer),(empty)
+resman_visual,tank-d-depletable,Is this tank depletable (False=infinite resource),(boolean),True
+resman_vocal,tank-d-depletable,Is this tank depletable (False=infinite resource),(boolean),True
+resman_vv,tank-d-depletable,Is this tank depletable (False=infinite resource),(boolean),True
+resman_visual,tank-d-lossperminute,Volume lost (leak) in a minute,(positive integer),0
+resman_vocal,tank-d-lossperminute,Volume lost (leak) in a minute,(positive integer),0
+resman_vv,tank-d-lossperminute,Volume lost (leak) in a minute,(positive integer),0
+resman_visual,tank-e-level,Current level of this tank,(integer),3000
+resman_vocal,tank-e-level,Current level of this tank,(integer),3000
+resman_vv,tank-e-level,Current level of this tank,(integer),3000
+resman_visual,tank-e-max,Maximum level of this tank,(integer),4000
+resman_vocal,tank-e-max,Maximum level of this tank,(integer),4000
+resman_vv,tank-e-max,Maximum level of this tank,(integer),4000
+resman_visual,tank-e-target,Target level of this tank,(integer),(empty)
+resman_vocal,tank-e-target,Target level of this tank,(integer),(empty)
+resman_vv,tank-e-target,Target level of this tank,(integer),(empty)
+resman_visual,tank-e-depletable,Is this tank depletable (False=infinite resource),(boolean),False
+resman_vocal,tank-e-depletable,Is this tank depletable (False=infinite resource),(boolean),False
+resman_vv,tank-e-depletable,Is this tank depletable (False=infinite resource),(boolean),False
+resman_visual,tank-e-lossperminute,Volume lost (leak) in a minute,(positive integer),0
+resman_vocal,tank-e-lossperminute,Volume lost (leak) in a minute,(positive integer),0
+resman_vv,tank-e-lossperminute,Volume lost (leak) in a minute,(positive integer),0
+resman_visual,tank-f-level,Current level of this tank,(integer),3000
+resman_vocal,tank-f-level,Current level of this tank,(integer),3000
+resman_vv,tank-f-level,Current level of this tank,(integer),3000
+resman_visual,tank-f-max,Maximum level of this tank,(integer),4000
+resman_vocal,tank-f-max,Maximum level of this tank,(integer),4000
+resman_vv,tank-f-max,Maximum level of this tank,(integer),4000
+resman_visual,tank-f-target,Target level of this tank,(integer),(empty)
+resman_vocal,tank-f-target,Target level of this tank,(integer),(empty)
+resman_vv,tank-f-target,Target level of this tank,(integer),(empty)
+resman_visual,tank-f-depletable,Is this tank depletable (False=infinite resource),(boolean),False
+resman_vocal,tank-f-depletable,Is this tank depletable (False=infinite resource),(boolean),False
+resman_vv,tank-f-depletable,Is this tank depletable (False=infinite resource),(boolean),False
+resman_visual,tank-f-lossperminute,Volume lost (leak) in a minute,(positive integer),0
+resman_vocal,tank-f-lossperminute,Volume lost (leak) in a minute,(positive integer),0
+resman_vv,tank-f-lossperminute,Volume lost (leak) in a minute,(positive integer),0
+resman_visual,pump-1-flow,Pump debit per minute,(positive integer),800
+resman_vocal,pump-1-flow,Pump debit per minute,(positive integer),800
+resman_vv,pump-1-flow,Pump debit per minute,(positive integer),800
+resman_visual,pump-1-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vocal,pump-1-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vv,pump-1-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_visual,pump-1-key,Keyboard key to toggle the pump,(keyboard key),NUM_1
+resman_vocal,pump-1-key,Keyboard key to toggle the pump,(keyboard key),NUM_1
+resman_vv,pump-1-key,Keyboard key to toggle the pump,(keyboard key),NUM_1
+resman_visual,pump-2-flow,Pump debit per minute,(positive integer),600
+resman_vocal,pump-2-flow,Pump debit per minute,(positive integer),600
+resman_vv,pump-2-flow,Pump debit per minute,(positive integer),600
+resman_visual,pump-2-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vocal,pump-2-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vv,pump-2-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_visual,pump-2-key,Keyboard key to toggle the pump,(keyboard key),NUM_2
+resman_vocal,pump-2-key,Keyboard key to toggle the pump,(keyboard key),NUM_2
+resman_vv,pump-2-key,Keyboard key to toggle the pump,(keyboard key),NUM_2
+resman_visual,pump-3-flow,Pump debit per minute,(positive integer),800
+resman_vocal,pump-3-flow,Pump debit per minute,(positive integer),800
+resman_vv,pump-3-flow,Pump debit per minute,(positive integer),800
+resman_visual,pump-3-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vocal,pump-3-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vv,pump-3-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_visual,pump-3-key,Keyboard key to toggle the pump,(keyboard key),NUM_3
+resman_vocal,pump-3-key,Keyboard key to toggle the pump,(keyboard key),NUM_3
+resman_vv,pump-3-key,Keyboard key to toggle the pump,(keyboard key),NUM_3
+resman_visual,pump-4-flow,Pump debit per minute,(positive integer),600
+resman_vocal,pump-4-flow,Pump debit per minute,(positive integer),600
+resman_vv,pump-4-flow,Pump debit per minute,(positive integer),600
+resman_visual,pump-4-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vocal,pump-4-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vv,pump-4-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_visual,pump-4-key,Keyboard key to toggle the pump,(keyboard key),NUM_4
+resman_vocal,pump-4-key,Keyboard key to toggle the pump,(keyboard key),NUM_4
+resman_vv,pump-4-key,Keyboard key to toggle the pump,(keyboard key),NUM_4
+resman_visual,pump-5-flow,Pump debit per minute,(positive integer),600
+resman_vocal,pump-5-flow,Pump debit per minute,(positive integer),600
+resman_vv,pump-5-flow,Pump debit per minute,(positive integer),600
+resman_visual,pump-5-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vocal,pump-5-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vv,pump-5-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_visual,pump-5-key,Keyboard key to toggle the pump,(keyboard key),NUM_5
+resman_vocal,pump-5-key,Keyboard key to toggle the pump,(keyboard key),NUM_5
+resman_vv,pump-5-key,Keyboard key to toggle the pump,(keyboard key),NUM_5
+resman_visual,pump-6-flow,Pump debit per minute,(positive integer),600
+resman_vocal,pump-6-flow,Pump debit per minute,(positive integer),600
+resman_vv,pump-6-flow,Pump debit per minute,(positive integer),600
+resman_visual,pump-6-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vocal,pump-6-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vv,pump-6-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_visual,pump-6-key,Keyboard key to toggle the pump,(keyboard key),NUM_6
+resman_vocal,pump-6-key,Keyboard key to toggle the pump,(keyboard key),NUM_6
+resman_vv,pump-6-key,Keyboard key to toggle the pump,(keyboard key),NUM_6
+resman_visual,pump-7-flow,Pump debit per minute,(positive integer),400
+resman_vocal,pump-7-flow,Pump debit per minute,(positive integer),400
+resman_vv,pump-7-flow,Pump debit per minute,(positive integer),400
+resman_visual,pump-7-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vocal,pump-7-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vv,pump-7-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_visual,pump-7-key,Keyboard key to toggle the pump,(keyboard key),NUM_7
+resman_vocal,pump-7-key,Keyboard key to toggle the pump,(keyboard key),NUM_7
+resman_vv,pump-7-key,Keyboard key to toggle the pump,(keyboard key),NUM_7
+resman_visual,pump-8-flow,Pump debit per minute,(positive integer),400
+resman_vocal,pump-8-flow,Pump debit per minute,(positive integer),400
+resman_vv,pump-8-flow,Pump debit per minute,(positive integer),400
+resman_visual,pump-8-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vocal,pump-8-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_vv,pump-8-state,Current state of the pump,`on` or `off` or `failure`,off
+resman_visual,pump-8-key,Keyboard key to toggle the pump,(keyboard key),NUM_8
+resman_vocal,pump-8-key,Keyboard key to toggle the pump,(keyboard key),NUM_8
+resman_vv,pump-8-key,Keyboard key to toggle the pump,(keyboard key),NUM_8

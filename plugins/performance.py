@@ -62,7 +62,7 @@ class Performance(AbstractPlugin):
             if hasattr(plugin, 'performance') and len(plugin.performance) > 0:
 
                 # System monitoring
-                if p == 'sysmon':
+                if p in ['sysmon', 'sysmon_visual', 'sysmon_vocal', 'sysmon_vv']:
                     # Only considering hits and missed for system monitoring
                     # HIT = 1   |   MISS = 0
                     # Compute average of 4 last signal detection events
@@ -80,7 +80,7 @@ class Performance(AbstractPlugin):
 
 
                 # Resman
-                elif p == 'resman':
+                elif p in ['resman', 'resman_visual', 'resman_vocal', 'resman_vv']:
                     # Time proportion spent in target for the last 5 seconds
                     frames_n = int(5000 / plugin.parameters['taskupdatetime'])
                     if len(plugin.performance['a_in_tolerance']) >= frames_n \
@@ -94,7 +94,8 @@ class Performance(AbstractPlugin):
                         self.performance_levels[p] = perf / 2
 
                 #       Communications
-                elif p == 'communications':
+                elif p in ['communications', 'communications_visual',
+                           'communications_vocal', 'communications_vv']:
                     if len(plugin.performance['correct_radio']) >= 4:
                         perf_radio = plugin.performance['correct_radio'][-4:]
                         perf_freq = plugin.performance['response_deviation'][-4:]

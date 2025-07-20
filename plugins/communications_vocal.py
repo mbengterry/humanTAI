@@ -14,7 +14,7 @@ from core.pseudorandom import randint, uniform, choice, xeger
 from core import validation
 
 
-class Communications(AbstractPlugin):
+class Communications_vocal(AbstractPlugin):
     def __init__(self, label='', taskplacement='bottomleft', taskupdatetime=80):
         super().__init__(_('Communications'), taskplacement, taskupdatetime)
 
@@ -31,18 +31,14 @@ class Communications(AbstractPlugin):
             'radioprompt' : (validation.is_in_list, ['own', 'other']),
             'promptlist': (validation.is_in_list, ['NAV_1', 'NAV_2', 'COM_1', 'COM_2']),
             'maxresponsedelay': validation.is_positive_integer,
-            'callsignregex': validation.is_a_regex,
-            'keys-selectradioup' : validation.is_key,
-            'keys-selectradiodown' : validation.is_key,
-            'keys-tunefrequencyup' : validation.is_key, 
-            'keys-tunefrequencydown' : validation.is_key,
-            'keys-validateresponse' : validation.is_key}
+            'callsignregex': validation.is_a_regex}
 
 
         self.keys = {'UP', 'DOWN', 'RIGHT', 'LEFT', 'ENTER'}
         self.callsign_seed = 1  # Useful to pseudorandomly generate different callsign when
                                 # trying to generate multiple callsigns at once
 
+        self.change_radio = dict(UP=-1, DOWN=1)
         self.letters, self.digits = ascii_uppercase, digits
 
         # Callsign regex must be defined first because it is needed by self.get_callsign()
@@ -50,15 +46,12 @@ class Communications(AbstractPlugin):
         self.old_regex = str(self.parameters['callsignregex'])
         new_par = dict(owncallsign=str(), othercallsign=list(), othercallsignnumber=5,
                        airbandminMhz=108.0, airbandmaxMhz=137.0, airbandminvariationMhz=5,
-                       airbandmaxvariationMhz=6, voicegender='male', voiceidiom='english',
+                       airbandmaxvariationMhz=6, voicegender='female', voiceidiom='french',
                        radioprompt=str(), maxresponsedelay=20000,
                        promptlist=['NAV_1', 'NAV_2', 'COM_1', 'COM_2'], automaticsolver=False,
                        displayautomationstate=True, feedbackduration=1500,
                        feedbacks=dict(positive=dict(active=False, color=C['GREEN']),
-                                      negative=dict(active=False, color=C['RED'])),
-                       keys=dict(selectradioup='UP', selectradiodown='DOWN',
-                                 tunefrequencyup='RIGHT', tunefrequencydown='LEFT',
-                                 validateresponse='ENTER'))
+                                      negative=dict(active=False, color=C['RED'])))
 
         self.parameters.update(new_par)
         self.regenerate_callsigns()
@@ -158,7 +151,7 @@ class Communications(AbstractPlugin):
         group = SourceGroup()
         for f in list_of_sounds:
             source = load(str(self.sound_path.joinpath(f'{f}.wav')), streaming=False)
-            # print(f)
+            print(f)
             group.add(source)
         return group
 
@@ -254,9 +247,9 @@ class Communications(AbstractPlugin):
 
 
     def modulate_frequency(self):
-        if self.is_key_state(self.parameters['keys']['tunefrequencydown'], True):
+        if self.is_key_state('LEFT', True):
             self.get_active_radio_dict()['currentfreq'] -= self.frequency_modulation
-        elif self.is_key_state(self.parameters['keys']['tunefrequencyup'], True):
+        elif self.is_key_state('RIGHT', True):
             self.get_active_radio_dict()['currentfreq'] += self.frequency_modulation
 
 
@@ -492,20 +485,13 @@ class Communications(AbstractPlugin):
             return
 
         if state == 'press':
-            change_radio = 0
-            if key == self.parameters['keys']['selectradioup']:
-                change_radio = -1
-            elif key == self.parameters['keys']['selectradiodown']:
-                change_radio = 1
-
-            if change_radio != 0:
+            if key in self.change_radio.keys():  # Change radio
                 next_active_n = self.keep_value_between(self.get_active_radio_dict()['pos']
-                                                        + change_radio,
+                                                        + self.change_radio[key],
                                                         down=self.get_min_pos(), up=self.get_max_pos())
 
                 self.get_active_radio_dict()['is_active'] = False
                 self.get_radio_dict_by_pos(next_active_n)['is_active'] = True
 
-
-            elif key == self.parameters['keys']['validateresponse']:
+            elif key == 'ENTER':
                 self.confirm_response()

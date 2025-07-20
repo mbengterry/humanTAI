@@ -1,0 +1,165 @@
+# Enhanced OpenMATB demonstration scenario with extended testing phase
+# Total duration: 4 minutes 30 seconds (30s intro + 4min testing)
+
+# Welcome message
+0:00:00;instructions;filename;3language/welcome_screen.txt
+0:00:00;instructions;start
+
+# View complete environment for 3 seconds
+0:00:00;sysmon;start
+0:00:00;scheduling;start
+0:00:00;resman;start
+0:00:00;communications;start
+
+# Introducing sysmon (3 seconds longer for better understanding)
+0:00:03;resman;hide
+0:00:03;resman;pause
+0:00:03;scheduling;hide
+0:00:03;scheduling;pause
+0:00:03;communications;hide
+0:00:03;communications;pause
+0:00:03;instructions;filename;3language/sysmon.txt
+0:00:03;instructions;start
+
+# In the sysmon, errors appear with longer intervals for better learning
+0:00:08;sysmon;scales-1-failure;True
+0:00:12;sysmon;lights-1-failure;True
+
+# Presentation of the communication task (extended time)
+0:00:15;communications;show
+0:00:15;communications;resume
+0:00:15;sysmon;hide
+0:00:15;sysmon;pause
+0:00:15;instructions;filename;3language/communications.txt
+0:00:15;instructions;start
+
+# Presentation of the resource management task
+0:00:21;resman;show
+0:00:21;resman;resume
+0:00:21;communications;hide
+0:00:21;communications;pause
+0:00:21;instructions;filename;3language/resman.txt
+0:00:21;instructions;start
+0:00:24;resman;pump-1-state;failure
+
+# Introduction to the planner
+0:00:27;resman;hide
+0:00:27;scheduling;show
+0:00:27;sysmon;resume
+0:00:27;communications;resume
+0:00:27;scheduling;resume
+0:00:27;instructions;filename;3language/scheduling.txt
+0:00:27;instructions;start
+0:00:27;sysmon;automaticsolver;false
+0:00:27;resman;automaticsolver;false
+
+# === MAIN TESTING PHASE BEGINS (4 minutes) ===
+0:00:30;sysmon;show
+0:00:30;communications;show
+0:00:30;resman;show
+0:00:30;instructions;filename;3language/full.txt
+0:00:30;instructions;start
+0:00:30;sysmon;automaticsolver;false
+0:00:30;resman;automaticsolver;false
+
+# === PHASE 1: Initial Testing (0:30-1:30) ===
+# Basic system monitoring and communication tasks
+0:00:35;resman;pump-1-state;off
+0:00:35;sysmon;lights-2-failure;true
+
+# First communication task
+0:00:40;communications;radioprompt;own
+0:00:40;resman;pump-6-state;failure
+0:00:40;sysmon;scales-3-failure;true
+
+# Introduce non-own communication (as requested)
+0:00:50;communications;radioprompt;other
+0:00:55;sysmon;scales-1-failure;false  # Fix previous error
+0:00:55;resman;pump-2-state;failure
+
+# Multiple simultaneous failures to test multitasking
+0:01:05;sysmon;lights-1-failure;false  # Fix lights
+0:01:05;sysmon;lights-3-failure;true   # New light failure
+0:01:05;resman;pump-3-state;off
+0:01:10;communications;radioprompt;own
+
+# First error scenario - incorrect pump suggestion
+0:01:20;resman;pump-4-state;failure    # Pump 4 fails
+0:01:20;instructions;filename;3language/error_suggestion_pump.txt  # Shows incorrect advice to turn off pump 5 instead of 4
+0:01:25;sysmon;scales-2-failure;true
+
+# === PHASE 2: Increased Complexity (1:30-2:30) ===
+# More complex scenarios with error corrections needed
+0:01:30;communications;radioprompt;other
+0:01:35;resman;pump-5-state;failure
+0:01:35;sysmon;lights-2-failure;false  # Fix previous light
+
+# Error correction scenario - wrong scale identified
+0:01:45;sysmon;scales-4-failure;true
+0:01:45;instructions;filename;3language/error_correction_scale.txt  # Incorrectly states scale 2 needs attention
+0:01:50;resman;pump-1-state;failure    # Pump 1 fails again
+
+# Communication overload test
+0:02:00;communications;radioprompt;own
+0:02:05;communications;radioprompt;other
+0:02:10;sysmon;lights-4-failure;true
+0:02:10;resman;pump-6-state;off
+
+# Second error suggestion scenario - scheduling conflict
+0:02:20;instructions;filename;3language/error_suggestion_schedule.txt  # Suggests wrong priority for tasks
+0:02:25;sysmon;scales-3-failure;false  # Fix scale 3
+
+# === PHASE 3: High Load Testing (2:30-3:30) ===
+# Maximum complexity with multiple concurrent issues
+0:02:30;communications;radioprompt;own
+0:02:35;resman;pump-2-state;off
+0:02:35;sysmon;lights-1-failure;true   # Multiple light failures
+0:02:35;sysmon;scales-1-failure;true
+
+# Critical system failure requiring immediate attention
+0:02:45;resman;pump-3-state;failure
+0:02:45;resman;pump-4-state;failure    # Multiple pumps fail simultaneously
+0:02:50;instructions;filename;3language/critical_failure.txt
+
+# Third error scenario - misleading communication response
+0:03:00;communications;radioprompt;other
+0:03:00;instructions;filename;3language/error_suggestion_comm.txt  # Suggests ignoring important communication
+0:03:05;sysmon;lights-3-failure;false  # Fix light 3
+0:03:05;sysmon;scales-2-failure;false  # Fix scale 2
+
+# System recovery phase with conflicting instructions
+0:03:15;resman;pump-5-state;off
+0:03:20;communications;radioprompt;own
+0:03:20;sysmon;lights-2-failure;true   # New light failure during recovery
+
+# === PHASE 4: Final Challenge (3:30-4:30) ===
+# Complex multi-task scenario requiring prioritization
+0:03:30;resman;pump-1-state;off
+0:03:35;sysmon;scales-4-failure;false  # Fix scale 4
+0:03:35;communications;radioprompt;other
+
+# Fourth error scenario - resource management confusion
+0:03:45;resman;pump-6-state;failure
+0:03:45;instructions;filename;3language/error_suggestion_resource.txt  # Wrong fuel management advice
+0:03:50;sysmon;lights-4-failure;false  # Fix light 4
+
+# Final communication burst
+0:04:00;communications;radioprompt;own
+0:04:05;communications;radioprompt;own
+0:04:10;resman;pump-2-state;failure
+
+# System stabilization with correction needed
+0:04:15;sysmon;lights-1-failure;false  # Fix remaining lights
+0:04:15;instructions;filename;3language/correction_needed.txt  # Indicates previous advice was wrong
+0:04:20;resman;pump-3-state;off
+0:04:25;sysmon;scales-1-failure;false  # Final scale fix
+
+# === END OF TESTING PHASE ===
+0:04:30;sysmon;stop
+0:04:30;communications;stop
+0:04:30;resman;stop
+0:04:30;scheduling;stop
+
+# Display final questionnaire
+0:04:30;genericscales;filename;enhanced_questionnaire.txt
+0:04:30;genericscales;start

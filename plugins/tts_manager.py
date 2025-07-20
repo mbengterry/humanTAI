@@ -1,18 +1,11 @@
-
 import multiprocessing
+import pyttsx3
 
 
 def tts_process_main(queue):
-    import pyttsx3
     engine = pyttsx3.init()
-     # Set English voice
-    for voice in engine.getProperty('voices'):
-        if 'en' in voice.languages[0].decode('utf-8') or 'English' in voice.name:
-            engine.setProperty('voice', voice.id)
-            break
-    engine.setProperty('rate', 180)
+    engine.setProperty('rate', 150)
     engine.setProperty('volume', 0.75)
-
     while True:
         text = queue.get()
         if text is None:
@@ -36,10 +29,6 @@ class TTSProcessManager:
     def _init(self):
         if getattr(self, '_initialized', False):
             return
-        # On Windows, multiprocessing requires the 'spawn' method and all process creation must be under __main__
-        import sys
-        if sys.platform == 'win32':
-            multiprocessing.set_start_method('spawn', force=True)
         from .tts_manager import tts_process_main  # Ensure correct import for multiprocessing
         self.queue = multiprocessing.Queue()
         self.process = multiprocessing.Process(target=tts_process_main, args=(self.queue,), daemon=True)

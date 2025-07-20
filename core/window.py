@@ -181,7 +181,7 @@ class Window(Window):
 
         return [Container('invisible', 0, 0, 0, 0),
                 Container('fullscreen', 0, b, w, h),
-                Container('topleft', 0, y1, x1, h/2),
+                Container('topleft', w-x2, y1, x1, h/2),
                 Container('topmid', x1, y1, x2 - x1, h/2),
                 Container('topright', x2, y1, w-x2, h/2),
                 Container('bottomleft', 0, b, x3, h/2),

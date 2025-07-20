@@ -14,7 +14,7 @@ from core.pseudorandom import randint, uniform, choice, xeger
 from core import validation
 
 
-class Communications(AbstractPlugin):
+class Communications_vv(AbstractPlugin):
     def __init__(self, label='', taskplacement='bottomleft', taskupdatetime=80):
         super().__init__(_('Communications'), taskplacement, taskupdatetime)
 
@@ -31,14 +31,18 @@ class Communications(AbstractPlugin):
             'radioprompt' : (validation.is_in_list, ['own', 'other']),
             'promptlist': (validation.is_in_list, ['NAV_1', 'NAV_2', 'COM_1', 'COM_2']),
             'maxresponsedelay': validation.is_positive_integer,
-            'callsignregex': validation.is_a_regex}
+            'callsignregex': validation.is_a_regex,
+            'keys-selectradioup' : validation.is_key,
+            'keys-selectradiodown' : validation.is_key,
+            'keys-tunefrequencyup' : validation.is_key, 
+            'keys-tunefrequencydown' : validation.is_key,
+            'keys-validateresponse' : validation.is_key}
 
 
         self.keys = {'UP', 'DOWN', 'RIGHT', 'LEFT', 'ENTER'}
         self.callsign_seed = 1  # Useful to pseudorandomly generate different callsign when
                                 # trying to generate multiple callsigns at once
 
-        self.change_radio = dict(UP=-1, DOWN=1)
         self.letters, self.digits = ascii_uppercase, digits
 
         # Callsign regex must be defined first because it is needed by self.get_callsign()
@@ -46,12 +50,15 @@ class Communications(AbstractPlugin):
         self.old_regex = str(self.parameters['callsignregex'])
         new_par = dict(owncallsign=str(), othercallsign=list(), othercallsignnumber=5,
                        airbandminMhz=108.0, airbandmaxMhz=137.0, airbandminvariationMhz=5,
-                       airbandmaxvariationMhz=6, voicegender='female', voiceidiom='french',
-                       radioprompt=str(), maxresponsedelay=20000,
+                       airbandmaxvariationMhz=6, voicegender='male', voiceidiom='english',
+                       radioprompt=str(), maxresponsedelay=10000,
                        promptlist=['NAV_1', 'NAV_2', 'COM_1', 'COM_2'], automaticsolver=False,
                        displayautomationstate=True, feedbackduration=1500,
-                       feedbacks=dict(positive=dict(active=False, color=C['GREEN']),
-                                      negative=dict(active=False, color=C['RED'])))
+                       feedbacks=dict(positive=dict(active=True, color=C['GREEN']),
+                                      negative=dict(active=True, color=C['RED'])),
+                       keys=dict(selectradioup='UP', selectradiodown='DOWN',
+                                 tunefrequencyup='RIGHT', tunefrequencydown='LEFT',
+                                 validateresponse='ENTER'))
 
         self.parameters.update(new_par)
         self.regenerate_callsigns()
@@ -108,6 +115,14 @@ class Communications(AbstractPlugin):
         super().create_widgets()
         self.add_widget('callsign', Simpletext, container=self.task_container,
                        text=_('Callsign \t\t %s') % self.parameters['owncallsign'], y=0.9)
+        self.target_instruction = self.add_widget('target_instruction', Simpletext,
+            container=self.task_container,
+            color=(255, 255, 0, 255),     # 黄色文字
+            bgcolor=(255, 0, 0, 255),     # 红色背景
+            draw_order=5,
+            text='',  # 初始文字
+            y=0.025  # 放在较低的位置，避免遮挡其他控件
+        )
 
         active_index = randint(0, len(self.parameters['radios'])-1, self.alias, self.scenario_time)
         for pos, radio in self.parameters['radios'].items():
@@ -151,7 +166,7 @@ class Communications(AbstractPlugin):
         group = SourceGroup()
         for f in list_of_sounds:
             source = load(str(self.sound_path.joinpath(f'{f}.wav')), streaming=False)
-            print(f)
+            # print(f)
             group.add(source)
         return group
 
@@ -174,6 +189,16 @@ class Communications(AbstractPlugin):
         if destination == 'own':
             radio['targetfreq'] = random_frequency
             radio['is_prompting'] = True
+        self.target_instruction.set_text(
+            f"[{callsign}] Adjust {radio_name} to {random_frequency} MHz"
+        )
+
+        # 清除旧高亮
+        for _, r in self.parameters['radios'].items():
+            r['widget'].set_highlight(False)
+
+        # 设置新高亮
+        radio['widget'].set_highlight(True)
 
         sound_group = self.group_audio_files(callsign, radio_name, random_frequency)
 
@@ -181,6 +206,11 @@ class Communications(AbstractPlugin):
         self.player.queue(sound_group)
         self.player.play()
 
+    def set_highlight(self, state):
+        if state:
+            self.set_background_color((255, 255, 0))  # 黄色
+        else:
+            self.set_background_color((30, 30, 30))   # 默认色
 
     def get_rand_frequency(self, radio_n):
         return round(uniform(float(self.parameters['airbandminMhz']),
@@ -247,9 +277,9 @@ class Communications(AbstractPlugin):
 
 
     def modulate_frequency(self):
-        if self.is_key_state('LEFT', True):
+        if self.is_key_state(self.parameters['keys']['tunefrequencydown'], True):
             self.get_active_radio_dict()['currentfreq'] -= self.frequency_modulation
-        elif self.is_key_state('RIGHT', True):
+        elif self.is_key_state(self.parameters['keys']['tunefrequencyup'], True):
             self.get_active_radio_dict()['currentfreq'] += self.frequency_modulation
 
 
@@ -352,6 +382,12 @@ class Communications(AbstractPlugin):
                     radio['_feedbacktimer'] = None
                     radio['_feedbacktype'] = None
 
+                # 检查是否所有 radio 都已调到目标频率，如果是，则隐藏提示字幕
+        if all(
+            radio['targetfreq'] is None or radio['currentfreq'] == radio['targetfreq']
+            for radio in self.parameters['radios'].values()
+        ):
+            self.target_instruction.set_text('')
 
     def refresh_widgets(self):
         if not super().refresh_widgets():
@@ -466,8 +502,16 @@ class Communications(AbstractPlugin):
             if good_radio == True and deviation == 0:
                 self.disable_radio_target(responded_radio)
                 self.set_feedback(responded_radio, ft='positive')
+                self.target_instruction.set_text('')  
             else:
                 self.set_feedback(responded_radio, ft='negative')
+
+        if sdt == 'HIT':
+            self.target_instruction.set_text('✅ Correct! Well done.')
+        elif sdt == 'MISS':
+            self.target_instruction.set_text('❌ Missed. You didn’t tune in time.')
+        else:
+            self.target_instruction.set_text(f'⚠️ Incorrect. Deviation: {deviation} MHz')
 
 
     def set_feedback(self, radio, ft):
@@ -485,13 +529,20 @@ class Communications(AbstractPlugin):
             return
 
         if state == 'press':
-            if key in self.change_radio.keys():  # Change radio
+            change_radio = 0
+            if key == self.parameters['keys']['selectradioup']:
+                change_radio = -1
+            elif key == self.parameters['keys']['selectradiodown']:
+                change_radio = 1
+
+            if change_radio != 0:
                 next_active_n = self.keep_value_between(self.get_active_radio_dict()['pos']
-                                                        + self.change_radio[key],
+                                                        + change_radio,
                                                         down=self.get_min_pos(), up=self.get_max_pos())
 
                 self.get_active_radio_dict()['is_active'] = False
                 self.get_radio_dict_by_pos(next_active_n)['is_active'] = True
 
-            elif key == 'ENTER':
+
+            elif key == self.parameters['keys']['validateresponse']:
                 self.confirm_response()

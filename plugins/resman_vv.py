@@ -10,9 +10,10 @@ from core import validation
 from core.window import Window
 from plugins.tts_manager import TTSProcessManager
 from plugins.TTSManager import TTSManager
+from plugins.TTSManager import TTSManager
 
-class Resman(AbstractPlugin):
-    def __init__(self, label='', taskplacement='bottommid', taskupdatetime=2000):
+class Resman_vv(AbstractPlugin):
+    def __init__(self, label='', taskplacement='topleft', taskupdatetime=2000):
         super().__init__(_('Resources management'), taskplacement, taskupdatetime)
         self.tts_manager = TTSManager()
 
@@ -86,9 +87,9 @@ class Resman(AbstractPlugin):
         self.keys = {'NUM_1','NUM_2','NUM_3','NUM_4','NUM_5','NUM_6','NUM_7', 'NUM_8'}
 
         new_par = dict(automaticsolver=False, displayautomationstate=True, pumpcoloroff=C['WHITE'],
-                       pumpcoloron=C['GREEN'], pumpcolorfailure=C['RED'], toleranceradius=250,
-                       statuslocation='bottomright', displaystatus=True,
-                       tolerancecolor=C['BLACK'], tolerancecoloroutside=C['BLACK'],
+                       pumpcoloron=C['GREEN'], pumpcolorfailure=C['GREY'], toleranceradius=250,
+                       statuslocation='topmid', displaystatus=True,
+                       tolerancecolor=C['GREEN'], tolerancecoloroutside=C['RED'],
 
                         tank=dict(a=dict(level=2500, max=4000, target=2500, depletable=True,
                                          lossperminute=800, _infoside='left'),
@@ -184,7 +185,7 @@ class Resman(AbstractPlugin):
 
             # Add the pump status title
             self.add_widget('status_title', Simpletext, container=status_title_container,
-                           text=_('Pump status').upper(),
+                           text=_('Pump status').upper() + ' 泵流量',
                            font_size=F['MEDIUM'], color=C['WHITE'])
 
             # Add pump flows
@@ -230,7 +231,9 @@ class Resman(AbstractPlugin):
     def compute_next_plugin_state(self):
         if not super().compute_next_plugin_state():
             return
-
+        subtitle_msgs = []
+        failure_msgs = []
+        status_change_msgs = []
         tanks = self.parameters['tank']
         pumps = self.parameters['pump']
         time_resolution = (self.parameters['taskupdatetime'] / 1000) / 60.
@@ -280,6 +283,15 @@ class Resman(AbstractPlugin):
 
                                                     # ...to tank (if it's not full)
                     totank['level'] += min(int(volume), totank['max'] - totank['level'])
+        failure_msgs = [f"Pump {k} is failed" for k, p in pumps.items() if p['state'] == 'failure']
+        status_change_msgs = []
+        for k, pump in pumps.items():
+            if pump['state'] != pump.get('_previous_state', pump['state']):
+                if pump['state'] == 'on':
+                    status_change_msgs.append(f"Pump {k} turned on")
+                elif pump['state'] == 'off':
+                    status_change_msgs.append(f"Pump {k} turned off")
+                pump['_previous_state'] = pump['state']
 
         # The following is always executed (independent on wait_before_leak)
         for tank_l, this_tank in tanks.items():      # 3. For each tank
@@ -381,21 +393,46 @@ class Resman(AbstractPlugin):
                 self.log_performance(f'{tank_l}_deviation', deviation)
                             
             # Add subtitle warning for A/B tanks if out of tolerance
-            subtitle_msgs = []
-            for tank_l in ['a', 'b']:
-                this_tank = tanks[tank_l]
-                if this_tank['_is_in_tolerance'] is False:
-                    if this_tank['level'] > this_tank['target']:
-                        subtitle_msgs.append(f"{tank_l.upper()} level too high")
-                    else:
-                        subtitle_msgs.append(f"{tank_l.upper()} level too low")
+        for tank_l in ['a', 'b']:
+            this_tank = tanks[tank_l]
+            if this_tank['_is_in_tolerance'] is False:
+                too_high = this_tank['level'] > this_tank['target']
+                too_low = this_tank['level'] < this_tank['target']
 
-            # 合并信息并显示字幕
-            if subtitle_msgs:
-                subtitle_text = ",".join(subtitle_msgs) + ", please fix"
-                self.set_subtitle(subtitle_text, color=(255, 255, 0, 255))
+                subtitle_line = f"{tank_l.upper()} level too {'high' if too_high else 'low'}"
+                action_lines = []
+
+                # 找出所有影响该 tank 的泵
+                for pump_n, pump in pumps.items():
+                    if pump['state'] == 'failure':
+                        continue
+                    # ✅ 流入控制：进入当前水箱的泵
+                    if pump['_totank'] == tank_l:
+                        if too_high and pump['state'] == 'on':
+                            action_lines.append(f"press {pump_n} to deactivate pump {pump_n}")  # 关闭它
+                        elif too_low and pump['state'] == 'off':
+                            action_lines.append(f"press {pump_n} to activate pump {pump_n}")  # 打开它
+
+                    # ✅ 流出控制：从当前水箱流出的泵
+                    if pump['_fromtank'] == tank_l:
+                        if too_high and pump['state'] == 'off':
+                            action_lines.append(f"press {pump_n} to activate pump {pump_n}")  # 打开它
+                        elif too_low and pump['state'] == 'on':
+                            action_lines.append(f"press {pump_n} to deactivate pump {pump_n}")  # 关闭它
+
+                if action_lines:
+                    subtitle_line += ": " + ", ".join(action_lines)
+
+                subtitle_msgs.append(subtitle_line)
+
+            # 显示或隐藏字幕
+            # 🆕 合并所有字幕信息
+            all_msgs = subtitle_msgs + failure_msgs + status_change_msgs
+            if all_msgs:
+                self.set_subtitle(", ".join(all_msgs), color=(255, 255, 0, 255))
             else:
-                self.set_subtitle('', color=C['BLACK'])  # Hide subtitle if all is fine
+                self.set_subtitle('', color=C['BLACK'])  # 清除提示
+
 
 
     def set_subtitle(self, text, color=(255, 255, 0, 255)):
@@ -404,7 +441,7 @@ class Resman(AbstractPlugin):
                 'subtitle', Simpletext,
                 container=self.task_container,
                 text=text,
-                color=(255, 255, 0, 255),     # 黄色文字
+                color=color,
                 bgcolor=(255, 0, 0, 255),     # 红色背景
                 draw_order=5,
                 x=0.5,
@@ -413,7 +450,6 @@ class Resman(AbstractPlugin):
         else:
             self.widgets['subtitle'].set_text(text)
             self.widgets['subtitle'].set_color(color)
-
 
     def refresh_widgets(self):
         if not super().refresh_widgets():

@@ -13,14 +13,16 @@ import pyglet
 from core.widgets.popup import PopUp
 from core.constants import FONTSIZE as F
 
+from plugins.tts_manager import TTSProcessManager
+from plugins.TTSManager import TTSManager
 
 
 
 
 # Use this singleton, but do NOT instantiate at import time
+tts_manager = TTSManager()
 
-
-class Sysmon(AbstractPlugin):
+class Sysmon_vv(AbstractPlugin):
     def __init__(self, label='', taskplacement='bottommid', taskupdatetime=200):
         super().__init__('System monitoring', taskplacement, taskupdatetime)
 
@@ -231,7 +233,7 @@ class Sysmon(AbstractPlugin):
                 gauge['widget'].set_label(gauge['name'])
 
        # 清除旧提示
-        self.widgets['sysmon_alert'].set_text("")
+        self.widgets['sysmon_vv_alert'].set_text("")
         # === 合并多个提示信息 ===
         alert_lines = []
 
@@ -239,23 +241,22 @@ class Sysmon(AbstractPlugin):
         f5 = self.parameters['lights']['1']
         f6 = self.parameters['lights']['2']
         if not f5['on']:
-            alert_lines.append("Press F5!")
+            alert_lines.append("F5 should always be green. Press F5 to fix!")
         if f6['on']:
-            alert_lines.append("Press F6!")
+            alert_lines.append("F6 should be off. Press F6 to fix!")
 
         # 刻度失败状态检查
         for scale_id, scale in self.parameters['scales'].items():
             if scale.get('_onfailure', False):
-                alert_lines.append(f"Press {scale['key']}!")
+                alert_lines.append(f"{scale['name']} is abnormal. Press {scale['key']} to fix!")
 
         # 显示所有合并后的字幕
         if alert_lines:
             full_alert_text = ", ".join(alert_lines)
-            self.widgets['sysmon_alert'].set_text(full_alert_text)
-            self.widgets['sysmon_alert'].set_color((255, 255, 0, 255))  # 黄色文字
+            self.widgets['sysmon_vv_alert'].set_text(full_alert_text)
+            self.widgets['sysmon_vv_alert'].set_color((255, 255, 0, 255))  # 黄色文字
         else:
-            self.widgets['sysmon_alert'].set_text("")
-
+            self.widgets['sysmon_vv_alert'].set_text("")
 
     def determine_light_color(self, light):
         color = light['oncolor'] if light['on'] == True else C['BACKGROUND']
@@ -281,8 +282,9 @@ class Sysmon(AbstractPlugin):
         delay = self.parameters['automaticsolverdelay'] if self.parameters['automaticsolver'] \
             else self.parameters['alerttimeout']
         gauge['_failuretimer'] = delay
-
-
+        # --- Non-blocking TTS via process ---
+        gauge_name = gauge['name']
+        tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {gauge_name} to resolve.")
         # --- End of dynamic sound loading ---
         # (Legacy sound code remains commented for reference)
 
