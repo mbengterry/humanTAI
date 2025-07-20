@@ -11,12 +11,20 @@ from core.logger import logger
 from core.constants import BFLIM
 from core.utils import get_conf_value
 from core.window import Window
-
+import platform
 class AbstractWidget:
     def __init__(self, name, container):
         self.name = name
         self.container = container
-        self.font_name = get_conf_value('Openmatb', 'font_name')
+        #self.font_name = get_conf_value('Openmatb', 'font_name')
+        #self.font_name = 'Noto Sans CJK SC'
+        system = platform.system()
+        if system == 'Darwin':
+            self.font_name = 'PingFangSC'
+        elif system == 'Linux':
+            self.font_name = 'WenQuanYiZenHei'
+        else:
+            self.font_name = 'Noto Sans SC'  # 可选，也支持中文（用于 Windows）
         self.vertex = dict()
         self.on_batch = dict()
         self.visible = False

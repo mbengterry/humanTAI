@@ -496,12 +496,6 @@ class Communications_vv(AbstractPlugin):
         self.log_performance('sdt_value', sdt)
 
         # Response is good if both radio and frequency are correct
-
-        if responded_radio == target_radio_name and target_frequency == responded_radio['currentfreq']:
-           self.player.play(load(str(self.sound_path.joinpath('success.wav')), streaming=False))
-        else:
-            self.player.play(load(str(self.sound_path.joinpath('alarm.wav')), streaming=False))
-            
         if not response_needed:
             self.set_feedback(responded_radio, ft='negative')
         else:

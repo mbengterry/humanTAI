@@ -9,11 +9,20 @@ from core.constants import FONT_SIZES as F
 from core.constants import COLORS as C
 from core.utils import get_conf_value
 from core.window import Window
+import platform
 
 class SimpleHTML(AbstractWidget):
     def __init__(self, name, container, text, draw_order=1, x=0.5, y=0.5, wrap_width=1):
         super().__init__(name, container)
-        self.font_name = get_conf_value('Openmatb', 'font_name')
+        # self.font_name = get_conf_value('Openmatb', 'font_name')
+        #self.font_name = 'Noto Sans CJK SC'  # Use a default font for simplicity
+        system = platform.system()
+        if system == 'Darwin':
+            self.font_name = 'PingFangSC'
+        elif system == 'Linux':
+            self.font_name = 'WenQuanYi Zen Hei'
+        else:
+            self.font_name = 'Noto Sans SC'  # 可选，也支持中文（用于 Windows）
         text = self.preparse(text)
 
         x = int(self.container.l + x * self.container.w)
@@ -41,12 +50,12 @@ class SimpleHTML(AbstractWidget):
         hs = html_sizes = {k:get_nearest_size_of_pt(v) for k,v in F.items()}
 
         pars_dict = {
-        '<h1>':f"<center><strong><font size={hs['XLARGE']} face={self.font_name}>",
-        '</h1>':f"</font></strong></center><br>",
-        '<h2>':f"<center><font size={hs['XLARGE']} face={self.font_name}><em>",
-        '</h2>':f"</em></font></center><br>",
-        '<p>':f"<p><font size={hs['LARGE']} face={self.font_name}>",
-        '</p>':f"</font></p>"
+            '<h1>':f"<center><strong><font size={hs['XLARGE']} face=\"{self.font_name}\">",
+            '</h1>':f"</font></strong></center><br>",
+            '<h2>':f"<center><font size={hs['XLARGE']} face=\"{self.font_name}\"><em>",
+            '</h2>':f"</em></font></center><br>",
+            '<p>':f"<p><font size={hs['LARGE']} face=\"{self.font_name}\">",
+            '</p>':f"</font></p>"
         }
 
         for b in ['<h1>', '<h2>', '<p>']:

@@ -1,19 +1,19 @@
 <h1>Task Overview: Resource Management</h1>
 
-<p>Your goal is to keep the levels of tanks A and B close to normal.
+<p>Your goal is to keep the levels of tanks A and B close to normal.<br>
 Use the numbered pumps to transfer power from backup tanks.
-Turn pumps on or off as needed.
+Turn pumps on or off as needed.<br>
 Be aware: some pumps may fail during the task.</p>
 
 <h1>任务总览：资源管理</h1>
 
-<p>你的目标是尽量保持 A 和 B 两个主储罐的液位在正常范围内。
-你可以使用编号泵从备用储罐提供动力，并根据情况选择开关泵。
+<p>你的目标是尽量保持 A 和 B 两个主储罐的液位在正常范围内。<br>
+你可以使用编号泵从备用储罐提供动力，并根据情况选择开关泵。<br>
 注意：部分泵可能在任务过程中发生故障。</p>
 
 <h1>Task Overview: Resource Management</h1>
 <h1>3</h1>
-<p>Ziel ist es, die Füllstände der Tanks A und B möglichst nahe am Normalwert zu halten.
+<p>Ziel ist es, die Füllstände der Tanks A und B möglichst nahe am Normalwert zu halten.<br>
 Nutze die nummerierten Pumpen, um Energie von den Zusatztanks zu übertragen.
-Schalte Pumpen je nach Bedarf ein oder aus.
+Schalte Pumpen je nach Bedarf ein oder aus.<br>
 Achtung: Manche Pumpen können während der Aufgabe ausfallen.</p>

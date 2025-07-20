@@ -1,116 +1,40 @@
-# OpenMATB demonstration scenario (extended with clear issues)
-
-# Welcome message
-0:00:00;instructions;filename;3language/welcome_screen.txt
-0:00:00;instructions;start
-
-# View complete environment for 3 seconds
 0:00:00;sysmon_vocal;start
 0:00:00;resman_vocal;start
 0:00:00;communications_vocal;start
 
-# === 1. System monitoring task ===
-0:00:03;resman_vocal;hide
-0:00:03;resman_vocal;pause
-0:00:03;communications_vocal;hide
-0:00:03;communications_vocal;pause
-0:00:03;communications_vocal;voiceidiom;english
-0:00:03;communications_vocal;voicegender;male
-0:00:03;instructions;filename;3language/sysmon.txt
-0:00:03;instructions;start
+0:00:00;sysmon_vocal;automaticsolver;false
+0:00:00;resman_vocal;automaticsolver;false
 
-# Two issues in sysmon_vocal: one scale failure and one light failure
-0:00:06;sysmon_vocal;scales-1-failure;True
-0:00:09;sysmon_vocal;lights-1-failure;True
 
-# === 2. communications_vocal task ===
-0:00:12;communications_vocal;show
-0:00:12;communications_vocal;resume
-0:00:12;sysmon_vocal;hide
-0:00:12;sysmon_vocal;pause
-0:00:12;instructions;filename;3language/communications.txt
-0:00:12;instructions;start
+0:00:00;sysmon_vocal;feedbacks-positive-active;true
+0:00:00;communications_vocal;feedbacks-positive-active;true
+0:00:05;resman_vocal;pump-1-state;off
+0:00:05;sysmon_vocal;lights-2-failure;True
 
-# Issue: radio prompt mismatch (operator must select correct response)
-0:00:12;communications_vocal;radioprompt;own
+0:00:13;communications_vocal;radioprompt;own
+0:00:15;resman_vocal;pump-6-state;failure
+0:00:15;sysmon_vocal;scales-3-failure;True
 
-# === 3. Resource management task ===
-0:00:23;resman_vocal;show
-0:00:23;resman_vocal;resume
-0:00:23;communications_vocal;hide
-0:00:23;communications_vocal;pause
-0:00:23;instructions;filename;3language/resman.txt
-0:00:23;instructions;start
+0:00:20;resman_vocal;pump-1-state;failure
+0:00:25;sysmon_vocal;lights-1-failure;True
+0:00:30;resman_vocal;pump-1-state;on
+0:00:40;resman_vocal;pump-3-state;failure
+0:00:55;resman_vocal;pump-3-state;off
+0:00:55;communications_vocal;radioprompt;own
+0:01:05;sysmon_vocal;scales-2-failure;True
+0:01:15;resman_vocal;tank-a-level;2100
+0:01:25;resman_vocal;pump-4-state;off
+0:01:30;resman_vocal;tank-b-level;2700
+0:01:33;sysmon_vocal;lights-2-failure;True
+0:01:38;sysmon_vocal;scales-4-failure;True
+0:01:45;sysmon_vocal;lights-1-failure;True
+0:01:50;communications_vocal;radioprompt;other
+0:02:05;resman_vocal;pump-2-state;on
+0:02:10;sysmon_vocal;scales-1-failure;True
 
-# Tank A overfilled -> deactivate incoming pump
-0:00:25;resman_vocal;tank-a-level;2500
-0:00:25;resman_vocal;pump-1-state;on
+0:02:20;sysmon_vocal;stop
+0:02:20;communications_vocal;stop
+0:02:20;resman_vocal;stop
 
-# Tank B underfilled -> activate outgoing pump
-0:00:27;resman_vocal;tank-b-level;2200
-0:00:27;resman_vocal;pump-4-state;off
-
-# === All tasks in full scenario ===
-0:00:33;sysmon_vocal;automaticsolver;true
-0:00:33;resman_vocal;automaticsolver;true
-
-0:00:33;sysmon_vocal;show
-0:00:33;communications_vocal;show
-0:00:33;resman_vocal;show
-0:00:33;instructions;filename;3language/full.txt
-0:00:33;instructions;start
-
-0:00:33;sysmon_vocal;automaticsolver;false
-0:00:33;resman_vocal;automaticsolver;false
-0:00:33;communications_vocal;resume
-0:00:33;sysmon_vocal;resume
-0:00:33;resman_vocal;resume
-
-0:00:33;sysmon_vocal;feedbacks-positive-active;true
-
-# === Combined task run with multiple faults ===
-0:00:40;resman_vocal;pump-1-state;off
-0:00:40;sysmon_vocal;lights-2-failure;True
-
-# Communication prompt
-0:00:45;communications_vocal;radioprompt;own
-
-# Resource failure
-0:00:45;resman_vocal;pump-6-state;failure
-
-# System monitoring issue
-0:00:45;sysmon_vocal;scales-3-failure;True
-
-# Another pump failure
-0:00:55;resman_vocal;pump-1-state;failure
-
-0:01:00;sysmon_vocal;lights-1-failure;True
-0:01:05;resman_vocal;pump-1-state;on
-0:01:15;resman_vocal;pump-3-state;failure
-0:01:30;resman_vocal;pump-3-state;off
-0:01:30;communications_vocal;radioprompt;own
-0:01:40;sysmon_vocal;scales-2-failure;True
-0:01:50;resman_vocal;tank-a-level;2100
-0:02:00;resman_vocal;pump-4-state;off
-0:02:10;sysmon_vocal;lights-2-failure;True
-0:02:25;resman_vocal;pump-2-state;failure
-0:02:35;communications_vocal;radioprompt;other
-0:02:40;resman_vocal;pump-2-state;on
-0:02:45;sysmon_vocal;scales-1-failure;True
-0:03:00;resman_vocal;tank-b-level;2700
-0:03:10;resman_vocal;pump-6-state;on
-0:03:20;sysmon_vocal;scales-4-failure;True
-0:03:35;communications_vocal;radioprompt;own
-0:03:45;resman_vocal;pump-5-state;failure
-0:04:00;sysmon_vocal;lights-1-failure;True
-0:04:05;resman_vocal;pump-5-state;off
-0:04:20;communications_vocal;radioprompt;other
-
-# === End of simulation ===
-0:04:45;sysmon_vocal;stop
-0:04:45;communications_vocal;stop
-0:04:45;resman_vocal;stop
-
-# Questionnaire
-0:04:45;genericscales;filename;newquestion.txt
-0:04:45;genericscales;start
+0:02:20;genericscales;filename;newquestion.txt
+0:02:20;genericscales;start

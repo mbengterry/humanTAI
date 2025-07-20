@@ -90,7 +90,11 @@ class Joystick:
 
 joykey, joystick = None, None
 # Search and find a joystick
-joysticks = pyglet.input.get_joysticks()
+try:
+    joysticks = pyglet.input.get_joysticks()
+except FileNotFoundError:
+    print("No /dev/input found – likely running under WSL. Skipping joystick setup.")
+    joysticks = []
 
 if not REPLAY_MODE:
     if len(joysticks) > 0:

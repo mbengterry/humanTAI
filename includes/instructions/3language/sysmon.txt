@@ -1,9 +1,9 @@
 <h1>Task Overview: Monitoring</h1>
 
 <p>You will monitor six gauges on the screen.
-You need to take action in the following cases:
-– The green light turns off
-– The red light turns on
+You need to take action in the following cases:<br>
+– The green light turns off<br>
+– The red light turns on<br>
 – A moving arrow reaches the end of any of the four ladders</p>
 
 <p>When any of these happen, correct the system as quickly as possible.</p>
@@ -12,10 +12,10 @@ You need to take action in the following cases:
 
 <h1>任务总览：监控任务</h1>
 
-<p>你需要监控屏幕上的六个仪表。
-遇到以下情况时，请立即进行纠正操作：
-– 绿色指示灯熄灭
-– 红色指示灯亮起
+<p>你需要监控屏幕上的六个仪表。<br>
+遇到以下情况时，请立即进行纠正操作：<br>
+– 绿色指示灯熄灭<br>
+– 红色指示灯亮起<br>
 – 移动箭头到达四个刻度条中的任意一端</p>
 
 <p>一旦出现这些情况，请尽快处理系统问题。</p>
@@ -26,9 +26,9 @@ You need to take action in the following cases:
 <h1>1</h1>
 
 <p>Du überwachst sechs Anzeigen auf dem Bildschirm.
-Du musst eingreifen, wenn einer der folgenden Fälle eintritt:
-– Das grüne Licht erlischt
-– Das rote Licht geht an
+Du musst eingreifen, wenn einer der folgenden Fälle eintritt:<br>
+– Das grüne Licht erlischt<br>
+– Das rote Licht geht an<br>
 – Ein beweglicher Pfeil erreicht das Ende einer der vier Skalen</p>
 
 <p>In solchen Fällen solltest du das System so schnell wie möglich korrigieren.</p>
