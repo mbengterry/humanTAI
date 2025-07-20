@@ -357,7 +357,7 @@ class Communications_vv(AbstractPlugin):
         if not super().refresh_widgets():
             return
 
-        self.widgets['communications_callsign'].set_text(self.parameters['owncallsign'])
+        self.widgets['communications_vv_callsign'].set_text(self.parameters['owncallsign'])
 
         # Move arrow to active radio
         for _, radio in self.parameters['radios'].items():
