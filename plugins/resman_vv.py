@@ -429,21 +429,21 @@ class Resman_vv(AbstractPlugin):
                 this_tank['_tts_warned'] = True
             elif not (too_low or too_high):
                 this_tank['_tts_warned'] = False
-        # Subtitle warning for A/B tanks if out of tolerance
-        subtitle_msgs = []
-        for tank_l in ['a', 'b']:
-            this_tank = tanks[tank_l]
-            if this_tank['_is_in_tolerance'] is False:
-                if this_tank['level'] > this_tank['target']:
-                    subtitle_msgs.append(f"{tank_l.upper()} level too high")
-                else:
-                    subtitle_msgs.append(f"{tank_l.upper()} level too low")
-        # 合并信息并显示字幕
-        if subtitle_msgs:
-            subtitle_text = ",".join(subtitle_msgs) + ", please fix"
-            self.set_subtitle(subtitle_text, color=(255, 255, 0, 255))
-        else:
-            self.set_subtitle('', color=C['BLACK'])  # Hide subtitle if all is fine
+            # Subtitle warning for A/B tanks if out of tolerance
+            subtitle_msgs = []
+            for tank_l in ['a', 'b']:
+                this_tank = tanks[tank_l]
+                if this_tank['_is_in_tolerance'] is False:
+                    if this_tank['level'] > this_tank['target']:
+                        subtitle_msgs.append(f"{tank_l.upper()} level too high")
+                    else:
+                        subtitle_msgs.append(f"{tank_l.upper()} level too low")
+            # 合并信息并显示字幕
+            if subtitle_msgs:
+                subtitle_text = ",".join(subtitle_msgs) + ", please fix"
+                self.set_subtitle(subtitle_text, color=(255, 255, 0, 255))
+            else:
+                self.set_subtitle('', color=C['BLACK'])  # Hide subtitle if all is fine
 
 
     def set_subtitle(self, text, color=(255, 255, 0, 255)):
