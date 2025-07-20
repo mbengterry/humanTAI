@@ -31,8 +31,12 @@ class Communications_vv(AbstractPlugin):
             'radioprompt' : (validation.is_in_list, ['own', 'other']),
             'promptlist': (validation.is_in_list, ['NAV_1', 'NAV_2', 'COM_1', 'COM_2']),
             'maxresponsedelay': validation.is_positive_integer,
-            'callsignregex': validation.is_a_regex}
-
+            'callsignregex': validation.is_a_regex,            
+            'keys-selectradioup' : validation.is_key,
+            'keys-selectradiodown' : validation.is_key,
+            'keys-tunefrequencyup' : validation.is_key, 
+            'keys-tunefrequencydown' : validation.is_key,
+            'keys-validateresponse' : validation.is_key}
 
         self.keys = {'UP', 'DOWN', 'RIGHT', 'LEFT', 'ENTER'}
         self.callsign_seed = 1  # Useful to pseudorandomly generate different callsign when
@@ -108,7 +112,15 @@ class Communications_vv(AbstractPlugin):
         super().create_widgets()
         self.add_widget('callsign', Simpletext, container=self.task_container,
                        text=_('Callsign \t\t %s') % self.parameters['owncallsign'], y=0.9)
-
+        
+        self.target_instruction = self.add_widget('target_instruction', Simpletext,
+            container=self.task_container,
+            color=(255, 255, 0, 255),     # 黄色文字
+            bgcolor=(255, 0, 0, 255),     # 红色背景
+            draw_order=5,
+            text='',  # 初始文字
+            y=0.025  # 放在较低的位置，避免遮挡其他控件
+        )
         active_index = randint(0, len(self.parameters['radios'])-1, self.alias, self.scenario_time)
         for pos, radio in self.parameters['radios'].items():
             radio['is_active'] = pos==active_index
@@ -351,13 +363,18 @@ class Communications_vv(AbstractPlugin):
                 if radio['_feedbacktimer'] <= 0:
                     radio['_feedbacktimer'] = None
                     radio['_feedbacktype'] = None
-
+         # 检查是否所有 radio 都已调到目标频率，如果是，则隐藏提示字幕
+        if all(
+            radio['targetfreq'] is None or radio['currentfreq'] == radio['targetfreq']
+            for radio in self.parameters['radios'].values()
+        ):
+            self.target_instruction.set_text('')
 
     def refresh_widgets(self):
         if not super().refresh_widgets():
             return
 
-        self.widgets['communications_callsign'].set_text(self.parameters['owncallsign'])
+        self.widgets['communications_vv_callsign'].set_text(self.parameters['owncallsign'])
 
         # Move arrow to active radio
         for _, radio in self.parameters['radios'].items():
