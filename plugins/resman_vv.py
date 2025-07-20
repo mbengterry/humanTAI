@@ -370,80 +370,80 @@ class Resman_vv(AbstractPlugin):
         else:
             self.set_subtitle('', color=C['BLACK'])  # 清除提示
 
-            # TTS feedback and pump control for target tanks out of tolerance (only once per crossing)
-            if this_tank['target'] is not None:
-                t, r = this_tank['target'], self.parameters['toleranceradius']
-                too_low = this_tank['level'] < t - r
-                too_high = this_tank['level'] > t + r
-                if '_tts_warned' not in this_tank:
-                    this_tank['_tts_warned'] = False
-                if too_low and not this_tank['_tts_warned']:
-                    # Deactivate outgoing, activate incoming
-                    outgoing_pumps = [(v['key'], p) for p, v in pumps.items() if v['_fromtank'] == tank_l and v['state'] != 'failure' and v['state'] != 'off']
-                    incoming_pumps = [(v['key'], p) for p, v in pumps.items() if v['_totank'] == tank_l and v['state'] != 'failure' and v['state'] != 'on']
-                    # Only announce pumps whose state will actually change
-                    outgoing_pumps = [(v['key'], p) for p, v in pumps.items() if v['_fromtank'] == tank_l and v['state'] != 'failure' and v['state'] == 'on']
-                    incoming_pumps = [(v['key'], p) for p, v in pumps.items() if v['_totank'] == tank_l and v['state'] != 'failure' and v['state'] == 'off']
-                    # Simplified logic: remove pumps 7 and 8 if both tanks A and B are too low
-                    tank_a = tanks.get('a')
-                    tank_b = tanks.get('b')
-                    t_a, r_a = tank_a['target'], self.parameters['toleranceradius']
-                    t_b, r_b = tank_b['target'], self.parameters['toleranceradius']
-                    too_low_a = tank_a['level'] < t_a - r_a
-                    too_low_b = tank_b['level'] < t_b - r_b
-                    if too_low_a and too_low_b:
-                        outgoing_pumps = [item for item in outgoing_pumps if item[1] not in ['7', '8']]
-                        incoming_pumps = [item for item in incoming_pumps if item[1] not in ['7', '8']]
-                    # --- TTS feedback ---
-                    tank_name = tank_l.upper()
-                    msg = f"Tank {tank_name} is too low. "
-                    if incoming_pumps:
-                        keys = ', '.join([item[1] for item in incoming_pumps])
-                        pumps_str = ', '.join([f"pump {item[1]}" for item in incoming_pumps])
-                        msg += f"Press {keys} to activate {pumps_str}. "
-                    if outgoing_pumps:
-                        keys = ', '.join([item[1] for item in outgoing_pumps])
-                        pumps_str = ', '.join([f"pump {item[1]}" for item in outgoing_pumps])
-                        msg += f"Press {keys} to deactivate {pumps_str}. "
-                    self.tts_manager.speak(msg)
-                    this_tank['_tts_warned'] = True
-                elif too_high and not this_tank['_tts_warned']:
-                    # Deactivate incoming, activate outgoing
-                    incoming_pumps = [(v['key'], p) for p, v in pumps.items() if v['_totank'] == tank_l and v['state'] != 'failure' and v['state'] != 'off']
-                    outgoing_pumps = [(v['key'], p) for p, v in pumps.items() if v['_fromtank'] == tank_l and v['state'] != 'failure' and v['state'] != 'on']
-                    # Only announce pumps whose state will actually change
-                    incoming_pumps = [(v['key'], p) for p, v in pumps.items() if v['_totank'] == tank_l and v['state'] != 'failure' and v['state'] == 'on']
-                    outgoing_pumps = [(v['key'], p) for p, v in pumps.items() if v['_fromtank'] == tank_l and v['state'] != 'failure' and v['state'] == 'off']
-                    # --- TTS feedback ---
-                    tank_name = tank_l.upper()
-                    msg = f"Tank {tank_name} is too high. "
-                    if outgoing_pumps:
-                        keys = ', '.join([item[1] for item in outgoing_pumps])
-                        pumps_str = ', '.join([f"pump {item[1]}" for item in outgoing_pumps])
-                        msg += f"Press {keys} to deactivate {pumps_str}. "
-                    if incoming_pumps:
-                        keys = ', '.join([item[1] for item in incoming_pumps])
-                        pumps_str = ', '.join([f"pump {item[1]}" for item in incoming_pumps])
-                        msg += f"Press {keys} to activate {pumps_str}. "
-                    self.tts_manager.speak(msg)
-                    this_tank['_tts_warned'] = True
-                elif not (too_low or too_high):
-                    this_tank['_tts_warned'] = False
-            # Subtitle warning for A/B tanks if out of tolerance
-            subtitle_msgs = []
-            for tank_l in ['a', 'b']:
-                this_tank = tanks[tank_l]
-                if this_tank['_is_in_tolerance'] is False:
-                    if this_tank['level'] > this_tank['target']:
-                        subtitle_msgs.append(f"{tank_l.upper()} level too high")
-                    else:
-                        subtitle_msgs.append(f"{tank_l.upper()} level too low")
-            # 合并信息并显示字幕
-            if subtitle_msgs:
-                subtitle_text = ",".join(subtitle_msgs) + ", please fix"
-                self.set_subtitle(subtitle_text, color=(255, 255, 0, 255))
-            else:
-                self.set_subtitle('', color=C['BLACK'])  # Hide subtitle if all is fine
+        # TTS feedback and pump control for target tanks out of tolerance (only once per crossing)
+        if this_tank['target'] is not None:
+            t, r = this_tank['target'], self.parameters['toleranceradius']
+            too_low = this_tank['level'] < t - r
+            too_high = this_tank['level'] > t + r
+            if '_tts_warned' not in this_tank:
+                this_tank['_tts_warned'] = False
+            if too_low and not this_tank['_tts_warned']:
+                # Deactivate outgoing, activate incoming
+                outgoing_pumps = [(v['key'], p) for p, v in pumps.items() if v['_fromtank'] == tank_l and v['state'] != 'failure' and v['state'] != 'off']
+                incoming_pumps = [(v['key'], p) for p, v in pumps.items() if v['_totank'] == tank_l and v['state'] != 'failure' and v['state'] != 'on']
+                # Only announce pumps whose state will actually change
+                outgoing_pumps = [(v['key'], p) for p, v in pumps.items() if v['_fromtank'] == tank_l and v['state'] != 'failure' and v['state'] == 'on']
+                incoming_pumps = [(v['key'], p) for p, v in pumps.items() if v['_totank'] == tank_l and v['state'] != 'failure' and v['state'] == 'off']
+                # Simplified logic: remove pumps 7 and 8 if both tanks A and B are too low
+                tank_a = tanks.get('a')
+                tank_b = tanks.get('b')
+                t_a, r_a = tank_a['target'], self.parameters['toleranceradius']
+                t_b, r_b = tank_b['target'], self.parameters['toleranceradius']
+                too_low_a = tank_a['level'] < t_a - r_a
+                too_low_b = tank_b['level'] < t_b - r_b
+                if too_low_a and too_low_b:
+                    outgoing_pumps = [item for item in outgoing_pumps if item[1] not in ['7', '8']]
+                    incoming_pumps = [item for item in incoming_pumps if item[1] not in ['7', '8']]
+                # --- TTS feedback ---
+                tank_name = tank_l.upper()
+                msg = f"Tank {tank_name} is too low. "
+                if incoming_pumps:
+                    keys = ', '.join([item[1] for item in incoming_pumps])
+                    pumps_str = ', '.join([f"pump {item[1]}" for item in incoming_pumps])
+                    msg += f"Press {keys} to activate {pumps_str}. "
+                if outgoing_pumps:
+                    keys = ', '.join([item[1] for item in outgoing_pumps])
+                    pumps_str = ', '.join([f"pump {item[1]}" for item in outgoing_pumps])
+                    msg += f"Press {keys} to deactivate {pumps_str}. "
+                self.tts_manager.speak(msg)
+                this_tank['_tts_warned'] = True
+            elif too_high and not this_tank['_tts_warned']:
+                # Deactivate incoming, activate outgoing
+                incoming_pumps = [(v['key'], p) for p, v in pumps.items() if v['_totank'] == tank_l and v['state'] != 'failure' and v['state'] != 'off']
+                outgoing_pumps = [(v['key'], p) for p, v in pumps.items() if v['_fromtank'] == tank_l and v['state'] != 'failure' and v['state'] != 'on']
+                # Only announce pumps whose state will actually change
+                incoming_pumps = [(v['key'], p) for p, v in pumps.items() if v['_totank'] == tank_l and v['state'] != 'failure' and v['state'] == 'on']
+                outgoing_pumps = [(v['key'], p) for p, v in pumps.items() if v['_fromtank'] == tank_l and v['state'] != 'failure' and v['state'] == 'off']
+                # --- TTS feedback ---
+                tank_name = tank_l.upper()
+                msg = f"Tank {tank_name} is too high. "
+                if outgoing_pumps:
+                    keys = ', '.join([item[1] for item in outgoing_pumps])
+                    pumps_str = ', '.join([f"pump {item[1]}" for item in outgoing_pumps])
+                    msg += f"Press {keys} to deactivate {pumps_str}. "
+                if incoming_pumps:
+                    keys = ', '.join([item[1] for item in incoming_pumps])
+                    pumps_str = ', '.join([f"pump {item[1]}" for item in incoming_pumps])
+                    msg += f"Press {keys} to activate {pumps_str}. "
+                self.tts_manager.speak(msg)
+                this_tank['_tts_warned'] = True
+            elif not (too_low or too_high):
+                this_tank['_tts_warned'] = False
+        # Subtitle warning for A/B tanks if out of tolerance
+        subtitle_msgs = []
+        for tank_l in ['a', 'b']:
+            this_tank = tanks[tank_l]
+            if this_tank['_is_in_tolerance'] is False:
+                if this_tank['level'] > this_tank['target']:
+                    subtitle_msgs.append(f"{tank_l.upper()} level too high")
+                else:
+                    subtitle_msgs.append(f"{tank_l.upper()} level too low")
+        # 合并信息并显示字幕
+        if subtitle_msgs:
+            subtitle_text = ",".join(subtitle_msgs) + ", please fix"
+            self.set_subtitle(subtitle_text, color=(255, 255, 0, 255))
+        else:
+            self.set_subtitle('', color=C['BLACK'])  # Hide subtitle if all is fine
 
 
     def set_subtitle(self, text, color=(255, 255, 0, 255)):
