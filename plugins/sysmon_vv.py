@@ -13,18 +13,17 @@ import pyglet
 from core.widgets.popup import PopUp
 from core.constants import FONTSIZE as F
 
-from plugins.tts_manager import TTSProcessManager
-from plugins.TTSManager import TTSManager
 
 
 
 
 # Use this singleton, but do NOT instantiate at import time
-tts_manager = TTSManager()
+
 
 class Sysmon_vv(AbstractPlugin):
     def __init__(self, label='', taskplacement='bottommid', taskupdatetime=200):
         super().__init__('System monitoring', taskplacement, taskupdatetime)
+        self._wrong_failure_given = False  # Track if wrong recommendation has been given
 
         self.validation_dict = {
             'alerttimeout': validation.is_positive_integer,
@@ -241,14 +240,14 @@ class Sysmon_vv(AbstractPlugin):
         f5 = self.parameters['lights']['1']
         f6 = self.parameters['lights']['2']
         if not f5['on']:
-            alert_lines.append("F5 should always be green. Press F5 to fix!")
+            alert_lines.append("Press F5!")
         if f6['on']:
-            alert_lines.append("F6 should be off. Press F6 to fix!")
+            alert_lines.append("Press F6!")
 
         # 刻度失败状态检查
         for scale_id, scale in self.parameters['scales'].items():
             if scale.get('_onfailure', False):
-                alert_lines.append(f"{scale['name']} is abnormal. Press {scale['key']} to fix!")
+                alert_lines.append(f"Press {scale['key']}!")
 
         # 显示所有合并后的字幕
         if alert_lines:
@@ -257,6 +256,7 @@ class Sysmon_vv(AbstractPlugin):
             self.widgets['sysmon_vv_alert'].set_color((255, 255, 0, 255))  # 黄色文字
         else:
             self.widgets['sysmon_vv_alert'].set_text("")
+
 
     def determine_light_color(self, light):
         color = light['oncolor'] if light['on'] == True else C['BACKGROUND']
@@ -282,11 +282,26 @@ class Sysmon_vv(AbstractPlugin):
         delay = self.parameters['automaticsolverdelay'] if self.parameters['automaticsolver'] \
             else self.parameters['alerttimeout']
         gauge['_failuretimer'] = delay
-        # --- Non-blocking TTS via process ---
-        gauge_name = gauge['name']
-        tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {gauge_name} to resolve.")
+
+
         # --- End of dynamic sound loading ---
         # (Legacy sound code remains commented for reference)
+        # TTS feedback for gauge failure
+        gauge_name = gauge['name']
+        keys = list(self.keys) if hasattr(self, 'keys') else ['F1', 'F2', 'F3', 'F4', 'F5', 'F6']
+        correct_key = gauge.get('key', gauge_name)
+        wrong_key = None
+        # Only give wrong recommendation when F6 fails
+        if gauge_name == 'F6' and not self._wrong_failure_given:
+            wrong_choices = [k for k in keys if k != correct_key]
+            if wrong_choices:
+                import random
+                wrong_key = random.choice(wrong_choices)
+                self._wrong_failure_given = True
+        if wrong_key:
+            tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {wrong_key} to resolve.")
+        else:
+            tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {gauge_name} to resolve.")
 
 
 
