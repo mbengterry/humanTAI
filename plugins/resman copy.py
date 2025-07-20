@@ -18,7 +18,8 @@ class Resman(AbstractPlugin):
     def __init__(self, label='', taskplacement='bottommid', taskupdatetime=2000):
         super().__init__(_('Resources management'), taskplacement, taskupdatetime)
         self.tts_manager = TTSManager()
-        # self.tts_manager is used for audible feedback
+        from pyglet.media import Player
+        self.player = Player()
 
         self.validation_dict = {
             'pumpcoloroff': validation.is_color,
@@ -308,12 +309,20 @@ class Resman(AbstractPlugin):
                 if '_tts_warned' not in this_tank:
                     this_tank['_tts_warned'] = False
                 if too_low and not this_tank['_tts_warned']:
+                    print(f'[Resman] Playing sound sequence for tank {this_tank}this_tank(too low): {deactivated} deactivated, {activated} activatedthis_tank')
                     # Deactivate outgoing, activate incoming
-                    outgoing_pumps = [(v['key'], p) for p, v in pumps.items() if v['_fromtank'] == tank_l and v['state'] != 'failure' and v['state'] != 'off']
-                    incoming_pumps = [(v['key'], p) for p, v in pumps.items() if v['_totank'] == tank_l and v['state'] != 'failure' and v['state'] != 'on']
-                    # Only announce pumps whose state will actually change
-                    outgoing_pumps = [(v['key'], p) for p, v in pumps.items() if v['_fromtank'] == tank_l and v['state'] != 'failure' and v['state'] == 'on']
-                    incoming_pumps = [(v['key'], p) for p, v in pumps.items() if v['_totank'] == tank_l and v['state'] != 'failure' and v['state'] == 'off']
+                    outgoing_pumps = [v for p, v in pumps.items() if v['_fromtank'] == tank_l and v['state'] != 'failure']
+                    incoming_pumps = [v for p, v in pumps.items() if v['_totank'] == tank_l and v['state'] != 'failure']
+                    deactivated = []
+                    activated = []
+                    for pump in outgoing_pumps:
+                        if pump['state'] != 'off':
+                            pump['state'] = 'off'
+                            deactivated.append(pump['key'][-1])
+                    for pump in incoming_pumps:
+                        if pump['state'] != 'on':
+                            pump['state'] = 'on'
+                            activated.append(pump['key'][-1])
                     # Simplified logic: remove pumps 7 and 8 if both tanks A and B are too low
                     tank_a = tanks.get('a')
                     tank_b = tanks.get('b')
@@ -322,44 +331,115 @@ class Resman(AbstractPlugin):
                     too_low_a = tank_a['level'] < t_a - r_a
                     too_low_b = tank_b['level'] < t_b - r_b
                     if too_low_a and too_low_b:
-                        outgoing_pumps = [item for item in outgoing_pumps if item[1] not in ['7', '8']]
-                        incoming_pumps = [item for item in incoming_pumps if item[1] not in ['7', '8']]
-                    # --- TTS feedback ---
-                    tank_name = tank_l.upper()
-                    msg = f"Tank {tank_name} is too low. "
-                    if incoming_pumps:
-                        keys = ', '.join([item[1] for item in incoming_pumps])
-                        pumps_str = ', '.join([f"pump {item[1]}" for item in incoming_pumps])
-                        msg += f"Press {keys} to activate {pumps_str}. "
-                    if outgoing_pumps:
-                        keys = ', '.join([item[1] for item in outgoing_pumps])
-                        pumps_str = ', '.join([f"pump {item[1]}" for item in outgoing_pumps])
-                        msg += f"Press {keys} to deactivate {pumps_str}. "
-                    self.tts_manager.speak(msg)
+                        deactivated = [k for k in deactivated if k not in ['7', '8']]
+                        activated = [k for k in activated if k not in ['7', '8']]
+                    # --- Sound feedback ---
+                    
+                    print(f'[Resman] Playing sound sequence for tank {this_tank} (too low): {deactivated} deactivated, {activated} activatedthis_tank')
+                    if self.player.playing:
+                        print("[Resman] Sound sequence is already playing, skipping new sequence.")
+                        return
+                    self.player.pause()
+                    self.player.next_source()  # Clear any previous queue
+                    sound_sequence = [
+                        'includes/sounds/english/male/tank.wav',
+                        f'includes/sounds/english/male/{tank_l.lower()}.wav',
+                        'includes/sounds/english/male/too_low.wav'
+                    ]
+                    for k in deactivated:
+                        sound_sequence.append('includes/sounds/english/male/normalized/press.wav')
+                        sound_sequence.append(f'includes/sounds/english/male/{k}.wav')
+                        sound_sequence.append('includes/sounds/english/male/deactivate.wav')
+                    for k in activated:
+                        sound_sequence.append('includes/sounds/english/male/normalized/press.wav')
+                        sound_sequence.append(f'includes/sounds/english/male/{k}.wav')
+                        sound_sequence.append('includes/sounds/english/male/activate.wav')
+                    sound_sequence.append('includes/sounds/english/male/normalized/resolve.wav')
+                    print(f"[Resman] Playing sound sequence: {sound_sequence}")
+                    for sound_path in sound_sequence:
+                        if os.path.exists(sound_path):
+                            print(f"[Resman] Found sound file: {sound_path}")
+                            try:
+                                source = pyglet.media.load(sound_path, streaming=False)
+                                self.player.queue(source)
+                            except Exception as e:
+                                print(f"[Resman] Error loading sound {sound_path}: {e}")
+                        else:
+                            print(f"[Resman] Sound file not found: {sound_path}")
+                    self.player.play()
+                    # --- End sound feedback ---
                     this_tank['_tts_warned'] = True
                 elif too_high and not this_tank['_tts_warned']:
                     # Deactivate incoming, activate outgoing
-                    incoming_pumps = [(v['key'], p) for p, v in pumps.items() if v['_totank'] == tank_l and v['state'] != 'failure' and v['state'] != 'off']
-                    outgoing_pumps = [(v['key'], p) for p, v in pumps.items() if v['_fromtank'] == tank_l and v['state'] != 'failure' and v['state'] != 'on']
-                    # Only announce pumps whose state will actually change
-                    incoming_pumps = [(v['key'], p) for p, v in pumps.items() if v['_totank'] == tank_l and v['state'] != 'failure' and v['state'] == 'on']
-                    outgoing_pumps = [(v['key'], p) for p, v in pumps.items() if v['_fromtank'] == tank_l and v['state'] != 'failure' and v['state'] == 'off']
-                    # --- TTS feedback ---
-                    tank_name = tank_l.upper()
-                    msg = f"Tank {tank_name} is too high. "
-                    if outgoing_pumps:
-                        keys = ', '.join([item[1] for item in outgoing_pumps])
-                        pumps_str = ', '.join([f"pump {item[1]}" for item in outgoing_pumps])
-                        msg += f"Press {keys} to deactivate {pumps_str}. "
-                    if incoming_pumps:
-                        keys = ', '.join([item[1] for item in incoming_pumps])
-                        pumps_str = ', '.join([f"pump {item[1]}" for item in incoming_pumps])
-                        msg += f"Press {keys} to activate {pumps_str}. "
-                    self.tts_manager.speak(msg)
+                    incoming_pumps = [v for p, v in pumps.items() if v['_totank'] == tank_l and v['state'] != 'failure']
+                    outgoing_pumps = [v for p, v in pumps.items() if v['_fromtank'] == tank_l and v['state'] != 'failure']
+                    deactivated = []
+                    activated = []
+                    for pump in incoming_pumps:
+                        if pump['state'] != 'off':
+                            pump['state'] = 'off'
+                            deactivated.append(pump['key'][-1])
+                    for pump in outgoing_pumps:
+                        if pump['state'] != 'on':
+                            pump['state'] = 'on'
+                            activated.append(pump['key'][-1])
+                    # --- Sound feedback ---
+                    import os
+                    if self.player.playing:
+                        print("[Resman] Sound sequence is already playing, skipping new sequence.")
+                        return
+                    self.player.pause()
+                    self.player.next_source()  # Clear any previous queue
+                    sound_sequence = [
+                        'includes/sounds/english/male/tank.wav',
+                        f'includes/sounds/english/male/{tank_l.lower()}.wav',
+                        'includes/sounds/english/male/too_high.wav'
+                    ]
+                    for k in deactivated:
+                        sound_sequence.append('includes/sounds/english/male/normalized/press.wav')
+                        sound_sequence.append(f'includes/sounds/english/male/{k}.wav')
+                        sound_sequence.append('includes/sounds/english/male/deactivate.wav')
+                    for k in activated:
+                        sound_sequence.append('includes/sounds/english/male/normalized/press.wav')
+                        sound_sequence.append(f'includes/sounds/english/male/{k}.wav')
+                        sound_sequence.append('includes/sounds/english/male/activate.wav')
+                    sound_sequence.append('includes/sounds/english/male/normalized/resolve.wav')
+                    print(f"[Resman] Playing sound sequence: {sound_sequence}")
+                    for sound_path in sound_sequence:
+                        if os.path.exists(sound_path):
+                            print(f"[Resman] Found sound file: {sound_path}")
+                            try:
+                                source = pyglet.media.load(sound_path, streaming=False)
+                                self.player.queue(source)
+                            except Exception as e:
+                                print(f"[Resman] Error loading sound {sound_path}: {e}")
+                        else:
+                            print(f"[Resman] Sound file not found: {sound_path}")
+                    self.player.play()
+                    # --- End sound feedback ---
                     this_tank['_tts_warned'] = True
                 elif not (too_low or too_high):
                     this_tank['_tts_warned'] = False
-            # Subtitle warning for A/B tanks if out of tolerance
+
+            if this_tank['target'] is not None:      # Record performance for target tanks
+                t, r = this_tank['target'], self.parameters['toleranceradius']
+                this_tank['_is_in_tolerance'] = float('nan')
+                if r > 0:  # If a tolerance level is defined
+                    this_tank['_is_in_tolerance'] = t - r <= this_tank['level'] <= t + r
+                    tolerance_color = self.parameters['tolerancecolor']
+                    if not this_tank['_is_in_tolerance']:  # If a response is needed
+                        tolerance_color = self.parameters['tolerancecoloroutside']
+                        this_tank['_response_time'] += self.parameters['taskupdatetime']
+                    elif this_tank['_response_time'] > 0:  # Back in the tolerance zone
+                        self.log_performance(f'{tank_l}_response_time', this_tank['_response_time'])
+                        this_tank['_response_time'] = 0
+                    this_tank['_tolerance_color'] = tolerance_color
+
+                deviation = this_tank['level'] - this_tank['target']
+                self.log_performance(f'{tank_l}_in_tolerance', this_tank['_is_in_tolerance'])
+                self.log_performance(f'{tank_l}_deviation', deviation)
+                            
+            # Add subtitle warning for A/B tanks if out of tolerance
             subtitle_msgs = []
             for tank_l in ['a', 'b']:
                 this_tank = tanks[tank_l]
@@ -368,6 +448,7 @@ class Resman(AbstractPlugin):
                         subtitle_msgs.append(f"{tank_l.upper()} level too high")
                     else:
                         subtitle_msgs.append(f"{tank_l.upper()} level too low")
+
             # 合并信息并显示字幕
             if subtitle_msgs:
                 subtitle_text = ",".join(subtitle_msgs) + ", please fix"

@@ -25,7 +25,6 @@ tts_manager = TTSManager()
 class Sysmon(AbstractPlugin):
     def __init__(self, label='', taskplacement='topleft', taskupdatetime=200):
         super().__init__('System monitoring', taskplacement, taskupdatetime)
-        self._wrong_failure_given = False  # Track if wrong recommendation has been given
 
         self.validation_dict = {
             'alerttimeout': validation.is_positive_integer,
@@ -278,22 +277,44 @@ class Sysmon(AbstractPlugin):
             else self.parameters['alerttimeout']
         gauge['_failuretimer'] = delay
 
-        # TTS feedback for gauge failure
+       
+        #gauge_name = gauge['name']
+        #tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {gauge_name} to resolve.") """
+    
+        import os
         gauge_name = gauge['name']
-        keys = list(self.keys) if hasattr(self, 'keys') else ['F1', 'F2', 'F3', 'F4', 'F5', 'F6']
-        correct_key = gauge.get('key', gauge_name)
-        wrong_key = None
-        # Only give wrong recommendation when F6 fails
-        if gauge_name == 'F6' and not self._wrong_failure_given:
-            wrong_choices = [k for k in keys if k != correct_key]
-            if wrong_choices:
-                import random
-                wrong_key = random.choice(wrong_choices)
-                self._wrong_failure_given = True
-        if wrong_key:
-            tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {wrong_key} to resolve.")
-        else:
-            tts_manager.speak(f"Failure detected on gauge {gauge_name}. Press {gauge_name} to resolve.")
+        letter = gauge_name[0].lower()
+        number = gauge_name[1]
+        sound_sequence = [
+            'includes/sounds/english/male/normalized/failure.wav',
+            f'includes/sounds/english/male/{letter}.wav',
+            f'includes/sounds/english/male/{number}.wav',
+            'includes/sounds/english/male/normalized/press.wav',
+            f'includes/sounds/english/male/{letter}.wav',
+            f'includes/sounds/english/male/{number}.wav',
+            'includes/sounds/english/male/normalized/resolve.wav'
+        ]
+        if not hasattr(self, 'player'):
+            from pyglet.media import Player
+            self.player = Player()
+        if self.player.playing:
+            print("[Sysmon] Sound sequence is already playing, skipping new sequence.")
+            return
+        self.player.pause()
+        self.player.next_source()  # Clear previous queue
+        print(f"[Sysmon] Playing sound sequence: {sound_sequence}")
+        for sound_path in sound_sequence:
+            if os.path.exists(sound_path):
+                print(f"[Sysmon] Found sound file: {sound_path}")
+                try:
+                    source = pyglet.media.load(sound_path, streaming=False)
+                    self.player.queue(source)
+                except Exception as e:
+                    print(f"[Sysmon] Error loading sound {sound_path}: {e}")
+            else:
+                print(f"[Sysmon] Sound file not found: {sound_path}")
+        self.player.play()
+        # --- End of dynamic sound loading ---
 
 
 
