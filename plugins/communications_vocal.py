@@ -46,7 +46,7 @@ class Communications_vocal(AbstractPlugin):
         self.old_regex = str(self.parameters['callsignregex'])
         new_par = dict(owncallsign=str(), othercallsign=list(), othercallsignnumber=5,
                        airbandminMhz=108.0, airbandmaxMhz=137.0, airbandminvariationMhz=5,
-                       airbandmaxvariationMhz=6, voicegender='female', voiceidiom='french',
+                       airbandmaxvariationMhz=6,voicegender='male', voiceidiom='english',
                        radioprompt=str(), maxresponsedelay=20000,
                        promptlist=['NAV_1', 'NAV_2', 'COM_1', 'COM_2'], automaticsolver=False,
                        displayautomationstate=True, feedbackduration=1500,

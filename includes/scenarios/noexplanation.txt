@@ -35,20 +35,20 @@
 0:00:15;communications;radioprompt;own
 
 # === 3. Resource management task ===
-0:00:30;resman;show
-0:00:30;resman;resume
-0:00:30;communications;hide
-0:00:30;communications;pause
-0:00:30;instructions;filename;3language/resman.txt
-0:00:30;instructions;start
+0:00:35;resman;show
+0:00:35;resman;resume
+0:00:35;communications;hide
+0:00:35;communications;pause
+0:00:35;instructions;filename;3language/resman.txt
+0:00:35;instructions;start
 
 # Tank A overfilled -> deactivate incoming pump
-0:00:32;resman;tank-a-level;2500
-0:00:34;resman;pump-1-state;on
+0:00:38;resman;tank-a-level;2500
+0:00:38;resman;pump-1-state;on
 
 # Tank B underfilled -> activate outgoing pump
-0:00:38;resman;tank-b-level;2200
-0:00:42;resman;pump-4-state;off
+0:00:40;resman;tank-b-level;2200
+0:00:48;resman;pump-4-state;off
 
 # === All tasks in full scenario ===
 0:00:50;sysmon;automaticsolver;true

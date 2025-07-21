@@ -13,9 +13,9 @@ import math
 
 class Slider(AbstractWidget):
     def __init__(self, name, container, title, label_min, label_max,
-                 value_min, value_max, value_default, rank, draw_order=1):
+                 value_min, value_max, value_default, rank, draw_order=1,step=1):
         super().__init__(name, container)
-
+        self.step = step  # ✅ 加上这行
         self.title = title
         self.label_min = label_min
         self.label_max = label_max
@@ -143,6 +143,12 @@ class Slider(AbstractWidget):
 
     def update_groove_value(self, ratio):
         val = float(ratio * (self.value_max - self.value_min) + self.value_min)
+        
+            # ✅ 四舍五入到最接近的 step 值
+        val = round(val / self.step) * self.step  # ✅ 加这一行让值按步长变化
+
+
+
         if math.isclose(val, self.groove_value):
             return
         self.groove_value = val
@@ -155,7 +161,8 @@ class Slider(AbstractWidget):
 
 
     def get_value(self):
-        return self.groove_value
+        return int(self.groove_value) if self.step == 1 else self.groove_value
+
 
 
     def update_cursor_appearance(self):

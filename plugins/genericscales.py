@@ -17,12 +17,12 @@ class Genericscales(BlockingPlugin):
                        allowkeypress=True)
         self.sliders = dict()
         self.parameters.update(new_par)
-
+        self.force_int = True  # ✅ 添加这一行
         self.ignore_empty_lines = True
 
         self.regex_scale_pattern = r'(.*);(.*)/(.*);(\d*)/(\d*)/(\d*)'
-        self.question_height_ratio = 0.1  # question + response slider
-        self.question_interspace = 0.05  # Space to leave between two questions
+        self.question_height_ratio = 0.08  # question + response slider
+        self.question_interspace = 0.005  # Space to leave between two questions
         self.top_to_top = self.question_interspace + self.question_height_ratio
 
 
