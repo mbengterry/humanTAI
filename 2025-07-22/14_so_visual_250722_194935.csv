@@ -1,0 +1,2468 @@
+logtime,scenario_time,type,module,address,value
+68660.411647,0,scenario_path,,,includes/scenarios/questiononly.txt
+68660.411913,0,seed_value,communications_vv,,
+68660.41192,0,seed_output,communications_vv,,VBZ818
+68660.411959,0,seed_value,communications_vv,,
+68660.411964,0,seed_output,communications_vv,,XVZ241
+68660.412001,0,seed_value,communications_vv,,
+68660.412005,0,seed_output,communications_vv,,EHA972
+68660.412038,0,seed_value,communications_vv,,
+68660.412042,0,seed_output,communications_vv,,WMS232
+68660.41207,0,seed_value,communications_vv,,
+68660.412074,0,seed_output,communications_vv,,MYA347
+68660.412103,0,seed_value,communications_vv,,
+68660.412106,0,seed_output,communications_vv,,UPW443
+68660.412134,0,seed_value,communications_vv,,
+68660.412137,0,seed_output,communications_vv,,DXE892
+68660.412168,0,seed_value,communications_vv,,
+68660.412172,0,seed_output,communications_vv,,RZJ909
+68660.412199,0,seed_value,communications_vv,,
+68660.412202,0,seed_output,communications_vv,,APD620
+68660.412229,0,seed_value,communications_vv,,
+68660.412232,0,seed_output,communications_vv,,SFU347
+68660.412246,0,seed_value,communications_vv,,
+68660.412249,0,seed_output,communications_vv,,123.137533
+68660.412261,0,seed_value,communications_vv,,
+68660.412264,0,seed_output,communications_vv,,113.256681
+68660.412274,0,seed_value,communications_vv,,
+68660.412277,0,seed_output,communications_vv,,127.636649
+68660.412287,0,seed_value,communications_vv,,
+68660.41229,0,seed_output,communications_vv,,134.263551
+68664.588038,0,dialog,,,OpenMATB end
+68664.598748,0.014919,aoi,sysmon,vv_foreground,"(691, 444.6, 1641, 0.0)"
+68664.598804,0.014919,aoi,sysmon,vv_overdue,"(691, 444.6, 1641, 0.0)"
+68664.604855,0.014919,aoi,sysmon,vv_task_title,"(691, 494.0, 1641, 444.6)"
+68664.605125,0.014919,aoi,sysmon,vv_automode,"(1094.75, 48.165000000000006, 1237.25, 23.465000000000003)"
+68664.606228,0.014919,aoi,sysmon,vv_scale1,"(762.25, 288.99, 857.25, 66.69)"
+68664.606988,0.014919,aoi,sysmon,vv_scale2,"(999.75, 288.99, 1094.75, 66.69)"
+68664.607819,0.014919,aoi,sysmon,vv_scale3,"(1237.25, 288.99, 1332.25, 66.69)"
+68664.608475,0.014919,aoi,sysmon,vv_scale4,"(1474.75, 288.99, 1569.75, 66.69)"
+68664.609148,0.014919,aoi,sysmon,vv_light1,"(738.5, 400.14000000000004, 1118.5, 333.45000000000005)"
+68664.609918,0.014919,aoi,sysmon,vv_light2,"(1213.5, 400.14000000000004, 1593.5, 333.45000000000005)"
+68664.611168,0.014919,aoi,sysmon,vv_alert,"(691, 444.6, 1641, 0.0)"
+68664.611276,0.014919,parameter,sysmon_vv,title,System monitoring
+68664.611288,0.014919,parameter,sysmon_vv,taskplacement,bottommid
+68664.611296,0.014919,parameter,sysmon_vv,taskupdatetime,200
+68664.611305,0.014919,parameter,sysmon_vv,taskfeedback-overdue-active,0
+68664.611313,0.014919,parameter,sysmon_vv,taskfeedback-overdue-color,"(241, 100, 100, 255)"
+68664.611323,0.014919,parameter,sysmon_vv,taskfeedback-overdue-delayms,2000
+68664.611335,0.014919,parameter,sysmon_vv,taskfeedback-overdue-blinkdurationms,1000
+68664.611343,0.014919,parameter,sysmon_vv,taskfeedback-overdue-_nexttoggletime,0
+68664.61135,0.014919,parameter,sysmon_vv,taskfeedback-overdue-_is_visible,0
+68664.611358,0.014919,parameter,sysmon_vv,taskfeedback-overdue-widget,<core.widgets.frame.Frame object at 0x140014a50>
+68664.61137,0.014919,parameter,sysmon_vv,alerttimeout,10000
+68664.611376,0.014919,parameter,sysmon_vv,automaticsolver,0
+68664.611383,0.014919,parameter,sysmon_vv,automaticsolverdelay,1000
+68664.611389,0.014919,parameter,sysmon_vv,displayautomationstate,1
+68664.611395,0.014919,parameter,sysmon_vv,allowanykey,0
+68664.611401,0.014919,parameter,sysmon_vv,feedbackduration,1500
+68664.611409,0.014919,parameter,sysmon_vv,feedbacks-positive-active,1
+68664.611415,0.014919,parameter,sysmon_vv,feedbacks-positive-color,"(142, 219, 176, 255)"
+68664.611423,0.014919,parameter,sysmon_vv,feedbacks-negative-active,1
+68664.61143,0.014919,parameter,sysmon_vv,feedbacks-negative-color,"(241, 100, 100, 255)"
+68664.611437,0.014919,parameter,sysmon_vv,lights-1-name,F5
+68664.611443,0.014919,parameter,sysmon_vv,lights-1-failure,0
+68664.611449,0.014919,parameter,sysmon_vv,lights-1-default,on
+68664.611456,0.014919,parameter,sysmon_vv,lights-1-oncolor,"(142, 219, 176, 255)"
+68664.611463,0.014919,parameter,sysmon_vv,lights-1-key,F5
+68664.611468,0.014919,parameter,sysmon_vv,lights-1-on,1
+68664.611474,0.014919,parameter,sysmon_vv,lights-1-_failuretimer,
+68664.61148,0.014919,parameter,sysmon_vv,lights-1-_onfailure,0
+68664.611486,0.014919,parameter,sysmon_vv,lights-1-_milliresponsetime,0
+68664.611492,0.014919,parameter,sysmon_vv,lights-1-_freezetimer,
+68664.611498,0.014919,parameter,sysmon_vv,lights-1-widget,<core.widgets.light.Light object at 0x14003fa50>
+68664.611506,0.014919,parameter,sysmon_vv,lights-2-name,F6
+68664.611512,0.014919,parameter,sysmon_vv,lights-2-failure,0
+68664.611518,0.014919,parameter,sysmon_vv,lights-2-default,off
+68664.611524,0.014919,parameter,sysmon_vv,lights-2-oncolor,"(241, 100, 100, 255)"
+68664.611531,0.014919,parameter,sysmon_vv,lights-2-key,F6
+68664.611537,0.014919,parameter,sysmon_vv,lights-2-on,0
+68664.611543,0.014919,parameter,sysmon_vv,lights-2-_failuretimer,
+68664.611549,0.014919,parameter,sysmon_vv,lights-2-_onfailure,0
+68664.611555,0.014919,parameter,sysmon_vv,lights-2-_milliresponsetime,0
+68664.611561,0.014919,parameter,sysmon_vv,lights-2-_freezetimer,
+68664.611567,0.014919,parameter,sysmon_vv,lights-2-widget,<core.widgets.light.Light object at 0x1400496d0>
+68664.611575,0.014919,parameter,sysmon_vv,scales-1-name,F1
+68664.611581,0.014919,parameter,sysmon_vv,scales-1-failure,0
+68664.611588,0.014919,parameter,sysmon_vv,scales-1-side,0
+68664.611595,0.014919,parameter,sysmon_vv,scales-1-key,F1
+68664.611602,0.014919,parameter,sysmon_vv,scales-1-_failuretimer,
+68664.611608,0.014919,parameter,sysmon_vv,scales-1-_onfailure,0
+68664.611614,0.014919,parameter,sysmon_vv,scales-1-_milliresponsetime,0
+68664.61162,0.014919,parameter,sysmon_vv,scales-1-_freezetimer,
+68664.611625,0.014919,parameter,sysmon_vv,scales-1-_pos,5
+68664.611632,0.014919,parameter,sysmon_vv,scales-1-_zone,0
+68664.611638,0.014919,parameter,sysmon_vv,scales-1-_feedbacktimer,
+68664.611644,0.014919,parameter,sysmon_vv,scales-1-_feedbacktype,
+68664.611651,0.014919,parameter,sysmon_vv,scales-1-widget,<core.widgets.scale.Scale object at 0x140017dd0>
+68664.611659,0.014919,parameter,sysmon_vv,scales-2-name,F2
+68664.611665,0.014919,parameter,sysmon_vv,scales-2-failure,0
+68664.611671,0.014919,parameter,sysmon_vv,scales-2-side,0
+68664.611677,0.014919,parameter,sysmon_vv,scales-2-key,F2
+68664.611682,0.014919,parameter,sysmon_vv,scales-2-_failuretimer,
+68664.611687,0.014919,parameter,sysmon_vv,scales-2-_onfailure,0
+68664.611693,0.014919,parameter,sysmon_vv,scales-2-_milliresponsetime,0
+68664.611698,0.014919,parameter,sysmon_vv,scales-2-_freezetimer,
+68664.611703,0.014919,parameter,sysmon_vv,scales-2-_pos,5
+68664.611708,0.014919,parameter,sysmon_vv,scales-2-_zone,0
+68664.611713,0.014919,parameter,sysmon_vv,scales-2-_feedbacktimer,
+68664.611719,0.014919,parameter,sysmon_vv,scales-2-_feedbacktype,
+68664.611725,0.014919,parameter,sysmon_vv,scales-2-widget,<core.widgets.scale.Scale object at 0x14002da10>
+68664.611732,0.014919,parameter,sysmon_vv,scales-3-name,F3
+68664.611737,0.014919,parameter,sysmon_vv,scales-3-failure,0
+68664.611742,0.014919,parameter,sysmon_vv,scales-3-side,0
+68664.611747,0.014919,parameter,sysmon_vv,scales-3-key,F3
+68664.611753,0.014919,parameter,sysmon_vv,scales-3-_failuretimer,
+68664.611758,0.014919,parameter,sysmon_vv,scales-3-_onfailure,0
+68664.611763,0.014919,parameter,sysmon_vv,scales-3-_milliresponsetime,0
+68664.611769,0.014919,parameter,sysmon_vv,scales-3-_freezetimer,
+68664.611774,0.014919,parameter,sysmon_vv,scales-3-_pos,5
+68664.611779,0.014919,parameter,sysmon_vv,scales-3-_zone,0
+68664.611784,0.014919,parameter,sysmon_vv,scales-3-_feedbacktimer,
+68664.61179,0.014919,parameter,sysmon_vv,scales-3-_feedbacktype,
+68664.611795,0.014919,parameter,sysmon_vv,scales-3-widget,<core.widgets.scale.Scale object at 0x14002f8d0>
+68664.611801,0.014919,parameter,sysmon_vv,scales-4-name,F4
+68664.612029,0.014919,parameter,sysmon_vv,scales-4-failure,0
+68664.612038,0.014919,parameter,sysmon_vv,scales-4-side,0
+68664.612043,0.014919,parameter,sysmon_vv,scales-4-key,F4
+68664.612049,0.014919,parameter,sysmon_vv,scales-4-_failuretimer,
+68664.612054,0.014919,parameter,sysmon_vv,scales-4-_onfailure,0
+68664.61206,0.014919,parameter,sysmon_vv,scales-4-_milliresponsetime,0
+68664.612065,0.014919,parameter,sysmon_vv,scales-4-_freezetimer,
+68664.61207,0.014919,parameter,sysmon_vv,scales-4-_pos,5
+68664.612076,0.014919,parameter,sysmon_vv,scales-4-_zone,0
+68664.612081,0.014919,parameter,sysmon_vv,scales-4-_feedbacktimer,
+68664.612086,0.014919,parameter,sysmon_vv,scales-4-_feedbacktype,
+68664.612092,0.014919,parameter,sysmon_vv,scales-4-widget,<core.widgets.scale.Scale object at 0x14003d6d0>
+68664.614269,0.014919,state,sysmon,"vv_foreground, visibility",1
+68664.614349,0.014919,state,sysmon,"vv_overdue, visibility",1
+68664.615763,0.014919,event,sysmon_vv,self,start
+68666.286559,0.014919,dialog,,,Warning end
+68666.28699,0.027904,seed_value,sysmon_vv,,
+68666.287006,0.027904,seed_output,sysmon_vv,,1
+68666.287036,0.027904,seed_value,sysmon_vv,,
+68666.287044,0.027904,seed_output,sysmon_vv,,1
+68666.287068,0.027904,seed_value,sysmon_vv,,
+68666.287075,0.027904,seed_output,sysmon_vv,,1
+68666.287106,0.027904,seed_value,sysmon_vv,,
+68666.287113,0.027904,seed_output,sysmon_vv,,-1
+68666.287174,0.027904,state,sysmon,"vv_foreground, visibility",0
+68666.288733,0.027904,state,sysmon,"vv_overdue, visibility",0
+68666.288772,0.027904,state,sysmon,"vv_scale1, arrow",6
+68666.289194,0.027904,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.289221,0.027904,state,sysmon,"vv_scale2, arrow",6
+68666.289403,0.027904,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.289422,0.027904,state,sysmon,"vv_scale3, arrow",6
+68666.289592,0.027904,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.289609,0.027904,state,sysmon,"vv_scale4, arrow",4
+68666.289776,0.027904,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.290151,0.027904,state,sysmon,"vv_light1, label",F5  OPEN
+68666.290502,0.027904,state,sysmon,"vv_light2, label",F6  CLOSE
+68666.290609,0.027904,state,sysmon,"vv_scale1, label",F1
+68666.290697,0.027904,state,sysmon,"vv_scale2, label",F2
+68666.290775,0.027904,state,sysmon,"vv_scale3, label",F3
+68666.290854,0.027904,state,sysmon,"vv_scale4, label",F4
+68666.291079,0.027904,aoi,resman,vv_foreground,"(87, 938.6, 1469, 494.0)"
+68666.291106,0.027904,aoi,resman,vv_overdue,"(87, 938.6, 1469, 494.0)"
+68666.292417,0.027904,aoi,resman,vv_task_title,"(87, 988.0, 1469, 938.6)"
+68666.293444,0.027904,aoi,resman,vv_automode,"(650.856, 776.815, 858.156, 752.115)"
+68666.293571,0.027904,aoi,resman,vv_status_foreground,"(1382, 938.6, 1641, 494.0)"
+68666.298784,0.027904,aoi,resman,vv_status_title,"(1382, 988.0, 1641, 938.6)"
+68666.299908,0.027904,aoi,resman,vv_pump_1_flow,"(1382, 938.6, 1641, 889.2)"
+68666.300738,0.027904,aoi,resman,vv_pump_2_flow,"(1382, 889.1999999999999, 1641, 839.8)"
+68666.3014,0.027904,aoi,resman,vv_pump_3_flow,"(1382, 839.8000000000001, 1641, 790.4000000000001)"
+68666.301983,0.027904,aoi,resman,vv_pump_4_flow,"(1382, 790.4, 1641, 741.0)"
+68666.302585,0.027904,aoi,resman,vv_pump_5_flow,"(1382, 741.0, 1641, 691.6)"
+68666.303273,0.027904,aoi,resman,vv_pump_6_flow,"(1382, 691.6, 1641, 642.2)"
+68666.303988,0.027904,aoi,resman,vv_pump_7_flow,"(1382, 642.1999999999999, 1641, 592.8)"
+68666.304732,0.027904,aoi,resman,vv_pump_8_flow,"(1382, 592.8, 1641, 543.4)"
+68666.305478,0.027904,aoi,resman,vv_tank_a,"(280.48, 894.14, 487.78, 738.53)"
+68666.306365,0.027904,aoi,resman,vv_tank_b,"(971.48, 894.14, 1178.78, 738.53)"
+68666.307093,0.027904,aoi,resman,vv_tank_c,"(156.10000000000002, 716.3000000000001, 294.30000000000007, 560.69)"
+68666.307907,0.027904,aoi,resman,vv_tank_d,"(847.1, 716.3000000000001, 985.3000000000001, 560.69)"
+68666.308318,0.027904,aoi,resman,vv_tank_e,"(501.59999999999997, 716.3000000000001, 667.4399999999999, 560.69)"
+68666.308776,0.027904,aoi,resman,vv_tank_f,"(1192.6000000000001, 716.3000000000001, 1358.44, 560.69)"
+68666.311087,0.027904,parameter,resman_vv,title,Resources management
+68666.311095,0.027904,parameter,resman_vv,taskplacement,topleft
+68666.3111,0.027904,parameter,resman_vv,taskupdatetime,2000
+68666.311107,0.027904,parameter,resman_vv,taskfeedback-overdue-active,0
+68666.311113,0.027904,parameter,resman_vv,taskfeedback-overdue-color,"(241, 100, 100, 255)"
+68666.311119,0.027904,parameter,resman_vv,taskfeedback-overdue-delayms,2000
+68666.311124,0.027904,parameter,resman_vv,taskfeedback-overdue-blinkdurationms,1000
+68666.311129,0.027904,parameter,resman_vv,taskfeedback-overdue-_nexttoggletime,0
+68666.311134,0.027904,parameter,resman_vv,taskfeedback-overdue-_is_visible,0
+68666.311139,0.027904,parameter,resman_vv,taskfeedback-overdue-widget,<core.widgets.frame.Frame object at 0x140087c50>
+68666.311147,0.027904,parameter,resman_vv,automaticsolver,0
+68666.311152,0.027904,parameter,resman_vv,displayautomationstate,1
+68666.311156,0.027904,parameter,resman_vv,pumpcoloroff,"(255, 255, 255, 255)"
+68666.311163,0.027904,parameter,resman_vv,pumpcoloron,"(142, 219, 176, 255)"
+68666.311168,0.027904,parameter,resman_vv,pumpcolorfailure,"(200, 200, 200, 255)"
+68666.311173,0.027904,parameter,resman_vv,toleranceradius,250
+68666.311178,0.027904,parameter,resman_vv,statuslocation,topmid
+68666.311183,0.027904,parameter,resman_vv,displaystatus,1
+68666.311187,0.027904,parameter,resman_vv,tolerancecolor,"(142, 219, 176, 255)"
+68666.311193,0.027904,parameter,resman_vv,tolerancecoloroutside,"(241, 100, 100, 255)"
+68666.311199,0.027904,parameter,resman_vv,tank-a-level,2500
+68666.311204,0.027904,parameter,resman_vv,tank-a-max,4000
+68666.311208,0.027904,parameter,resman_vv,tank-a-target,2500
+68666.311213,0.027904,parameter,resman_vv,tank-a-depletable,1
+68666.311218,0.027904,parameter,resman_vv,tank-a-lossperminute,800
+68666.311222,0.027904,parameter,resman_vv,tank-a-_infoside,left
+68666.311227,0.027904,parameter,resman_vv,tank-a-_response_time,0
+68666.311232,0.027904,parameter,resman_vv,tank-a-_is_in_tolerance,
+68666.311236,0.027904,parameter,resman_vv,tank-a-_tolerance_color,"(142, 219, 176, 255)"
+68666.311242,0.027904,parameter,resman_vv,tank-a-widget,<core.widgets.tank.Tank object at 0x1400c3810>
+68666.311253,0.027904,parameter,resman_vv,tank-b-level,2500
+68666.311259,0.027904,parameter,resman_vv,tank-b-max,4000
+68666.311264,0.027904,parameter,resman_vv,tank-b-target,2500
+68666.311269,0.027904,parameter,resman_vv,tank-b-depletable,1
+68666.311274,0.027904,parameter,resman_vv,tank-b-lossperminute,800
+68666.311278,0.027904,parameter,resman_vv,tank-b-_infoside,right
+68666.311283,0.027904,parameter,resman_vv,tank-b-_response_time,0
+68666.311288,0.027904,parameter,resman_vv,tank-b-_is_in_tolerance,
+68666.311292,0.027904,parameter,resman_vv,tank-b-_tolerance_color,"(142, 219, 176, 255)"
+68666.311298,0.027904,parameter,resman_vv,tank-b-widget,<core.widgets.tank.Tank object at 0x1400d3450>
+68666.311304,0.027904,parameter,resman_vv,tank-c-level,1000
+68666.31131,0.027904,parameter,resman_vv,tank-c-max,2000
+68666.311316,0.027904,parameter,resman_vv,tank-c-target,
+68666.31132,0.027904,parameter,resman_vv,tank-c-depletable,1
+68666.311325,0.027904,parameter,resman_vv,tank-c-lossperminute,0
+68666.31133,0.027904,parameter,resman_vv,tank-c-_infoside,left
+68666.311335,0.027904,parameter,resman_vv,tank-c-widget,<core.widgets.tank.Tank object at 0x1400dae50>
+68666.311341,0.027904,parameter,resman_vv,tank-d-level,1000
+68666.311347,0.027904,parameter,resman_vv,tank-d-max,2000
+68666.311352,0.027904,parameter,resman_vv,tank-d-target,
+68666.311356,0.027904,parameter,resman_vv,tank-d-depletable,1
+68666.311361,0.027904,parameter,resman_vv,tank-d-lossperminute,0
+68666.311366,0.027904,parameter,resman_vv,tank-d-_infoside,left
+68666.311371,0.027904,parameter,resman_vv,tank-d-widget,<core.widgets.tank.Tank object at 0x1400e6850>
+68666.311376,0.027904,parameter,resman_vv,tank-e-level,3000
+68666.311381,0.027904,parameter,resman_vv,tank-e-max,4000
+68666.311458,0.027904,parameter,resman_vv,tank-e-target,
+68666.311464,0.027904,parameter,resman_vv,tank-e-depletable,0
+68666.311469,0.027904,parameter,resman_vv,tank-e-lossperminute,0
+68666.311474,0.027904,parameter,resman_vv,tank-e-_infoside,right
+68666.311479,0.027904,parameter,resman_vv,tank-e-widget,<core.widgets.tank.Tank object at 0x1400c3f90>
+68666.311485,0.027904,parameter,resman_vv,tank-f-level,3000
+68666.31149,0.027904,parameter,resman_vv,tank-f-max,4000
+68666.311495,0.027904,parameter,resman_vv,tank-f-target,
+68666.311499,0.027904,parameter,resman_vv,tank-f-depletable,0
+68666.311504,0.027904,parameter,resman_vv,tank-f-lossperminute,0
+68666.311509,0.027904,parameter,resman_vv,tank-f-_infoside,right
+68666.311513,0.027904,parameter,resman_vv,tank-f-widget,<core.widgets.tank.Tank object at 0x143c58290>
+68666.311519,0.027904,parameter,resman_vv,pump-1-flow,800
+68666.311524,0.027904,parameter,resman_vv,pump-1-state,off
+68666.311529,0.027904,parameter,resman_vv,pump-1-key,NUM_1
+68666.311533,0.027904,parameter,resman_vv,pump-1-_fromtank,c
+68666.311538,0.027904,parameter,resman_vv,pump-1-_totank,a
+68666.311543,0.027904,parameter,resman_vv,pump-1-_previous_state,off
+68666.311548,0.027904,parameter,resman_vv,pump-1-statuswidget,<core.widgets.pumpflow.PumpFlow object at 0x1400862d0>
+68666.311553,0.027904,parameter,resman_vv,pump-1-widget,<core.widgets.pump.Pump object at 0x1400c3cd0>
+68666.311559,0.027904,parameter,resman_vv,pump-2-flow,600
+68666.311564,0.027904,parameter,resman_vv,pump-2-state,off
+68666.311568,0.027904,parameter,resman_vv,pump-2-key,NUM_2
+68666.311573,0.027904,parameter,resman_vv,pump-2-_fromtank,e
+68666.311578,0.027904,parameter,resman_vv,pump-2-_totank,a
+68666.311582,0.027904,parameter,resman_vv,pump-2-_previous_state,off
+68666.311587,0.027904,parameter,resman_vv,pump-2-statuswidget,<core.widgets.pumpflow.PumpFlow object at 0x1400979d0>
+68666.311592,0.027904,parameter,resman_vv,pump-2-widget,<core.widgets.pump.Pump object at 0x143c68d90>
+68666.311598,0.027904,parameter,resman_vv,pump-3-flow,800
+68666.311603,0.027904,parameter,resman_vv,pump-3-state,off
+68666.311608,0.027904,parameter,resman_vv,pump-3-key,NUM_3
+68666.311612,0.027904,parameter,resman_vv,pump-3-_fromtank,d
+68666.311617,0.027904,parameter,resman_vv,pump-3-_totank,b
+68666.311621,0.027904,parameter,resman_vv,pump-3-_previous_state,off
+68666.311626,0.027904,parameter,resman_vv,pump-3-statuswidget,<core.widgets.pumpflow.PumpFlow object at 0x140095890>
+68666.311631,0.027904,parameter,resman_vv,pump-3-widget,<core.widgets.pump.Pump object at 0x143c6abd0>
+68666.311637,0.027904,parameter,resman_vv,pump-4-flow,600
+68666.311641,0.027904,parameter,resman_vv,pump-4-state,off
+68666.311646,0.027904,parameter,resman_vv,pump-4-key,NUM_4
+68666.31165,0.027904,parameter,resman_vv,pump-4-_fromtank,f
+68666.311655,0.027904,parameter,resman_vv,pump-4-_totank,b
+68666.311659,0.027904,parameter,resman_vv,pump-4-_previous_state,off
+68666.311664,0.027904,parameter,resman_vv,pump-4-statuswidget,<core.widgets.pumpflow.PumpFlow object at 0x1400a7990>
+68666.311669,0.027904,parameter,resman_vv,pump-4-widget,<core.widgets.pump.Pump object at 0x143c80a50>
+68666.311675,0.027904,parameter,resman_vv,pump-5-flow,600
+68666.311679,0.027904,parameter,resman_vv,pump-5-state,off
+68666.311684,0.027904,parameter,resman_vv,pump-5-key,NUM_5
+68666.311688,0.027904,parameter,resman_vv,pump-5-_fromtank,e
+68666.311692,0.027904,parameter,resman_vv,pump-5-_totank,c
+68666.311697,0.027904,parameter,resman_vv,pump-5-_previous_state,off
+68666.311701,0.027904,parameter,resman_vv,pump-5-statuswidget,<core.widgets.pumpflow.PumpFlow object at 0x1400bd010>
+68666.311707,0.027904,parameter,resman_vv,pump-5-widget,<core.widgets.pump.Pump object at 0x143c82750>
+68666.311713,0.027904,parameter,resman_vv,pump-6-flow,600
+68666.311717,0.027904,parameter,resman_vv,pump-6-state,off
+68666.311722,0.027904,parameter,resman_vv,pump-6-key,NUM_6
+68666.311726,0.027904,parameter,resman_vv,pump-6-_fromtank,f
+68666.311731,0.027904,parameter,resman_vv,pump-6-_totank,d
+68666.311735,0.027904,parameter,resman_vv,pump-6-_previous_state,off
+68666.31174,0.027904,parameter,resman_vv,pump-6-statuswidget,<core.widgets.pumpflow.PumpFlow object at 0x1400bf5d0>
+68666.311745,0.027904,parameter,resman_vv,pump-6-widget,<core.widgets.pump.Pump object at 0x143c8c090>
+68666.311751,0.027904,parameter,resman_vv,pump-7-flow,400
+68666.311756,0.027904,parameter,resman_vv,pump-7-state,off
+68666.31176,0.027904,parameter,resman_vv,pump-7-key,NUM_7
+68666.311765,0.027904,parameter,resman_vv,pump-7-_fromtank,a
+68666.311769,0.027904,parameter,resman_vv,pump-7-_totank,b
+68666.311774,0.027904,parameter,resman_vv,pump-7-_previous_state,off
+68666.311778,0.027904,parameter,resman_vv,pump-7-statuswidget,<core.widgets.pumpflow.PumpFlow object at 0x1400a6f10>
+68666.311784,0.027904,parameter,resman_vv,pump-7-widget,<core.widgets.pump.Pump object at 0x143c8e210>
+68666.311789,0.027904,parameter,resman_vv,pump-8-flow,400
+68666.311794,0.027904,parameter,resman_vv,pump-8-state,off
+68666.311799,0.027904,parameter,resman_vv,pump-8-key,NUM_8
+68666.311803,0.027904,parameter,resman_vv,pump-8-_fromtank,b
+68666.311808,0.027904,parameter,resman_vv,pump-8-_totank,a
+68666.311812,0.027904,parameter,resman_vv,pump-8-_previous_state,off
+68666.311817,0.027904,parameter,resman_vv,pump-8-statuswidget,<core.widgets.pumpflow.PumpFlow object at 0x1400c21d0>
+68666.311822,0.027904,parameter,resman_vv,pump-8-widget,<core.widgets.pump.Pump object at 0x143c8ff50>
+68666.311912,0.027904,state,resman,"vv_foreground, visibility",1
+68666.311961,0.027904,state,resman,"vv_overdue, visibility",1
+68666.312061,0.027904,state,resman,"vv_status_foreground, visibility",1
+68666.315938,0.027904,state,resman,"vv_status_foreground, visibility",0
+68666.315949,0.027904,event,resman_vv,self,start
+68666.31949,0.060441,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.319578,0.060441,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.319658,0.060441,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.319738,0.060441,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.319811,0.060441,state,sysmon,"vv_scale1, label",F1
+68666.319864,0.060441,state,sysmon,"vv_scale2, label",F2
+68666.319927,0.060441,state,sysmon,"vv_scale3, label",F3
+68666.319979,0.060441,state,sysmon,"vv_scale4, label",F4
+68666.320035,0.060441,performance,resman_vv,a_in_tolerance,1
+68666.320043,0.060441,performance,resman_vv,a_deviation,0
+68666.320049,0.060441,performance,resman_vv,b_in_tolerance,1
+68666.320055,0.060441,performance,resman_vv,b_deviation,0
+68666.320218,0.060441,aoi,resman,vv_subtitle,"(87, 938.6, 1469, 494.0)"
+68666.320248,0.060441,state,resman,"vv_foreground, visibility",0
+68666.320409,0.060441,state,resman,"vv_overdue, visibility",0
+68666.320471,0.060441,state,resman,"vv_tank_a, tolerance_color","(142, 219, 176, 255)"
+68666.320488,0.060441,state,resman,"vv_tank_b, tolerance_color","(142, 219, 176, 255)"
+68666.320612,0.060441,aoi,communications,vv_foreground,"(0, 444.6, 691, 0.0)"
+68666.320629,0.060441,aoi,communications,vv_overdue,"(0, 444.6, 691, 0.0)"
+68666.32107,0.060441,aoi,communications,vv_task_title,"(0, 494.0, 691, 444.6)"
+68666.321133,0.060441,aoi,communications,vv_automode,"(293.675, 118.56000000000002, 397.325, 93.86000000000001)"
+68666.323107,0.060441,aoi,communications,vv_callsign,"(0, 444.6, 691, 0.0)"
+68666.323208,0.060441,aoi,communications,vv_target_instruction,"(0, 444.6, 691, 0.0)"
+68666.323241,0.060441,seed_value,communications_vv,,
+68666.323246,0.060441,seed_output,communications_vv,,3
+68666.323972,0.060441,aoi,communications,vv_radio_NAV_1,"(0, 355.67999999999995, 691, 311.21999999999997)"
+68666.324497,0.060441,aoi,communications,vv_radio_NAV_2,"(0, 297.882, 691, 253.422)"
+68666.325058,0.060441,aoi,communications,vv_radio_COM_1,"(0, 240.084, 691, 195.624)"
+68666.325542,0.060441,state,communications,"vv_radio_COM_2, selected",1
+68666.325551,0.060441,aoi,communications,vv_radio_COM_2,"(0, 182.286, 691, 137.826)"
+68666.325559,0.060441,parameter,communications_vv,title,Communications
+68666.325598,0.060441,parameter,communications_vv,taskplacement,bottomleft
+68666.325604,0.060441,parameter,communications_vv,taskupdatetime,80
+68666.325609,0.060441,parameter,communications_vv,taskfeedback-overdue-active,0
+68666.325616,0.060441,parameter,communications_vv,taskfeedback-overdue-color,"(241, 100, 100, 255)"
+68666.325622,0.060441,parameter,communications_vv,taskfeedback-overdue-delayms,2000
+68666.325626,0.060441,parameter,communications_vv,taskfeedback-overdue-blinkdurationms,1000
+68666.325631,0.060441,parameter,communications_vv,taskfeedback-overdue-_nexttoggletime,0
+68666.325635,0.060441,parameter,communications_vv,taskfeedback-overdue-_is_visible,0
+68666.32564,0.060441,parameter,communications_vv,taskfeedback-overdue-widget,<core.widgets.frame.Frame object at 0x143c9ebd0>
+68666.325646,0.060441,parameter,communications_vv,callsignregex,[A-Z][A-Z][A-Z]\d\d\d
+68666.32565,0.060441,parameter,communications_vv,owncallsign,XVZ241
+68666.325654,0.060441,parameter,communications_vv,othercallsign,"['EHA972', 'MYA347', 'DXE892', 'APD620', 'SFU347']"
+68666.32566,0.060441,parameter,communications_vv,othercallsignnumber,5
+68666.325665,0.060441,parameter,communications_vv,airbandminMhz,108.0
+68666.325669,0.060441,parameter,communications_vv,airbandmaxMhz,137.0
+68666.325673,0.060441,parameter,communications_vv,airbandminvariationMhz,5
+68666.325678,0.060441,parameter,communications_vv,airbandmaxvariationMhz,6
+68666.325682,0.060441,parameter,communications_vv,voicegender,male
+68666.325686,0.060441,parameter,communications_vv,voiceidiom,english
+68666.32569,0.060441,parameter,communications_vv,radioprompt,
+68666.325694,0.060441,parameter,communications_vv,maxresponsedelay,10000
+68666.325698,0.060441,parameter,communications_vv,promptlist,"['NAV_1', 'NAV_2', 'COM_1', 'COM_2']"
+68666.325703,0.060441,parameter,communications_vv,automaticsolver,0
+68666.325707,0.060441,parameter,communications_vv,displayautomationstate,1
+68666.325711,0.060441,parameter,communications_vv,feedbackduration,1500
+68666.325716,0.060441,parameter,communications_vv,feedbacks-positive-active,1
+68666.32572,0.060441,parameter,communications_vv,feedbacks-positive-color,"(142, 219, 176, 255)"
+68666.325726,0.060441,parameter,communications_vv,feedbacks-negative-active,1
+68666.32573,0.060441,parameter,communications_vv,feedbacks-negative-color,"(241, 100, 100, 255)"
+68666.325736,0.060441,parameter,communications_vv,keys-selectradioup,UP
+68666.32574,0.060441,parameter,communications_vv,keys-selectradiodown,DOWN
+68666.325744,0.060441,parameter,communications_vv,keys-tunefrequencyup,RIGHT
+68666.325748,0.060441,parameter,communications_vv,keys-tunefrequencydown,LEFT
+68666.325752,0.060441,parameter,communications_vv,keys-validateresponse,ENTER
+68666.325757,0.060441,parameter,communications_vv,radios-0-name,NAV_1
+68666.325761,0.060441,parameter,communications_vv,radios-0-currentfreq,123.1
+68666.325765,0.060441,parameter,communications_vv,radios-0-targetfreq,
+68666.32577,0.060441,parameter,communications_vv,radios-0-pos,0
+68666.325774,0.060441,parameter,communications_vv,radios-0-response_time,0
+68666.325778,0.060441,parameter,communications_vv,radios-0-is_active,0
+68666.325782,0.060441,parameter,communications_vv,radios-0-is_prompting,0
+68666.325787,0.060441,parameter,communications_vv,radios-0-_feedbacktimer,
+68666.325791,0.060441,parameter,communications_vv,radios-0-_feedbacktype,
+68666.325795,0.060441,parameter,communications_vv,radios-0-widget,<core.widgets.radio.Radio object at 0x1400d80d0>
+68666.325801,0.060441,parameter,communications_vv,radios-1-name,NAV_2
+68666.325805,0.060441,parameter,communications_vv,radios-1-currentfreq,113.3
+68666.32581,0.060441,parameter,communications_vv,radios-1-targetfreq,
+68666.325814,0.060441,parameter,communications_vv,radios-1-pos,1
+68666.325818,0.060441,parameter,communications_vv,radios-1-response_time,0
+68666.325822,0.060441,parameter,communications_vv,radios-1-is_active,0
+68666.325826,0.060441,parameter,communications_vv,radios-1-is_prompting,0
+68666.32583,0.060441,parameter,communications_vv,radios-1-_feedbacktimer,
+68666.325835,0.060441,parameter,communications_vv,radios-1-_feedbacktype,
+68666.325839,0.060441,parameter,communications_vv,radios-1-widget,<core.widgets.radio.Radio object at 0x1400c3450>
+68666.325844,0.060441,parameter,communications_vv,radios-2-name,COM_1
+68666.325848,0.060441,parameter,communications_vv,radios-2-currentfreq,127.6
+68666.325852,0.060441,parameter,communications_vv,radios-2-targetfreq,
+68666.325856,0.060441,parameter,communications_vv,radios-2-pos,2
+68666.32586,0.060441,parameter,communications_vv,radios-2-response_time,0
+68666.325864,0.060441,parameter,communications_vv,radios-2-is_active,0
+68666.325869,0.060441,parameter,communications_vv,radios-2-is_prompting,0
+68666.325873,0.060441,parameter,communications_vv,radios-2-_feedbacktimer,
+68666.325877,0.060441,parameter,communications_vv,radios-2-_feedbacktype,
+68666.325881,0.060441,parameter,communications_vv,radios-2-widget,<core.widgets.radio.Radio object at 0x143cc3110>
+68666.325886,0.060441,parameter,communications_vv,radios-3-name,COM_2
+68666.32589,0.060441,parameter,communications_vv,radios-3-currentfreq,134.3
+68666.325895,0.060441,parameter,communications_vv,radios-3-targetfreq,
+68666.325899,0.060441,parameter,communications_vv,radios-3-pos,3
+68666.325903,0.060441,parameter,communications_vv,radios-3-response_time,0
+68666.325907,0.060441,parameter,communications_vv,radios-3-is_active,1
+68666.325911,0.060441,parameter,communications_vv,radios-3-is_prompting,0
+68666.325915,0.060441,parameter,communications_vv,radios-3-_feedbacktimer,
+68666.325919,0.060441,parameter,communications_vv,radios-3-_feedbacktype,
+68666.325923,0.060441,parameter,communications_vv,radios-3-widget,<core.widgets.radio.Radio object at 0x143cd90d0>
+68666.325987,0.060441,state,communications,"vv_foreground, visibility",1
+68666.32601,0.060441,state,communications,"vv_overdue, visibility",1
+68666.326042,0.060441,state,communications,"vv_radio_COM_2, selected",1
+68666.326548,0.060441,event,communications_vv,self,start
+68666.332441,0.073463,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.332521,0.073463,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.332595,0.073463,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.332669,0.073463,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.332734,0.073463,state,sysmon,"vv_scale1, label",F1
+68666.332784,0.073463,state,sysmon,"vv_scale2, label",F2
+68666.332834,0.073463,state,sysmon,"vv_scale3, label",F3
+68666.332883,0.073463,state,sysmon,"vv_scale4, label",F4
+68666.332983,0.073463,state,communications,"vv_foreground, visibility",0
+68666.333125,0.073463,state,communications,"vv_overdue, visibility",0
+68666.344352,0.085387,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.344433,0.085387,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.344507,0.085387,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.344581,0.085387,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.344642,0.085387,state,sysmon,"vv_scale1, label",F1
+68666.344694,0.085387,state,sysmon,"vv_scale2, label",F2
+68666.344762,0.085387,state,sysmon,"vv_scale3, label",F3
+68666.344811,0.085387,state,sysmon,"vv_scale4, label",F4
+68666.352674,0.093703,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.352754,0.093703,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.352827,0.093703,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.352899,0.093703,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.352957,0.093703,state,sysmon,"vv_scale1, label",F1
+68666.353008,0.093703,state,sysmon,"vv_scale2, label",F2
+68666.353058,0.093703,state,sysmon,"vv_scale3, label",F3
+68666.353105,0.093703,state,sysmon,"vv_scale4, label",F4
+68666.356736,0.097773,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.356818,0.097773,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.35689,0.097773,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.356963,0.097773,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.35702,0.097773,state,sysmon,"vv_scale1, label",F1
+68666.35707,0.097773,state,sysmon,"vv_scale2, label",F2
+68666.35714,0.097773,state,sysmon,"vv_scale3, label",F3
+68666.357188,0.097773,state,sysmon,"vv_scale4, label",F4
+68666.369334,0.110368,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.369416,0.110368,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.369491,0.110368,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.369565,0.110368,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.369625,0.110368,state,sysmon,"vv_scale1, label",F1
+68666.369677,0.110368,state,sysmon,"vv_scale2, label",F2
+68666.369745,0.110368,state,sysmon,"vv_scale3, label",F3
+68666.369801,0.110368,state,sysmon,"vv_scale4, label",F4
+68666.377649,0.11868,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.377735,0.11868,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.377815,0.11868,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.377894,0.11868,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.377956,0.11868,state,sysmon,"vv_scale1, label",F1
+68666.378009,0.11868,state,sysmon,"vv_scale2, label",F2
+68666.378065,0.11868,state,sysmon,"vv_scale3, label",F3
+68666.378117,0.11868,state,sysmon,"vv_scale4, label",F4
+68666.381936,0.122974,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.382017,0.122974,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.382091,0.122974,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.382165,0.122974,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.382226,0.122974,state,sysmon,"vv_scale1, label",F1
+68666.382276,0.122974,state,sysmon,"vv_scale2, label",F2
+68666.382328,0.122974,state,sysmon,"vv_scale3, label",F3
+68666.382378,0.122974,state,sysmon,"vv_scale4, label",F4
+68666.394324,0.135355,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.39441,0.135355,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.394489,0.135355,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.394567,0.135355,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.39463,0.135355,state,sysmon,"vv_scale1, label",F1
+68666.394683,0.135355,state,sysmon,"vv_scale2, label",F2
+68666.394738,0.135355,state,sysmon,"vv_scale3, label",F3
+68666.394791,0.135355,state,sysmon,"vv_scale4, label",F4
+68666.402657,0.143688,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.402743,0.143688,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.402822,0.143688,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.4029,0.143688,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.402963,0.143688,state,sysmon,"vv_scale1, label",F1
+68666.403016,0.143688,state,sysmon,"vv_scale2, label",F2
+68666.403071,0.143688,state,sysmon,"vv_scale3, label",F3
+68666.403123,0.143688,state,sysmon,"vv_scale4, label",F4
+68666.407248,0.14828,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.407335,0.14828,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.407414,0.14828,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.407492,0.14828,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.407556,0.14828,state,sysmon,"vv_scale1, label",F1
+68666.40761,0.14828,state,sysmon,"vv_scale2, label",F2
+68666.407666,0.14828,state,sysmon,"vv_scale3, label",F3
+68666.407718,0.14828,state,sysmon,"vv_scale4, label",F4
+68666.419351,0.160383,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.419438,0.160383,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.419517,0.160383,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.419594,0.160383,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.419657,0.160383,state,sysmon,"vv_scale1, label",F1
+68666.419709,0.160383,state,sysmon,"vv_scale2, label",F2
+68666.419772,0.160383,state,sysmon,"vv_scale3, label",F3
+68666.419823,0.160383,state,sysmon,"vv_scale4, label",F4
+68666.427681,0.168707,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.427772,0.168707,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.427856,0.168707,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.42794,0.168707,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.428005,0.168707,state,sysmon,"vv_scale1, label",F1
+68666.428061,0.168707,state,sysmon,"vv_scale2, label",F2
+68666.428121,0.168707,state,sysmon,"vv_scale3, label",F3
+68666.428176,0.168707,state,sysmon,"vv_scale4, label",F4
+68666.4325,0.173526,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.432591,0.173526,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.432675,0.173526,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.432758,0.173526,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.432824,0.173526,state,sysmon,"vv_scale1, label",F1
+68666.432881,0.173526,state,sysmon,"vv_scale2, label",F2
+68666.432938,0.173526,state,sysmon,"vv_scale3, label",F3
+68666.43299,0.173526,state,sysmon,"vv_scale4, label",F4
+68666.4444,0.185426,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.444491,0.185426,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.444575,0.185426,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.444655,0.185426,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.444723,0.185426,state,sysmon,"vv_scale1, label",F1
+68666.444787,0.185426,state,sysmon,"vv_scale2, label",F2
+68666.444845,0.185426,state,sysmon,"vv_scale3, label",F3
+68666.444899,0.185426,state,sysmon,"vv_scale4, label",F4
+68666.45266,0.193687,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.452754,0.193687,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.45284,0.193687,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.452921,0.193687,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.452989,0.193687,state,sysmon,"vv_scale1, label",F1
+68666.453046,0.193687,state,sysmon,"vv_scale2, label",F2
+68666.453101,0.193687,state,sysmon,"vv_scale3, label",F3
+68666.453158,0.193687,state,sysmon,"vv_scale4, label",F4
+68666.457414,0.19844,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.457505,0.19844,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.457589,0.19844,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.45767,0.19844,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.457737,0.19844,state,sysmon,"vv_scale1, label",F1
+68666.457794,0.19844,state,sysmon,"vv_scale2, label",F2
+68666.457852,0.19844,state,sysmon,"vv_scale3, label",F3
+68666.457907,0.19844,state,sysmon,"vv_scale4, label",F4
+68666.469356,0.210381,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.469448,0.210381,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.469531,0.210381,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.469612,0.210381,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.469679,0.210381,state,sysmon,"vv_scale1, label",F1
+68666.469735,0.210381,state,sysmon,"vv_scale2, label",F2
+68666.469791,0.210381,state,sysmon,"vv_scale3, label",F3
+68666.469848,0.210381,state,sysmon,"vv_scale4, label",F4
+68666.477691,0.218709,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.47779,0.218709,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.47788,0.218709,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.477968,0.218709,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.478042,0.218709,state,sysmon,"vv_scale1, label",F1
+68666.478104,0.218709,state,sysmon,"vv_scale2, label",F2
+68666.478166,0.218709,state,sysmon,"vv_scale3, label",F3
+68666.478225,0.218709,state,sysmon,"vv_scale4, label",F4
+68666.48289,0.223908,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.482984,0.223908,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.483072,0.223908,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.483155,0.223908,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.483223,0.223908,state,sysmon,"vv_scale1, label",F1
+68666.48328,0.223908,state,sysmon,"vv_scale2, label",F2
+68666.483337,0.223908,state,sysmon,"vv_scale3, label",F3
+68666.483392,0.223908,state,sysmon,"vv_scale4, label",F4
+68666.494338,0.235431,seed_value,sysmon_vv,,
+68666.494347,0.235431,seed_output,sysmon_vv,,1
+68666.494366,0.235431,seed_value,sysmon_vv,,
+68666.494371,0.235431,seed_output,sysmon_vv,,-1
+68666.494387,0.235431,seed_value,sysmon_vv,,
+68666.494392,0.235431,seed_output,sysmon_vv,,-1
+68666.494411,0.235431,seed_value,sysmon_vv,,
+68666.494416,0.235431,seed_output,sysmon_vv,,1
+68666.494437,0.235431,state,sysmon,"vv_scale1, arrow",7
+68666.494545,0.235431,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.494554,0.235431,state,sysmon,"vv_scale2, arrow",5
+68666.494646,0.235431,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.494712,0.235431,state,sysmon,"vv_scale3, arrow",5
+68666.494821,0.235431,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.494832,0.235431,state,sysmon,"vv_scale4, arrow",5
+68666.494925,0.235431,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.494997,0.235431,state,sysmon,"vv_scale1, label",F1
+68666.495057,0.235431,state,sysmon,"vv_scale2, label",F2
+68666.49512,0.235431,state,sysmon,"vv_scale3, label",F3
+68666.495179,0.235431,state,sysmon,"vv_scale4, label",F4
+68666.502677,0.24369,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.502775,0.24369,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.502865,0.24369,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.502951,0.24369,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.503024,0.24369,state,sysmon,"vv_scale1, label",F1
+68666.503084,0.24369,state,sysmon,"vv_scale2, label",F2
+68666.503145,0.24369,state,sysmon,"vv_scale3, label",F3
+68666.503203,0.24369,state,sysmon,"vv_scale4, label",F4
+68666.507325,0.248339,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.507422,0.248339,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.507514,0.248339,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.507614,0.248339,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.507686,0.248339,state,sysmon,"vv_scale1, label",F1
+68666.507746,0.248339,state,sysmon,"vv_scale2, label",F2
+68666.507809,0.248339,state,sysmon,"vv_scale3, label",F3
+68666.507869,0.248339,state,sysmon,"vv_scale4, label",F4
+68666.519369,0.260387,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.519468,0.260387,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.519559,0.260387,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.519648,0.260387,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.519721,0.260387,state,sysmon,"vv_scale1, label",F1
+68666.519783,0.260387,state,sysmon,"vv_scale2, label",F2
+68666.519843,0.260387,state,sysmon,"vv_scale3, label",F3
+68666.519904,0.260387,state,sysmon,"vv_scale4, label",F4
+68666.527688,0.268704,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.527787,0.268704,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.527878,0.268704,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.527965,0.268704,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.528038,0.268704,state,sysmon,"vv_scale1, label",F1
+68666.528099,0.268704,state,sysmon,"vv_scale2, label",F2
+68666.528158,0.268704,state,sysmon,"vv_scale3, label",F3
+68666.52822,0.268704,state,sysmon,"vv_scale4, label",F4
+68666.53277,0.273789,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.532868,0.273789,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.532958,0.273789,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.533045,0.273789,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.533118,0.273789,state,sysmon,"vv_scale1, label",F1
+68666.533179,0.273789,state,sysmon,"vv_scale2, label",F2
+68666.533241,0.273789,state,sysmon,"vv_scale3, label",F3
+68666.533299,0.273789,state,sysmon,"vv_scale4, label",F4
+68666.544419,0.285436,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.544518,0.285436,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.544608,0.285436,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.544696,0.285436,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.544778,0.285436,state,sysmon,"vv_scale1, label",F1
+68666.544839,0.285436,state,sysmon,"vv_scale2, label",F2
+68666.544899,0.285436,state,sysmon,"vv_scale3, label",F3
+68666.544961,0.285436,state,sysmon,"vv_scale4, label",F4
+68666.552733,0.293741,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.552838,0.293741,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.552935,0.293741,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.553028,0.293741,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.553108,0.293741,state,sysmon,"vv_scale1, label",F1
+68666.553174,0.293741,state,sysmon,"vv_scale2, label",F2
+68666.553242,0.293741,state,sysmon,"vv_scale3, label",F3
+68666.553304,0.293741,state,sysmon,"vv_scale4, label",F4
+68666.557515,0.298534,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.557613,0.298534,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.557702,0.298534,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.557792,0.298534,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.557862,0.298534,state,sysmon,"vv_scale1, label",F1
+68666.557922,0.298534,state,sysmon,"vv_scale2, label",F2
+68666.557985,0.298534,state,sysmon,"vv_scale3, label",F3
+68666.558043,0.298534,state,sysmon,"vv_scale4, label",F4
+68666.569405,0.310414,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.569511,0.310414,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.569607,0.310414,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.5697,0.310414,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.569779,0.310414,state,sysmon,"vv_scale1, label",F1
+68666.569845,0.310414,state,sysmon,"vv_scale2, label",F2
+68666.569912,0.310414,state,sysmon,"vv_scale3, label",F3
+68666.569975,0.310414,state,sysmon,"vv_scale4, label",F4
+68666.577723,0.318733,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.577828,0.318733,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.577924,0.318733,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.578018,0.318733,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.578096,0.318733,state,sysmon,"vv_scale1, label",F1
+68666.578161,0.318733,state,sysmon,"vv_scale2, label",F2
+68666.578228,0.318733,state,sysmon,"vv_scale3, label",F3
+68666.578292,0.318733,state,sysmon,"vv_scale4, label",F4
+68666.582479,0.323488,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.582584,0.323488,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.58268,0.323488,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.582775,0.323488,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.582852,0.323488,state,sysmon,"vv_scale1, label",F1
+68666.582917,0.323488,state,sysmon,"vv_scale2, label",F2
+68666.582984,0.323488,state,sysmon,"vv_scale3, label",F3
+68666.583047,0.323488,state,sysmon,"vv_scale4, label",F4
+68666.594427,0.335437,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.59453,0.335437,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.594626,0.335437,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.594722,0.335437,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.594797,0.335437,state,sysmon,"vv_scale1, label",F1
+68666.594861,0.335437,state,sysmon,"vv_scale2, label",F2
+68666.594928,0.335437,state,sysmon,"vv_scale3, label",F3
+68666.594991,0.335437,state,sysmon,"vv_scale4, label",F4
+68666.602751,0.343746,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.602869,0.343746,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.602977,0.343746,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.603081,0.343746,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.603169,0.343746,state,sysmon,"vv_scale1, label",F1
+68666.603242,0.343746,state,sysmon,"vv_scale2, label",F2
+68666.603316,0.343746,state,sysmon,"vv_scale3, label",F3
+68666.603386,0.343746,state,sysmon,"vv_scale4, label",F4
+68666.607169,0.348178,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.607274,0.348178,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.607371,0.348178,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.607465,0.348178,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.607542,0.348178,state,sysmon,"vv_scale1, label",F1
+68666.607606,0.348178,state,sysmon,"vv_scale2, label",F2
+68666.607673,0.348178,state,sysmon,"vv_scale3, label",F3
+68666.607742,0.348178,state,sysmon,"vv_scale4, label",F4
+68666.619416,0.360425,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.619521,0.360425,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.619617,0.360425,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.619711,0.360425,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.619789,0.360425,state,sysmon,"vv_scale1, label",F1
+68666.619856,0.360425,state,sysmon,"vv_scale2, label",F2
+68666.619921,0.360425,state,sysmon,"vv_scale3, label",F3
+68666.619987,0.360425,state,sysmon,"vv_scale4, label",F4
+68666.627732,0.368727,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.627849,0.368727,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.627956,0.368727,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.62806,0.368727,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.628327,0.368727,state,sysmon,"vv_scale1, label",F1
+68666.6284,0.368727,state,sysmon,"vv_scale2, label",F2
+68666.628473,0.368727,state,sysmon,"vv_scale3, label",F3
+68666.628544,0.368727,state,sysmon,"vv_scale4, label",F4
+68666.632828,0.373838,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.632933,0.373838,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.633029,0.373838,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.633122,0.373838,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.6332,0.373838,state,sysmon,"vv_scale1, label",F1
+68666.633265,0.373838,state,sysmon,"vv_scale2, label",F2
+68666.633331,0.373838,state,sysmon,"vv_scale3, label",F3
+68666.633394,0.373838,state,sysmon,"vv_scale4, label",F4
+68666.644412,0.385421,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.644516,0.385421,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.644613,0.385421,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.644705,0.385421,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.644782,0.385421,state,sysmon,"vv_scale1, label",F1
+68666.644846,0.385421,state,sysmon,"vv_scale2, label",F2
+68666.644914,0.385421,state,sysmon,"vv_scale3, label",F3
+68666.644976,0.385421,state,sysmon,"vv_scale4, label",F4
+68666.652731,0.393727,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.652847,0.393727,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.652954,0.393727,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.653057,0.393727,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.653142,0.393727,state,sysmon,"vv_scale1, label",F1
+68666.653214,0.393727,state,sysmon,"vv_scale2, label",F2
+68666.653287,0.393727,state,sysmon,"vv_scale3, label",F3
+68666.653356,0.393727,state,sysmon,"vv_scale4, label",F4
+68666.657648,0.398644,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.657764,0.398644,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.65787,0.398644,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.657974,0.398644,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.658059,0.398644,state,sysmon,"vv_scale1, label",F1
+68666.658131,0.398644,state,sysmon,"vv_scale2, label",F2
+68666.658205,0.398644,state,sysmon,"vv_scale3, label",F3
+68666.658274,0.398644,state,sysmon,"vv_scale4, label",F4
+68666.669406,0.410416,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.669512,0.410416,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.669609,0.410416,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.669703,0.410416,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.669781,0.410416,state,sysmon,"vv_scale1, label",F1
+68666.669846,0.410416,state,sysmon,"vv_scale2, label",F2
+68666.669913,0.410416,state,sysmon,"vv_scale3, label",F3
+68666.669975,0.410416,state,sysmon,"vv_scale4, label",F4
+68666.677747,0.418743,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.677864,0.418743,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.677972,0.418743,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.678076,0.418743,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.678161,0.418743,state,sysmon,"vv_scale1, label",F1
+68666.678234,0.418743,state,sysmon,"vv_scale2, label",F2
+68666.67831,0.418743,state,sysmon,"vv_scale3, label",F3
+68666.67838,0.418743,state,sysmon,"vv_scale4, label",F4
+68666.682653,0.423663,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.682757,0.423663,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.682853,0.423663,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.682945,0.423663,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.683022,0.423663,state,sysmon,"vv_scale1, label",F1
+68666.683086,0.423663,state,sysmon,"vv_scale2, label",F2
+68666.683153,0.423663,state,sysmon,"vv_scale3, label",F3
+68666.683216,0.423663,state,sysmon,"vv_scale4, label",F4
+68666.694339,0.435434,seed_value,sysmon_vv,,
+68666.694349,0.435434,seed_output,sysmon_vv,,-1
+68666.694371,0.435434,seed_value,sysmon_vv,,
+68666.694377,0.435434,seed_output,sysmon_vv,,-1
+68666.694397,0.435434,seed_value,sysmon_vv,,
+68666.694402,0.435434,seed_output,sysmon_vv,,-1
+68666.694421,0.435434,seed_value,sysmon_vv,,
+68666.694427,0.435434,seed_output,sysmon_vv,,1
+68666.694452,0.435434,state,sysmon,"vv_scale1, arrow",6
+68666.694583,0.435434,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.694594,0.435434,state,sysmon,"vv_scale2, arrow",4
+68666.694701,0.435434,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.694714,0.435434,state,sysmon,"vv_scale3, arrow",4
+68666.694828,0.435434,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.694841,0.435434,state,sysmon,"vv_scale4, arrow",6
+68666.694944,0.435434,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.695031,0.435434,state,sysmon,"vv_scale1, label",F1
+68666.695103,0.435434,state,sysmon,"vv_scale2, label",F2
+68666.695183,0.435434,state,sysmon,"vv_scale3, label",F3
+68666.695252,0.435434,state,sysmon,"vv_scale4, label",F4
+68666.7027,0.443695,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.702818,0.443695,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.702925,0.443695,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.70303,0.443695,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.703116,0.443695,state,sysmon,"vv_scale1, label",F1
+68666.703188,0.443695,state,sysmon,"vv_scale2, label",F2
+68666.703262,0.443695,state,sysmon,"vv_scale3, label",F3
+68666.703334,0.443695,state,sysmon,"vv_scale4, label",F4
+68666.707393,0.448403,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.707498,0.448403,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.707594,0.448403,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.707695,0.448403,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.707772,0.448403,state,sysmon,"vv_scale1, label",F1
+68666.707837,0.448403,state,sysmon,"vv_scale2, label",F2
+68666.707905,0.448403,state,sysmon,"vv_scale3, label",F3
+68666.707968,0.448403,state,sysmon,"vv_scale4, label",F4
+68666.719401,0.460407,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.719506,0.460407,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.719603,0.460407,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.71971,0.460407,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.719795,0.460407,state,sysmon,"vv_scale1, label",F1
+68666.71986,0.460407,state,sysmon,"vv_scale2, label",F2
+68666.719925,0.460407,state,sysmon,"vv_scale3, label",F3
+68666.719992,0.460407,state,sysmon,"vv_scale4, label",F4
+68666.727685,0.468692,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.72779,0.468692,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.727886,0.468692,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.727979,0.468692,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.728059,0.468692,state,sysmon,"vv_scale1, label",F1
+68666.728123,0.468692,state,sysmon,"vv_scale2, label",F2
+68666.728191,0.468692,state,sysmon,"vv_scale3, label",F3
+68666.728253,0.468692,state,sysmon,"vv_scale4, label",F4
+68666.732313,0.473324,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.732419,0.473324,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.732515,0.473324,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.732608,0.473324,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.732691,0.473324,state,sysmon,"vv_scale1, label",F1
+68666.732755,0.473324,state,sysmon,"vv_scale2, label",F2
+68666.732822,0.473324,state,sysmon,"vv_scale3, label",F3
+68666.732885,0.473324,state,sysmon,"vv_scale4, label",F4
+68666.744371,0.485378,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.744476,0.485378,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.744573,0.485378,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.744665,0.485378,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.744761,0.485378,state,sysmon,"vv_scale1, label",F1
+68666.744829,0.485378,state,sysmon,"vv_scale2, label",F2
+68666.744896,0.485378,state,sysmon,"vv_scale3, label",F3
+68666.744959,0.485378,state,sysmon,"vv_scale4, label",F4
+68666.752698,0.493706,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.752801,0.493706,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.752898,0.493706,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.752991,0.493706,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.753066,0.493706,state,sysmon,"vv_scale1, label",F1
+68666.753131,0.493706,state,sysmon,"vv_scale2, label",F2
+68666.753288,0.493706,state,sysmon,"vv_scale3, label",F3
+68666.753353,0.493706,state,sysmon,"vv_scale4, label",F4
+68666.75679,0.497783,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.756895,0.497783,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.756993,0.497783,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.757087,0.497783,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.757167,0.497783,state,sysmon,"vv_scale1, label",F1
+68666.757232,0.497783,state,sysmon,"vv_scale2, label",F2
+68666.757295,0.497783,state,sysmon,"vv_scale3, label",F3
+68666.75737,0.497783,state,sysmon,"vv_scale4, label",F4
+68666.76936,0.510366,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.769465,0.510366,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.769562,0.510366,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.769655,0.510366,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.769756,0.510366,state,sysmon,"vv_scale1, label",F1
+68666.769825,0.510366,state,sysmon,"vv_scale2, label",F2
+68666.769891,0.510366,state,sysmon,"vv_scale3, label",F3
+68666.769956,0.510366,state,sysmon,"vv_scale4, label",F4
+68666.777688,0.518693,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.777793,0.518693,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.777889,0.518693,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.777983,0.518693,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.778061,0.518693,state,sysmon,"vv_scale1, label",F1
+68666.778127,0.518693,state,sysmon,"vv_scale2, label",F2
+68666.778191,0.518693,state,sysmon,"vv_scale3, label",F3
+68666.778257,0.518693,state,sysmon,"vv_scale4, label",F4
+68666.781835,0.522836,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.78194,0.522836,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.782036,0.522836,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.782131,0.522836,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.782206,0.522836,state,sysmon,"vv_scale1, label",F1
+68666.782271,0.522836,state,sysmon,"vv_scale2, label",F2
+68666.782336,0.522836,state,sysmon,"vv_scale3, label",F3
+68666.782411,0.522836,state,sysmon,"vv_scale4, label",F4
+68666.794516,0.535523,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.79462,0.535523,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.794732,0.535523,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.794827,0.535523,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.794909,0.535523,state,sysmon,"vv_scale1, label",F1
+68666.794974,0.535523,state,sysmon,"vv_scale2, label",F2
+68666.795041,0.535523,state,sysmon,"vv_scale3, label",F3
+68666.795103,0.535523,state,sysmon,"vv_scale4, label",F4
+68666.802703,0.543709,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.802808,0.543709,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.802905,0.543709,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.802998,0.543709,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.803076,0.543709,state,sysmon,"vv_scale1, label",F1
+68666.803142,0.543709,state,sysmon,"vv_scale2, label",F2
+68666.80321,0.543709,state,sysmon,"vv_scale3, label",F3
+68666.803274,0.543709,state,sysmon,"vv_scale4, label",F4
+68666.806515,0.547516,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.806621,0.547516,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.806718,0.547516,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.806812,0.547516,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.80689,0.547516,state,sysmon,"vv_scale1, label",F1
+68666.806955,0.547516,state,sysmon,"vv_scale2, label",F2
+68666.807021,0.547516,state,sysmon,"vv_scale3, label",F3
+68666.807094,0.547516,state,sysmon,"vv_scale4, label",F4
+68666.819364,0.560371,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.819468,0.560371,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.819564,0.560371,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.819656,0.560371,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.819755,0.560371,state,sysmon,"vv_scale1, label",F1
+68666.819825,0.560371,state,sysmon,"vv_scale2, label",F2
+68666.819891,0.560371,state,sysmon,"vv_scale3, label",F3
+68666.819955,0.560371,state,sysmon,"vv_scale4, label",F4
+68666.827859,0.568853,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.827976,0.568853,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.828083,0.568853,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.828187,0.568853,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.828273,0.568853,state,sysmon,"vv_scale1, label",F1
+68666.828346,0.568853,state,sysmon,"vv_scale2, label",F2
+68666.828422,0.568853,state,sysmon,"vv_scale3, label",F3
+68666.828492,0.568853,state,sysmon,"vv_scale4, label",F4
+68666.831294,0.572295,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.831405,0.572295,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.831507,0.572295,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.8316,0.572295,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.831678,0.572295,state,sysmon,"vv_scale1, label",F1
+68666.831742,0.572295,state,sysmon,"vv_scale2, label",F2
+68666.831809,0.572295,state,sysmon,"vv_scale3, label",F3
+68666.831882,0.572295,state,sysmon,"vv_scale4, label",F4
+68666.844419,0.585415,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.844535,0.585415,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.844642,0.585415,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.844777,0.585415,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.844864,0.585415,state,sysmon,"vv_scale1, label",F1
+68666.844941,0.585415,state,sysmon,"vv_scale2, label",F2
+68666.845012,0.585415,state,sysmon,"vv_scale3, label",F3
+68666.84508,0.585415,state,sysmon,"vv_scale4, label",F4
+68666.8527,0.593691,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.852817,0.593691,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.852924,0.593691,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.853028,0.593691,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.853114,0.593691,state,sysmon,"vv_scale1, label",F1
+68666.853186,0.593691,state,sysmon,"vv_scale2, label",F2
+68666.853261,0.593691,state,sysmon,"vv_scale3, label",F3
+68666.853331,0.593691,state,sysmon,"vv_scale4, label",F4
+68666.855993,0.596974,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.856118,0.596974,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.856226,0.596974,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.856334,0.596974,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.856412,0.596974,state,sysmon,"vv_scale1, label",F1
+68666.856482,0.596974,state,sysmon,"vv_scale2, label",F2
+68666.856554,0.596974,state,sysmon,"vv_scale3, label",F3
+68666.856617,0.596974,state,sysmon,"vv_scale4, label",F4
+68666.869414,0.610407,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.869532,0.610407,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.86964,0.610407,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.869765,0.610407,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.869853,0.610407,state,sysmon,"vv_scale1, label",F1
+68666.869924,0.610407,state,sysmon,"vv_scale2, label",F2
+68666.869999,0.610407,state,sysmon,"vv_scale3, label",F3
+68666.870069,0.610407,state,sysmon,"vv_scale4, label",F4
+68666.877729,0.618724,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.877846,0.618724,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.877953,0.618724,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.878058,0.618724,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.878144,0.618724,state,sysmon,"vv_scale1, label",F1
+68666.878216,0.618724,state,sysmon,"vv_scale2, label",F2
+68666.878292,0.618724,state,sysmon,"vv_scale3, label",F3
+68666.878362,0.618724,state,sysmon,"vv_scale4, label",F4
+68666.881511,0.622503,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.881641,0.622503,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.881766,0.622503,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.881869,0.622503,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.881954,0.622503,state,sysmon,"vv_scale1, label",F1
+68666.882027,0.622503,state,sysmon,"vv_scale2, label",F2
+68666.882113,0.622503,state,sysmon,"vv_scale3, label",F3
+68666.882187,0.622503,state,sysmon,"vv_scale4, label",F4
+68666.894383,0.635377,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.8945,0.635377,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.894636,0.635377,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.894742,0.635377,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.894831,0.635377,state,sysmon,"vv_scale1, label",F1
+68666.894905,0.635377,state,sysmon,"vv_scale2, label",F2
+68666.894977,0.635377,state,sysmon,"vv_scale3, label",F3
+68666.89505,0.635377,state,sysmon,"vv_scale4, label",F4
+68666.902592,0.643689,seed_value,sysmon_vv,,
+68666.902602,0.643689,seed_output,sysmon_vv,,1
+68666.902625,0.643689,seed_value,sysmon_vv,,
+68666.902631,0.643689,seed_output,sysmon_vv,,1
+68666.902651,0.643689,seed_value,sysmon_vv,,
+68666.902657,0.643689,seed_output,sysmon_vv,,-1
+68666.902676,0.643689,seed_value,sysmon_vv,,
+68666.902682,0.643689,seed_output,sysmon_vv,,1
+68666.902705,0.643689,state,sysmon,"vv_scale1, arrow",7
+68666.90283,0.643689,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.902841,0.643689,state,sysmon,"vv_scale2, arrow",5
+68666.902954,0.643689,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.902966,0.643689,state,sysmon,"vv_scale3, arrow",3
+68666.903074,0.643689,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.903085,0.643689,state,sysmon,"vv_scale4, arrow",7
+68666.903191,0.643689,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.903274,0.643689,state,sysmon,"vv_scale1, label",F1
+68666.903347,0.643689,state,sysmon,"vv_scale2, label",F2
+68666.903419,0.643689,state,sysmon,"vv_scale3, label",F3
+68666.903487,0.643689,state,sysmon,"vv_scale4, label",F4
+68666.907745,0.648755,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.907851,0.648755,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.907948,0.648755,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.908041,0.648755,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.908117,0.648755,state,sysmon,"vv_scale1, label",F1
+68666.908182,0.648755,state,sysmon,"vv_scale2, label",F2
+68666.908248,0.648755,state,sysmon,"vv_scale3, label",F3
+68666.908311,0.648755,state,sysmon,"vv_scale4, label",F4
+68666.919417,0.660409,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.919536,0.660409,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.919644,0.660409,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.919768,0.660409,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.919857,0.660409,state,sysmon,"vv_scale1, label",F1
+68666.91993,0.660409,state,sysmon,"vv_scale2, label",F2
+68666.920005,0.660409,state,sysmon,"vv_scale3, label",F3
+68666.920075,0.660409,state,sysmon,"vv_scale4, label",F4
+68666.927711,0.668703,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.927827,0.668703,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.927935,0.668703,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.928039,0.668703,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.928125,0.668703,state,sysmon,"vv_scale1, label",F1
+68666.928198,0.668703,state,sysmon,"vv_scale2, label",F2
+68666.928271,0.668703,state,sysmon,"vv_scale3, label",F3
+68666.928341,0.668703,state,sysmon,"vv_scale4, label",F4
+68666.932557,0.673548,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.932672,0.673548,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.93278,0.673548,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.932895,0.673548,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.932982,0.673548,state,sysmon,"vv_scale1, label",F1
+68666.933054,0.673548,state,sysmon,"vv_scale2, label",F2
+68666.93313,0.673548,state,sysmon,"vv_scale3, label",F3
+68666.933195,0.673548,state,sysmon,"vv_scale4, label",F4
+68666.944398,0.68539,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.944513,0.68539,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.944621,0.68539,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.944743,0.68539,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.94483,0.68539,state,sysmon,"vv_scale1, label",F1
+68666.944902,0.68539,state,sysmon,"vv_scale2, label",F2
+68666.944977,0.68539,state,sysmon,"vv_scale3, label",F3
+68666.945048,0.68539,state,sysmon,"vv_scale4, label",F4
+68666.952789,0.693784,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.952905,0.693784,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.953012,0.693784,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.953116,0.693784,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.953203,0.693784,state,sysmon,"vv_scale1, label",F1
+68666.953276,0.693784,state,sysmon,"vv_scale2, label",F2
+68666.953351,0.693784,state,sysmon,"vv_scale3, label",F3
+68666.953421,0.693784,state,sysmon,"vv_scale4, label",F4
+68666.957345,0.698353,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.95745,0.698353,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.957547,0.698353,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.95765,0.698353,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.957731,0.698353,state,sysmon,"vv_scale1, label",F1
+68666.957795,0.698353,state,sysmon,"vv_scale2, label",F2
+68666.95786,0.698353,state,sysmon,"vv_scale3, label",F3
+68666.957927,0.698353,state,sysmon,"vv_scale4, label",F4
+68666.969381,0.710374,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.969498,0.710374,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.969606,0.710374,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.969728,0.710374,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.969818,0.710374,state,sysmon,"vv_scale1, label",F1
+68666.96989,0.710374,state,sysmon,"vv_scale2, label",F2
+68666.969962,0.710374,state,sysmon,"vv_scale3, label",F3
+68666.970037,0.710374,state,sysmon,"vv_scale4, label",F4
+68666.977711,0.718703,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.977827,0.718703,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.977935,0.718703,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.978039,0.718703,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.978127,0.718703,state,sysmon,"vv_scale1, label",F1
+68666.9782,0.718703,state,sysmon,"vv_scale2, label",F2
+68666.978274,0.718703,state,sysmon,"vv_scale3, label",F3
+68666.978343,0.718703,state,sysmon,"vv_scale4, label",F4
+68666.981682,0.722678,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.981799,0.722678,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.981906,0.722678,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.98201,0.722678,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.982092,0.722678,state,sysmon,"vv_scale1, label",F1
+68666.982156,0.722678,state,sysmon,"vv_scale2, label",F2
+68666.982235,0.722678,state,sysmon,"vv_scale3, label",F3
+68666.982298,0.722678,state,sysmon,"vv_scale4, label",F4
+68666.994421,0.735414,state,sysmon,"vv_scale1, label",F1  NORMAL
+68666.994538,0.735414,state,sysmon,"vv_scale2, label",F2  NORMAL
+68666.994646,0.735414,state,sysmon,"vv_scale3, label",F3  NORMAL
+68666.994762,0.735414,state,sysmon,"vv_scale4, label",F4  NORMAL
+68666.994867,0.735414,state,sysmon,"vv_scale1, label",F1
+68666.994939,0.735414,state,sysmon,"vv_scale2, label",F2
+68666.995014,0.735414,state,sysmon,"vv_scale3, label",F3
+68666.995085,0.735414,state,sysmon,"vv_scale4, label",F4
+68667.002697,0.743693,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.002815,0.743693,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.003048,0.743693,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.003171,0.743693,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.003261,0.743693,state,sysmon,"vv_scale1, label",F1
+68667.00334,0.743693,state,sysmon,"vv_scale2, label",F2
+68667.003414,0.743693,state,sysmon,"vv_scale3, label",F3
+68667.003486,0.743693,state,sysmon,"vv_scale4, label",F4
+68667.006926,0.747933,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.007032,0.747933,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.007132,0.747933,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.007226,0.747933,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.007308,0.747933,state,sysmon,"vv_scale1, label",F1
+68667.007374,0.747933,state,sysmon,"vv_scale2, label",F2
+68667.007449,0.747933,state,sysmon,"vv_scale3, label",F3
+68667.00752,0.747933,state,sysmon,"vv_scale4, label",F4
+68667.019431,0.76042,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.019549,0.76042,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.019658,0.76042,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.019784,0.76042,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.019982,0.76042,state,sysmon,"vv_scale1, label",F1
+68667.020055,0.76042,state,sysmon,"vv_scale2, label",F2
+68667.020129,0.76042,state,sysmon,"vv_scale3, label",F3
+68667.020201,0.76042,state,sysmon,"vv_scale4, label",F4
+68667.027725,0.768717,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.027841,0.768717,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.02795,0.768717,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.028055,0.768717,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.028141,0.768717,state,sysmon,"vv_scale1, label",F1
+68667.028213,0.768717,state,sysmon,"vv_scale2, label",F2
+68667.028288,0.768717,state,sysmon,"vv_scale3, label",F3
+68667.028359,0.768717,state,sysmon,"vv_scale4, label",F4
+68667.031926,0.772925,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.032031,0.772925,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.032127,0.772925,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.03222,0.772925,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.032297,0.772925,state,sysmon,"vv_scale1, label",F1
+68667.032361,0.772925,state,sysmon,"vv_scale2, label",F2
+68667.032425,0.772925,state,sysmon,"vv_scale3, label",F3
+68667.032499,0.772925,state,sysmon,"vv_scale4, label",F4
+68667.044403,0.78541,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.044508,0.78541,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.044605,0.78541,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.044711,0.78541,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.0448,0.78541,state,sysmon,"vv_scale1, label",F1
+68667.044865,0.78541,state,sysmon,"vv_scale2, label",F2
+68667.044932,0.78541,state,sysmon,"vv_scale3, label",F3
+68667.044996,0.78541,state,sysmon,"vv_scale4, label",F4
+68667.052728,0.793721,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.052846,0.793721,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.052954,0.793721,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.053059,0.793721,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.053145,0.793721,state,sysmon,"vv_scale1, label",F1
+68667.053217,0.793721,state,sysmon,"vv_scale2, label",F2
+68667.053287,0.793721,state,sysmon,"vv_scale3, label",F3
+68667.053361,0.793721,state,sysmon,"vv_scale4, label",F4
+68667.056728,0.797735,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.05684,0.797735,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.056936,0.797735,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.05703,0.797735,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.057109,0.797735,state,sysmon,"vv_scale1, label",F1
+68667.057174,0.797735,state,sysmon,"vv_scale2, label",F2
+68667.057242,0.797735,state,sysmon,"vv_scale3, label",F3
+68667.057305,0.797735,state,sysmon,"vv_scale4, label",F4
+68667.069387,0.810379,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.069505,0.810379,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.069612,0.810379,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.069736,0.810379,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.069827,0.810379,state,sysmon,"vv_scale1, label",F1
+68667.069901,0.810379,state,sysmon,"vv_scale2, label",F2
+68667.069973,0.810379,state,sysmon,"vv_scale3, label",F3
+68667.070047,0.810379,state,sysmon,"vv_scale4, label",F4
+68667.077725,0.818717,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.077842,0.818717,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.077949,0.818717,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.078057,0.818717,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.07814,0.818717,state,sysmon,"vv_scale1, label",F1
+68667.078216,0.818717,state,sysmon,"vv_scale2, label",F2
+68667.078286,0.818717,state,sysmon,"vv_scale3, label",F3
+68667.078355,0.818717,state,sysmon,"vv_scale4, label",F4
+68667.081288,0.822296,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.081402,0.822296,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.081498,0.822296,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.081593,0.822296,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.081669,0.822296,state,sysmon,"vv_scale1, label",F1
+68667.081734,0.822296,state,sysmon,"vv_scale2, label",F2
+68667.081802,0.822296,state,sysmon,"vv_scale3, label",F3
+68667.081876,0.822296,state,sysmon,"vv_scale4, label",F4
+68667.094419,0.835425,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.094523,0.835425,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.094619,0.835425,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.094733,0.835425,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.094824,0.835425,state,sysmon,"vv_scale1, label",F1
+68667.09489,0.835425,state,sysmon,"vv_scale2, label",F2
+68667.094958,0.835425,state,sysmon,"vv_scale3, label",F3
+68667.095021,0.835425,state,sysmon,"vv_scale4, label",F4
+68667.102624,0.843723,seed_value,sysmon_vv,,
+68667.102634,0.843723,seed_output,sysmon_vv,,-1
+68667.102655,0.843723,seed_value,sysmon_vv,,
+68667.102662,0.843723,seed_output,sysmon_vv,,1
+68667.102681,0.843723,seed_value,sysmon_vv,,
+68667.102687,0.843723,seed_output,sysmon_vv,,1
+68667.102705,0.843723,seed_value,sysmon_vv,,
+68667.102711,0.843723,seed_output,sysmon_vv,,-1
+68667.102734,0.843723,state,sysmon,"vv_scale1, arrow",6
+68667.102857,0.843723,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.102868,0.843723,state,sysmon,"vv_scale2, arrow",6
+68667.102977,0.843723,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.102988,0.843723,state,sysmon,"vv_scale3, arrow",4
+68667.103096,0.843723,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.103106,0.843723,state,sysmon,"vv_scale4, arrow",6
+68667.103212,0.843723,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.103297,0.843723,state,sysmon,"vv_scale1, label",F1
+68667.103369,0.843723,state,sysmon,"vv_scale2, label",F2
+68667.103443,0.843723,state,sysmon,"vv_scale3, label",F3
+68667.103513,0.843723,state,sysmon,"vv_scale4, label",F4
+68667.106177,0.847178,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.106292,0.847178,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.10639,0.847178,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.106488,0.847178,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.106566,0.847178,state,sysmon,"vv_scale1, label",F1
+68667.106631,0.847178,state,sysmon,"vv_scale2, label",F2
+68667.106695,0.847178,state,sysmon,"vv_scale3, label",F3
+68667.106769,0.847178,state,sysmon,"vv_scale4, label",F4
+68667.119388,0.860381,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.119505,0.860381,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.119613,0.860381,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.119734,0.860381,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.119828,0.860381,state,sysmon,"vv_scale1, label",F1
+68667.1199,0.860381,state,sysmon,"vv_scale2, label",F2
+68667.119976,0.860381,state,sysmon,"vv_scale3, label",F3
+68667.120047,0.860381,state,sysmon,"vv_scale4, label",F4
+68667.127729,0.868723,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.127846,0.868723,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.127954,0.868723,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.128058,0.868723,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.128144,0.868723,state,sysmon,"vv_scale1, label",F1
+68667.128217,0.868723,state,sysmon,"vv_scale2, label",F2
+68667.128292,0.868723,state,sysmon,"vv_scale3, label",F3
+68667.128363,0.868723,state,sysmon,"vv_scale4, label",F4
+68667.131452,0.872461,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.131559,0.872461,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.131654,0.872461,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.131749,0.872461,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.131823,0.872461,state,sysmon,"vv_scale1, label",F1
+68667.131891,0.872461,state,sysmon,"vv_scale2, label",F2
+68667.131954,0.872461,state,sysmon,"vv_scale3, label",F3
+68667.13202,0.872461,state,sysmon,"vv_scale4, label",F4
+68667.144385,0.885379,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.144503,0.885379,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.14461,0.885379,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.144733,0.885379,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.144819,0.885379,state,sysmon,"vv_scale1, label",F1
+68667.144895,0.885379,state,sysmon,"vv_scale2, label",F2
+68667.145025,0.885379,state,sysmon,"vv_scale3, label",F3
+68667.145097,0.885379,state,sysmon,"vv_scale4, label",F4
+68667.152729,0.893723,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.152845,0.893723,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.152952,0.893723,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.153056,0.893723,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.153142,0.893723,state,sysmon,"vv_scale1, label",F1
+68667.153214,0.893723,state,sysmon,"vv_scale2, label",F2
+68667.153288,0.893723,state,sysmon,"vv_scale3, label",F3
+68667.153357,0.893723,state,sysmon,"vv_scale4, label",F4
+68667.156432,0.897442,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.156538,0.897442,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.156634,0.897442,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.156727,0.897442,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.156807,0.897442,state,sysmon,"vv_scale1, label",F1
+68667.156872,0.897442,state,sysmon,"vv_scale2, label",F2
+68667.156939,0.897442,state,sysmon,"vv_scale3, label",F3
+68667.157002,0.897442,state,sysmon,"vv_scale4, label",F4
+68667.169388,0.910396,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.169492,0.910396,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.169587,0.910396,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.169692,0.910396,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.169786,0.910396,state,sysmon,"vv_scale1, label",F1
+68667.169855,0.910396,state,sysmon,"vv_scale2, label",F2
+68667.169922,0.910396,state,sysmon,"vv_scale3, label",F3
+68667.169985,0.910396,state,sysmon,"vv_scale4, label",F4
+68667.177728,0.918722,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.177845,0.918722,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.177952,0.918722,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.178055,0.918722,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.178142,0.918722,state,sysmon,"vv_scale1, label",F1
+68667.178215,0.918722,state,sysmon,"vv_scale2, label",F2
+68667.17829,0.918722,state,sysmon,"vv_scale3, label",F3
+68667.17836,0.918722,state,sysmon,"vv_scale4, label",F4
+68667.182086,0.923077,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.182203,0.923077,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.18231,0.923077,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.182414,0.923077,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.182501,0.923077,state,sysmon,"vv_scale1, label",F1
+68667.182574,0.923077,state,sysmon,"vv_scale2, label",F2
+68667.182661,0.923077,state,sysmon,"vv_scale3, label",F3
+68667.182732,0.923077,state,sysmon,"vv_scale4, label",F4
+68667.194435,0.935427,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.194551,0.935427,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.194658,0.935427,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.194785,0.935427,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.194877,0.935427,state,sysmon,"vv_scale1, label",F1
+68667.194951,0.935427,state,sysmon,"vv_scale2, label",F2
+68667.195027,0.935427,state,sysmon,"vv_scale3, label",F3
+68667.195097,0.935427,state,sysmon,"vv_scale4, label",F4
+68667.202704,0.9437,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.202821,0.9437,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.202928,0.9437,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.203031,0.9437,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.203119,0.9437,state,sysmon,"vv_scale1, label",F1
+68667.203192,0.9437,state,sysmon,"vv_scale2, label",F2
+68667.203266,0.9437,state,sysmon,"vv_scale3, label",F3
+68667.203339,0.9437,state,sysmon,"vv_scale4, label",F4
+68667.207272,0.948261,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.20739,0.948261,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.207496,0.948261,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.207613,0.948261,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.2077,0.948261,state,sysmon,"vv_scale1, label",F1
+68667.207772,0.948261,state,sysmon,"vv_scale2, label",F2
+68667.207846,0.948261,state,sysmon,"vv_scale3, label",F3
+68667.207917,0.948261,state,sysmon,"vv_scale4, label",F4
+68667.219387,0.960381,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.219505,0.960381,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.219613,0.960381,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.219718,0.960381,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.219805,0.960381,state,sysmon,"vv_scale1, label",F1
+68667.219878,0.960381,state,sysmon,"vv_scale2, label",F2
+68667.219949,0.960381,state,sysmon,"vv_scale3, label",F3
+68667.220025,0.960381,state,sysmon,"vv_scale4, label",F4
+68667.223002,0.96399,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.223118,0.96399,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.223228,0.96399,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.223332,0.96399,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.22342,0.96399,state,sysmon,"vv_scale1, label",F1
+68667.223492,0.96399,state,sysmon,"vv_scale2, label",F2
+68667.223566,0.96399,state,sysmon,"vv_scale3, label",F3
+68667.223648,0.96399,state,sysmon,"vv_scale4, label",F4
+68667.23607,0.977066,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.23619,0.977066,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.236309,0.977066,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.236414,0.977066,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.236522,0.977066,state,sysmon,"vv_scale1, label",F1
+68667.236594,0.977066,state,sysmon,"vv_scale2, label",F2
+68667.236668,0.977066,state,sysmon,"vv_scale3, label",F3
+68667.236739,0.977066,state,sysmon,"vv_scale4, label",F4
+68667.244372,0.985365,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.244488,0.985365,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.244597,0.985365,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.244702,0.985365,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.244788,0.985365,state,sysmon,"vv_scale1, label",F1
+68667.244862,0.985365,state,sysmon,"vv_scale2, label",F2
+68667.244935,0.985365,state,sysmon,"vv_scale3, label",F3
+68667.245008,0.985365,state,sysmon,"vv_scale4, label",F4
+68667.2481,0.989111,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.24821,0.989111,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.248307,0.989111,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.248401,0.989111,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.24848,0.989111,state,sysmon,"vv_scale1, label",F1
+68667.248545,0.989111,state,sysmon,"vv_scale2, label",F2
+68667.248613,0.989111,state,sysmon,"vv_scale3, label",F3
+68667.248687,0.989111,state,sysmon,"vv_scale4, label",F4
+68667.261052,1.002046,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.26117,1.002046,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.261278,1.002046,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.261402,1.002046,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.261491,1.002046,state,sysmon,"vv_scale1, label",F1
+68667.261563,1.002046,state,sysmon,"vv_scale2, label",F2
+68667.261638,1.002046,state,sysmon,"vv_scale3, label",F3
+68667.261709,1.002046,state,sysmon,"vv_scale4, label",F4
+68667.269363,1.010356,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.26948,1.010356,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.269586,1.010356,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.26969,1.010356,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.269776,1.010356,state,sysmon,"vv_scale1, label",F1
+68667.269849,1.010356,state,sysmon,"vv_scale2, label",F2
+68667.269924,1.010356,state,sysmon,"vv_scale3, label",F3
+68667.269995,1.010356,state,sysmon,"vv_scale4, label",F4
+68667.272725,1.013712,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.272853,1.013712,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.272961,1.013712,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.273067,1.013712,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.273155,1.013712,state,sysmon,"vv_scale1, label",F1
+68667.273234,1.013712,state,sysmon,"vv_scale2, label",F2
+68667.27331,1.013712,state,sysmon,"vv_scale3, label",F3
+68667.273381,1.013712,state,sysmon,"vv_scale4, label",F4
+68667.286089,1.027081,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.286206,1.027081,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.286347,1.027081,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.286461,1.027081,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.286548,1.027081,state,sysmon,"vv_scale1, label",F1
+68667.28662,1.027081,state,sysmon,"vv_scale2, label",F2
+68667.286696,1.027081,state,sysmon,"vv_scale3, label",F3
+68667.286768,1.027081,state,sysmon,"vv_scale4, label",F4
+68667.294396,1.035387,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.294512,1.035387,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.294619,1.035387,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.294723,1.035387,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.294809,1.035387,state,sysmon,"vv_scale1, label",F1
+68667.294883,1.035387,state,sysmon,"vv_scale2, label",F2
+68667.294958,1.035387,state,sysmon,"vv_scale3, label",F3
+68667.295029,1.035387,state,sysmon,"vv_scale4, label",F4
+68667.297952,1.038938,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.29807,1.038938,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.298182,1.038938,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.298289,1.038938,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.298376,1.038938,state,sysmon,"vv_scale1, label",F1
+68667.298454,1.038938,state,sysmon,"vv_scale2, label",F2
+68667.298532,1.038938,state,sysmon,"vv_scale3, label",F3
+68667.298602,1.038938,state,sysmon,"vv_scale4, label",F4
+68667.31095,1.052049,seed_value,sysmon_vv,,
+68667.31096,1.052049,seed_output,sysmon_vv,,1
+68667.310982,1.052049,seed_value,sysmon_vv,,
+68667.310988,1.052049,seed_output,sysmon_vv,,1
+68667.311007,1.052049,seed_value,sysmon_vv,,
+68667.311013,1.052049,seed_output,sysmon_vv,,-1
+68667.311031,1.052049,seed_value,sysmon_vv,,
+68667.311037,1.052049,seed_output,sysmon_vv,,1
+68667.31106,1.052049,state,sysmon,"vv_scale1, arrow",7
+68667.311184,1.052049,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.311194,1.052049,state,sysmon,"vv_scale2, arrow",7
+68667.311308,1.052049,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.31132,1.052049,state,sysmon,"vv_scale3, arrow",3
+68667.311448,1.052049,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.311459,1.052049,state,sysmon,"vv_scale4, arrow",7
+68667.311566,1.052049,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.31165,1.052049,state,sysmon,"vv_scale1, label",F1
+68667.31172,1.052049,state,sysmon,"vv_scale2, label",F2
+68667.311795,1.052049,state,sysmon,"vv_scale3, label",F3
+68667.311865,1.052049,state,sysmon,"vv_scale4, label",F4
+68667.319396,1.060393,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.319515,1.060393,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.319623,1.060393,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.319727,1.060393,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.319813,1.060393,state,sysmon,"vv_scale1, label",F1
+68667.319885,1.060393,state,sysmon,"vv_scale2, label",F2
+68667.319959,1.060393,state,sysmon,"vv_scale3, label",F3
+68667.320029,1.060393,state,sysmon,"vv_scale4, label",F4
+68667.32369,1.064676,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.323805,1.064676,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.323914,1.064676,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.324018,1.064676,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.324103,1.064676,state,sysmon,"vv_scale1, label",F1
+68667.324175,1.064676,state,sysmon,"vv_scale2, label",F2
+68667.324246,1.064676,state,sysmon,"vv_scale3, label",F3
+68667.324331,1.064676,state,sysmon,"vv_scale4, label",F4
+68667.336101,1.077092,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.336218,1.077092,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.336327,1.077092,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.336449,1.077092,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.33654,1.077092,state,sysmon,"vv_scale1, label",F1
+68667.336614,1.077092,state,sysmon,"vv_scale2, label",F2
+68667.336686,1.077092,state,sysmon,"vv_scale3, label",F3
+68667.336761,1.077092,state,sysmon,"vv_scale4, label",F4
+68667.344376,1.085368,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.344494,1.085368,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.344602,1.085368,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.344707,1.085368,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.344793,1.085368,state,sysmon,"vv_scale1, label",F1
+68667.344866,1.085368,state,sysmon,"vv_scale2, label",F2
+68667.344939,1.085368,state,sysmon,"vv_scale3, label",F3
+68667.345008,1.085368,state,sysmon,"vv_scale4, label",F4
+68667.348085,1.08908,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.348212,1.08908,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.34832,1.08908,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.348425,1.08908,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.348513,1.08908,state,sysmon,"vv_scale1, label",F1
+68667.348586,1.08908,state,sysmon,"vv_scale2, label",F2
+68667.34866,1.08908,state,sysmon,"vv_scale3, label",F3
+68667.348738,1.08908,state,sysmon,"vv_scale4, label",F4
+68667.361103,1.102095,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.361219,1.102095,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.361326,1.102095,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.361452,1.102095,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.361541,1.102095,state,sysmon,"vv_scale1, label",F1
+68667.361614,1.102095,state,sysmon,"vv_scale2, label",F2
+68667.361689,1.102095,state,sysmon,"vv_scale3, label",F3
+68667.36176,1.102095,state,sysmon,"vv_scale4, label",F4
+68667.369404,1.110399,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.369521,1.110399,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.36963,1.110399,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.369736,1.110399,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.369822,1.110399,state,sysmon,"vv_scale1, label",F1
+68667.369894,1.110399,state,sysmon,"vv_scale2, label",F2
+68667.36997,1.110399,state,sysmon,"vv_scale3, label",F3
+68667.37004,1.110399,state,sysmon,"vv_scale4, label",F4
+68667.373694,1.114678,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.373811,1.114678,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.373919,1.114678,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.374022,1.114678,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.374109,1.114678,state,sysmon,"vv_scale1, label",F1
+68667.374182,1.114678,state,sysmon,"vv_scale2, label",F2
+68667.374265,1.114678,state,sysmon,"vv_scale3, label",F3
+68667.374336,1.114678,state,sysmon,"vv_scale4, label",F4
+68667.386092,1.127084,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.386208,1.127084,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.386316,1.127084,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.38644,1.127084,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.386525,1.127084,state,sysmon,"vv_scale1, label",F1
+68667.386598,1.127084,state,sysmon,"vv_scale2, label",F2
+68667.386673,1.127084,state,sysmon,"vv_scale3, label",F3
+68667.386744,1.127084,state,sysmon,"vv_scale4, label",F4
+68667.394402,1.135399,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.39452,1.135399,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.394627,1.135399,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.394731,1.135399,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.394818,1.135399,state,sysmon,"vv_scale1, label",F1
+68667.394891,1.135399,state,sysmon,"vv_scale2, label",F2
+68667.394963,1.135399,state,sysmon,"vv_scale3, label",F3
+68667.395037,1.135399,state,sysmon,"vv_scale4, label",F4
+68667.398842,1.13979,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.398993,1.13979,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.399108,1.13979,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.399218,1.13979,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.399309,1.13979,state,sysmon,"vv_scale1, label",F1
+68667.399384,1.13979,state,sysmon,"vv_scale2, label",F2
+68667.399463,1.13979,state,sysmon,"vv_scale3, label",F3
+68667.399535,1.13979,state,sysmon,"vv_scale4, label",F4
+68667.411119,1.152106,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.41124,1.152106,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.411361,1.152106,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.411483,1.152106,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.411636,1.152106,state,sysmon,"vv_scale1, label",F1
+68667.411711,1.152106,state,sysmon,"vv_scale2, label",F2
+68667.411787,1.152106,state,sysmon,"vv_scale3, label",F3
+68667.411858,1.152106,state,sysmon,"vv_scale4, label",F4
+68667.4194,1.160392,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.419518,1.160392,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.419625,1.160392,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.41973,1.160392,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.419818,1.160392,state,sysmon,"vv_scale1, label",F1
+68667.419891,1.160392,state,sysmon,"vv_scale2, label",F2
+68667.419965,1.160392,state,sysmon,"vv_scale3, label",F3
+68667.420037,1.160392,state,sysmon,"vv_scale4, label",F4
+68667.422976,1.163968,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.4231,1.163968,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.423211,1.163968,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.423316,1.163968,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.423405,1.163968,state,sysmon,"vv_scale1, label",F1
+68667.423477,1.163968,state,sysmon,"vv_scale2, label",F2
+68667.423554,1.163968,state,sysmon,"vv_scale3, label",F3
+68667.423633,1.163968,state,sysmon,"vv_scale4, label",F4
+68667.436085,1.177077,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.436202,1.177077,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.43631,1.177077,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.436436,1.177077,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.436525,1.177077,state,sysmon,"vv_scale1, label",F1
+68667.4366,1.177077,state,sysmon,"vv_scale2, label",F2
+68667.436672,1.177077,state,sysmon,"vv_scale3, label",F3
+68667.436746,1.177077,state,sysmon,"vv_scale4, label",F4
+68667.444408,1.185402,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.444525,1.185402,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.444633,1.185402,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.444737,1.185402,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.444823,1.185402,state,sysmon,"vv_scale1, label",F1
+68667.444895,1.185402,state,sysmon,"vv_scale2, label",F2
+68667.444968,1.185402,state,sysmon,"vv_scale3, label",F3
+68667.445042,1.185402,state,sysmon,"vv_scale4, label",F4
+68667.448375,1.189357,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.448491,1.189357,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.448598,1.189357,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.448702,1.189357,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.448793,1.189357,state,sysmon,"vv_scale1, label",F1
+68667.44886,1.189357,state,sysmon,"vv_scale2, label",F2
+68667.448936,1.189357,state,sysmon,"vv_scale3, label",F3
+68667.449,1.189357,state,sysmon,"vv_scale4, label",F4
+68667.46118,1.202172,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.461297,1.202172,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.461412,1.202172,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.461527,1.202172,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.461618,1.202172,state,sysmon,"vv_scale1, label",F1
+68667.461691,1.202172,state,sysmon,"vv_scale2, label",F2
+68667.461767,1.202172,state,sysmon,"vv_scale3, label",F3
+68667.461838,1.202172,state,sysmon,"vv_scale4, label",F4
+68667.469401,1.210396,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.469517,1.210396,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.469624,1.210396,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.469727,1.210396,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.469813,1.210396,state,sysmon,"vv_scale1, label",F1
+68667.469885,1.210396,state,sysmon,"vv_scale2, label",F2
+68667.469957,1.210396,state,sysmon,"vv_scale3, label",F3
+68667.470031,1.210396,state,sysmon,"vv_scale4, label",F4
+68667.474322,1.215329,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.474425,1.215329,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.47452,1.215329,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.474629,1.215329,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.47471,1.215329,state,sysmon,"vv_scale1, label",F1
+68667.474776,1.215329,state,sysmon,"vv_scale2, label",F2
+68667.47484,1.215329,state,sysmon,"vv_scale3, label",F3
+68667.474907,1.215329,state,sysmon,"vv_scale4, label",F4
+68667.486048,1.227056,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.486153,1.227056,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.486248,1.227056,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.486344,1.227056,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.486434,1.227056,state,sysmon,"vv_scale1, label",F1
+68667.486502,1.227056,state,sysmon,"vv_scale2, label",F2
+68667.486565,1.227056,state,sysmon,"vv_scale3, label",F3
+68667.486633,1.227056,state,sysmon,"vv_scale4, label",F4
+68667.494396,1.235393,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.49451,1.235393,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.494616,1.235393,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.49472,1.235393,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.494806,1.235393,state,sysmon,"vv_scale1, label",F1
+68667.494879,1.235393,state,sysmon,"vv_scale2, label",F2
+68667.49495,1.235393,state,sysmon,"vv_scale3, label",F3
+68667.495025,1.235393,state,sysmon,"vv_scale4, label",F4
+68667.498676,1.239663,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.498792,1.239663,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.498898,1.239663,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.499002,1.239663,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.499089,1.239663,state,sysmon,"vv_scale1, label",F1
+68667.499158,1.239663,state,sysmon,"vv_scale2, label",F2
+68667.499236,1.239663,state,sysmon,"vv_scale3, label",F3
+68667.499303,1.239663,state,sysmon,"vv_scale4, label",F4
+68667.510974,1.252072,seed_value,sysmon_vv,,
+68667.510984,1.252072,seed_output,sysmon_vv,,1
+68667.511007,1.252072,seed_value,sysmon_vv,,
+68667.511013,1.252072,seed_output,sysmon_vv,,-1
+68667.511032,1.252072,seed_value,sysmon_vv,,
+68667.511038,1.252072,seed_output,sysmon_vv,,1
+68667.511057,1.252072,seed_value,sysmon_vv,,
+68667.511063,1.252072,seed_output,sysmon_vv,,-1
+68667.511086,1.252072,state,sysmon,"vv_scale1, arrow",6
+68667.511208,1.252072,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.51122,1.252072,state,sysmon,"vv_scale2, arrow",6
+68667.51133,1.252072,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.511342,1.252072,state,sysmon,"vv_scale3, arrow",4
+68667.511451,1.252072,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.511462,1.252072,state,sysmon,"vv_scale4, arrow",6
+68667.511566,1.252072,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.511652,1.252072,state,sysmon,"vv_scale1, label",F1
+68667.511723,1.252072,state,sysmon,"vv_scale2, label",F2
+68667.511795,1.252072,state,sysmon,"vv_scale3, label",F3
+68667.511867,1.252072,state,sysmon,"vv_scale4, label",F4
+68667.519397,1.260393,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.519514,1.260393,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.51962,1.260393,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.519723,1.260393,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.519807,1.260393,state,sysmon,"vv_scale1, label",F1
+68667.51988,1.260393,state,sysmon,"vv_scale2, label",F2
+68667.519954,1.260393,state,sysmon,"vv_scale3, label",F3
+68667.520023,1.260393,state,sysmon,"vv_scale4, label",F4
+68667.52411,1.26512,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.524213,1.26512,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.524308,1.26512,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.5244,1.26512,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.524489,1.26512,state,sysmon,"vv_scale1, label",F1
+68667.524557,1.26512,state,sysmon,"vv_scale2, label",F2
+68667.52462,1.26512,state,sysmon,"vv_scale3, label",F3
+68667.524686,1.26512,state,sysmon,"vv_scale4, label",F4
+68667.536067,1.277074,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.53617,1.277074,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.536265,1.277074,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.536369,1.277074,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.536453,1.277074,state,sysmon,"vv_scale1, label",F1
+68667.536521,1.277074,state,sysmon,"vv_scale2, label",F2
+68667.536637,1.277074,state,sysmon,"vv_scale3, label",F3
+68667.536703,1.277074,state,sysmon,"vv_scale4, label",F4
+68667.544379,1.285372,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.544495,1.285372,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.544601,1.285372,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.544705,1.285372,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.544792,1.285372,state,sysmon,"vv_scale1, label",F1
+68667.544865,1.285372,state,sysmon,"vv_scale2, label",F2
+68667.544939,1.285372,state,sysmon,"vv_scale3, label",F3
+68667.54501,1.285372,state,sysmon,"vv_scale4, label",F4
+68667.548615,1.289615,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.548718,1.289615,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.548813,1.289615,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.548911,1.289615,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.548983,1.289615,state,sysmon,"vv_scale1, label",F1
+68667.54905,1.289615,state,sysmon,"vv_scale2, label",F2
+68667.549113,1.289615,state,sysmon,"vv_scale3, label",F3
+68667.549176,1.289615,state,sysmon,"vv_scale4, label",F4
+68667.561129,1.302121,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.561244,1.302121,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.561363,1.302121,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.561474,1.302121,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.561562,1.302121,state,sysmon,"vv_scale1, label",F1
+68667.561634,1.302121,state,sysmon,"vv_scale2, label",F2
+68667.561709,1.302121,state,sysmon,"vv_scale3, label",F3
+68667.561779,1.302121,state,sysmon,"vv_scale4, label",F4
+68667.569439,1.310436,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.569556,1.310436,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.569663,1.310436,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.569766,1.310436,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.569852,1.310436,state,sysmon,"vv_scale1, label",F1
+68667.569925,1.310436,state,sysmon,"vv_scale2, label",F2
+68667.57,1.310436,state,sysmon,"vv_scale3, label",F3
+68667.570071,1.310436,state,sysmon,"vv_scale4, label",F4
+68667.573204,1.314215,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.573312,1.314215,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.573408,1.314215,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.573502,1.314215,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.57358,1.314215,state,sysmon,"vv_scale1, label",F1
+68667.573644,1.314215,state,sysmon,"vv_scale2, label",F2
+68667.573711,1.314215,state,sysmon,"vv_scale3, label",F3
+68667.573774,1.314215,state,sysmon,"vv_scale4, label",F4
+68667.586103,1.327097,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.586219,1.327097,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.586326,1.327097,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.586456,1.327097,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.586548,1.327097,state,sysmon,"vv_scale1, label",F1
+68667.58662,1.327097,state,sysmon,"vv_scale2, label",F2
+68667.586695,1.327097,state,sysmon,"vv_scale3, label",F3
+68667.586768,1.327097,state,sysmon,"vv_scale4, label",F4
+68667.594373,1.335367,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.594489,1.335367,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.594596,1.335367,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.594699,1.335367,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.594787,1.335367,state,sysmon,"vv_scale1, label",F1
+68667.594859,1.335367,state,sysmon,"vv_scale2, label",F2
+68667.59493,1.335367,state,sysmon,"vv_scale3, label",F3
+68667.595004,1.335367,state,sysmon,"vv_scale4, label",F4
+68667.598239,1.33923,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.598365,1.33923,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.598471,1.33923,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.598575,1.33923,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.598659,1.33923,state,sysmon,"vv_scale1, label",F1
+68667.598731,1.33923,state,sysmon,"vv_scale2, label",F2
+68667.598806,1.33923,state,sysmon,"vv_scale3, label",F3
+68667.598887,1.33923,state,sysmon,"vv_scale4, label",F4
+68667.611115,1.352112,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.611231,1.352112,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.61135,1.352112,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.611464,1.352112,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.611554,1.352112,state,sysmon,"vv_scale1, label",F1
+68667.611627,1.352112,state,sysmon,"vv_scale2, label",F2
+68667.611701,1.352112,state,sysmon,"vv_scale3, label",F3
+68667.611771,1.352112,state,sysmon,"vv_scale4, label",F4
+68667.619398,1.360395,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.619514,1.360395,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.61962,1.360395,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.619724,1.360395,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.61981,1.360395,state,sysmon,"vv_scale1, label",F1
+68667.619882,1.360395,state,sysmon,"vv_scale2, label",F2
+68667.619956,1.360395,state,sysmon,"vv_scale3, label",F3
+68667.620027,1.360395,state,sysmon,"vv_scale4, label",F4
+68667.622822,1.363799,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.622939,1.363799,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.623047,1.363799,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.623144,1.363799,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.62322,1.363799,state,sysmon,"vv_scale1, label",F1
+68667.623285,1.363799,state,sysmon,"vv_scale2, label",F2
+68667.623352,1.363799,state,sysmon,"vv_scale3, label",F3
+68667.623423,1.363799,state,sysmon,"vv_scale4, label",F4
+68667.63606,1.377053,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.636177,1.377053,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.636284,1.377053,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.636405,1.377053,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.636495,1.377053,state,sysmon,"vv_scale1, label",F1
+68667.636568,1.377053,state,sysmon,"vv_scale2, label",F2
+68667.636644,1.377053,state,sysmon,"vv_scale3, label",F3
+68667.636715,1.377053,state,sysmon,"vv_scale4, label",F4
+68667.644368,1.385362,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.644485,1.385362,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.644592,1.385362,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.644695,1.385362,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.644781,1.385362,state,sysmon,"vv_scale1, label",F1
+68667.644853,1.385362,state,sysmon,"vv_scale2, label",F2
+68667.644927,1.385362,state,sysmon,"vv_scale3, label",F3
+68667.644998,1.385362,state,sysmon,"vv_scale4, label",F4
+68667.648051,1.389036,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.648176,1.389036,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.648282,1.389036,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.648387,1.389036,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.648473,1.389036,state,sysmon,"vv_scale1, label",F1
+68667.648547,1.389036,state,sysmon,"vv_scale2, label",F2
+68667.64862,1.389036,state,sysmon,"vv_scale3, label",F3
+68667.6487,1.389036,state,sysmon,"vv_scale4, label",F4
+68667.661105,1.4021,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.661223,1.4021,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.661329,1.4021,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.66145,1.4021,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.66154,1.4021,state,sysmon,"vv_scale1, label",F1
+68667.661614,1.4021,state,sysmon,"vv_scale2, label",F2
+68667.661686,1.4021,state,sysmon,"vv_scale3, label",F3
+68667.661759,1.4021,state,sysmon,"vv_scale4, label",F4
+68667.669379,1.410376,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.669496,1.410376,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.669603,1.410376,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.669718,1.410376,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.669804,1.410376,state,sysmon,"vv_scale1, label",F1
+68667.669878,1.410376,state,sysmon,"vv_scale2, label",F2
+68667.669953,1.410376,state,sysmon,"vv_scale3, label",F3
+68667.670025,1.410376,state,sysmon,"vv_scale4, label",F4
+68667.672695,1.413677,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.672823,1.413677,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.672929,1.413677,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.673061,1.413677,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.673158,1.413677,state,sysmon,"vv_scale1, label",F1
+68667.673237,1.413677,state,sysmon,"vv_scale2, label",F2
+68667.673315,1.413677,state,sysmon,"vv_scale3, label",F3
+68667.673386,1.413677,state,sysmon,"vv_scale4, label",F4
+68667.686112,1.427105,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.686228,1.427105,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.686334,1.427105,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.686465,1.427105,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.686559,1.427105,state,sysmon,"vv_scale1, label",F1
+68667.686632,1.427105,state,sysmon,"vv_scale2, label",F2
+68667.686701,1.427105,state,sysmon,"vv_scale3, label",F3
+68667.686775,1.427105,state,sysmon,"vv_scale4, label",F4
+68667.694375,1.435369,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.694491,1.435369,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.694598,1.435369,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.694701,1.435369,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.694789,1.435369,state,sysmon,"vv_scale1, label",F1
+68667.694862,1.435369,state,sysmon,"vv_scale2, label",F2
+68667.694933,1.435369,state,sysmon,"vv_scale3, label",F3
+68667.695007,1.435369,state,sysmon,"vv_scale4, label",F4
+68667.697999,1.438983,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.698119,1.438983,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.698225,1.438983,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.698329,1.438983,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.698415,1.438983,state,sysmon,"vv_scale1, label",F1
+68667.698488,1.438983,state,sysmon,"vv_scale2, label",F2
+68667.69857,1.438983,state,sysmon,"vv_scale3, label",F3
+68667.698641,1.438983,state,sysmon,"vv_scale4, label",F4
+68667.711052,1.452046,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.711169,1.452046,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.711276,1.452046,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.711401,1.452046,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.711489,1.452046,state,sysmon,"vv_scale1, label",F1
+68667.711561,1.452046,state,sysmon,"vv_scale2, label",F2
+68667.711636,1.452046,state,sysmon,"vv_scale3, label",F3
+68667.711706,1.452046,state,sysmon,"vv_scale4, label",F4
+68667.719262,1.460362,seed_value,sysmon_vv,,
+68667.719272,1.460362,seed_output,sysmon_vv,,1
+68667.719293,1.460362,seed_value,sysmon_vv,,
+68667.7193,1.460362,seed_output,sysmon_vv,,-1
+68667.719319,1.460362,seed_value,sysmon_vv,,
+68667.719325,1.460362,seed_output,sysmon_vv,,-1
+68667.719343,1.460362,seed_value,sysmon_vv,,
+68667.719349,1.460362,seed_output,sysmon_vv,,-1
+68667.719372,1.460362,state,sysmon,"vv_scale1, arrow",7
+68667.719496,1.460362,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.719507,1.460362,state,sysmon,"vv_scale2, arrow",5
+68667.719615,1.460362,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.719626,1.460362,state,sysmon,"vv_scale3, arrow",3
+68667.719733,1.460362,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.719743,1.460362,state,sysmon,"vv_scale4, arrow",5
+68667.719847,1.460362,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.719933,1.460362,state,sysmon,"vv_scale1, label",F1
+68667.720005,1.460362,state,sysmon,"vv_scale2, label",F2
+68667.720081,1.460362,state,sysmon,"vv_scale3, label",F3
+68667.720152,1.460362,state,sysmon,"vv_scale4, label",F4
+68667.723105,1.464094,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.723231,1.464094,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.723337,1.464094,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.72344,1.464094,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.723526,1.464094,state,sysmon,"vv_scale1, label",F1
+68667.723599,1.464094,state,sysmon,"vv_scale2, label",F2
+68667.723681,1.464094,state,sysmon,"vv_scale3, label",F3
+68667.723753,1.464094,state,sysmon,"vv_scale4, label",F4
+68667.736082,1.477076,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.736198,1.477076,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.736305,1.477076,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.736421,1.477076,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.736516,1.477076,state,sysmon,"vv_scale1, label",F1
+68667.736589,1.477076,state,sysmon,"vv_scale2, label",F2
+68667.736663,1.477076,state,sysmon,"vv_scale3, label",F3
+68667.736734,1.477076,state,sysmon,"vv_scale4, label",F4
+68667.744396,1.485392,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.744515,1.485392,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.744621,1.485392,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.744726,1.485392,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.744813,1.485392,state,sysmon,"vv_scale1, label",F1
+68667.744886,1.485392,state,sysmon,"vv_scale2, label",F2
+68667.744962,1.485392,state,sysmon,"vv_scale3, label",F3
+68667.745033,1.485392,state,sysmon,"vv_scale4, label",F4
+68667.748,1.488983,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.748117,1.488983,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.748227,1.488983,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.748331,1.488983,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.748417,1.488983,state,sysmon,"vv_scale1, label",F1
+68667.74849,1.488983,state,sysmon,"vv_scale2, label",F2
+68667.748568,1.488983,state,sysmon,"vv_scale3, label",F3
+68667.748646,1.488983,state,sysmon,"vv_scale4, label",F4
+68667.761073,1.502064,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.761188,1.502064,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.761294,1.502064,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.761411,1.502064,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.761511,1.502064,state,sysmon,"vv_scale1, label",F1
+68667.761585,1.502064,state,sysmon,"vv_scale2, label",F2
+68667.761661,1.502064,state,sysmon,"vv_scale3, label",F3
+68667.761732,1.502064,state,sysmon,"vv_scale4, label",F4
+68667.769394,1.510388,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.769508,1.510388,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.769614,1.510388,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.76972,1.510388,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.769806,1.510388,state,sysmon,"vv_scale1, label",F1
+68667.769878,1.510388,state,sysmon,"vv_scale2, label",F2
+68667.769953,1.510388,state,sysmon,"vv_scale3, label",F3
+68667.770025,1.510388,state,sysmon,"vv_scale4, label",F4
+68667.773046,1.514039,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.773154,1.514039,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.773249,1.514039,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.773342,1.514039,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.77342,1.514039,state,sysmon,"vv_scale1, label",F1
+68667.773485,1.514039,state,sysmon,"vv_scale2, label",F2
+68667.773553,1.514039,state,sysmon,"vv_scale3, label",F3
+68667.773617,1.514039,state,sysmon,"vv_scale4, label",F4
+68667.786126,1.527121,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.786241,1.527121,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.78636,1.527121,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.786479,1.527121,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.786564,1.527121,state,sysmon,"vv_scale1, label",F1
+68667.786636,1.527121,state,sysmon,"vv_scale2, label",F2
+68667.78671,1.527121,state,sysmon,"vv_scale3, label",F3
+68667.786779,1.527121,state,sysmon,"vv_scale4, label",F4
+68667.794399,1.535397,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.794514,1.535397,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.794622,1.535397,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.794726,1.535397,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.794811,1.535397,state,sysmon,"vv_scale1, label",F1
+68667.794885,1.535397,state,sysmon,"vv_scale2, label",F2
+68667.794958,1.535397,state,sysmon,"vv_scale3, label",F3
+68667.795029,1.535397,state,sysmon,"vv_scale4, label",F4
+68667.798648,1.539654,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.798757,1.539654,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.798853,1.539654,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.798946,1.539654,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.799023,1.539654,state,sysmon,"vv_scale1, label",F1
+68667.799106,1.539654,state,sysmon,"vv_scale2, label",F2
+68667.799182,1.539654,state,sysmon,"vv_scale3, label",F3
+68667.799248,1.539654,state,sysmon,"vv_scale4, label",F4
+68667.811112,1.552105,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.811227,1.552105,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.811334,1.552105,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.811458,1.552105,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.811547,1.552105,state,sysmon,"vv_scale1, label",F1
+68667.81162,1.552105,state,sysmon,"vv_scale2, label",F2
+68667.811695,1.552105,state,sysmon,"vv_scale3, label",F3
+68667.811765,1.552105,state,sysmon,"vv_scale4, label",F4
+68667.819453,1.560383,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.819569,1.560383,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.819675,1.560383,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.819778,1.560383,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.819864,1.560383,state,sysmon,"vv_scale1, label",F1
+68667.819937,1.560383,state,sysmon,"vv_scale2, label",F2
+68667.820012,1.560383,state,sysmon,"vv_scale3, label",F3
+68667.820082,1.560383,state,sysmon,"vv_scale4, label",F4
+68667.82348,1.564473,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.823587,1.564473,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.823685,1.564473,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.823782,1.564473,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.823858,1.564473,state,sysmon,"vv_scale1, label",F1
+68667.823923,1.564473,state,sysmon,"vv_scale2, label",F2
+68667.823988,1.564473,state,sysmon,"vv_scale3, label",F3
+68667.824061,1.564473,state,sysmon,"vv_scale4, label",F4
+68667.836181,1.577186,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.836287,1.577186,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.836402,1.577186,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.836499,1.577186,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.836579,1.577186,state,sysmon,"vv_scale1, label",F1
+68667.836644,1.577186,state,sysmon,"vv_scale2, label",F2
+68667.836712,1.577186,state,sysmon,"vv_scale3, label",F3
+68667.836775,1.577186,state,sysmon,"vv_scale4, label",F4
+68667.844407,1.585399,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.844524,1.585399,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.84463,1.585399,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.844733,1.585399,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.844818,1.585399,state,sysmon,"vv_scale1, label",F1
+68667.844891,1.585399,state,sysmon,"vv_scale2, label",F2
+68667.844965,1.585399,state,sysmon,"vv_scale3, label",F3
+68667.845035,1.585399,state,sysmon,"vv_scale4, label",F4
+68667.848185,1.589194,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.848289,1.589194,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.848385,1.589194,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.848482,1.589194,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.848557,1.589194,state,sysmon,"vv_scale1, label",F1
+68667.848627,1.589194,state,sysmon,"vv_scale2, label",F2
+68667.848691,1.589194,state,sysmon,"vv_scale3, label",F3
+68667.848753,1.589194,state,sysmon,"vv_scale4, label",F4
+68667.861049,1.602044,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.86117,1.602044,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.861288,1.602044,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.861407,1.602044,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.861494,1.602044,state,sysmon,"vv_scale1, label",F1
+68667.861566,1.602044,state,sysmon,"vv_scale2, label",F2
+68667.861639,1.602044,state,sysmon,"vv_scale3, label",F3
+68667.861712,1.602044,state,sysmon,"vv_scale4, label",F4
+68667.869363,1.610355,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.86948,1.610355,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.869587,1.610355,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.869695,1.610355,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.869778,1.610355,state,sysmon,"vv_scale1, label",F1
+68667.86985,1.610355,state,sysmon,"vv_scale2, label",F2
+68667.869925,1.610355,state,sysmon,"vv_scale3, label",F3
+68667.869996,1.610355,state,sysmon,"vv_scale4, label",F4
+68667.872941,1.61393,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.87306,1.61393,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.873161,1.61393,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.873254,1.61393,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.873332,1.61393,state,sysmon,"vv_scale1, label",F1
+68667.873398,1.61393,state,sysmon,"vv_scale2, label",F2
+68667.873465,1.61393,state,sysmon,"vv_scale3, label",F3
+68667.873536,1.61393,state,sysmon,"vv_scale4, label",F4
+68667.886089,1.627081,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.886206,1.627081,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.886312,1.627081,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.886428,1.627081,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.886516,1.627081,state,sysmon,"vv_scale1, label",F1
+68667.886588,1.627081,state,sysmon,"vv_scale2, label",F2
+68667.886662,1.627081,state,sysmon,"vv_scale3, label",F3
+68667.886732,1.627081,state,sysmon,"vv_scale4, label",F4
+68667.894396,1.635387,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.894513,1.635387,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.894622,1.635387,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.894728,1.635387,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.894813,1.635387,state,sysmon,"vv_scale1, label",F1
+68667.894886,1.635387,state,sysmon,"vv_scale2, label",F2
+68667.89496,1.635387,state,sysmon,"vv_scale3, label",F3
+68667.895031,1.635387,state,sysmon,"vv_scale4, label",F4
+68667.898197,1.639181,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.898316,1.639181,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.898423,1.639181,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.898527,1.639181,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.898615,1.639181,state,sysmon,"vv_scale1, label",F1
+68667.898687,1.639181,state,sysmon,"vv_scale2, label",F2
+68667.898766,1.639181,state,sysmon,"vv_scale3, label",F3
+68667.898841,1.639181,state,sysmon,"vv_scale4, label",F4
+68667.911098,1.652095,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.911216,1.652095,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.911324,1.652095,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.911429,1.652095,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.911515,1.652095,state,sysmon,"vv_scale1, label",F1
+68667.911589,1.652095,state,sysmon,"vv_scale2, label",F2
+68667.911661,1.652095,state,sysmon,"vv_scale3, label",F3
+68667.911735,1.652095,state,sysmon,"vv_scale4, label",F4
+68667.914625,1.655606,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.914745,1.655606,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.914857,1.655606,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.914962,1.655606,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.915047,1.655606,state,sysmon,"vv_scale1, label",F1
+68667.915127,1.655606,state,sysmon,"vv_scale2, label",F2
+68667.915203,1.655606,state,sysmon,"vv_scale3, label",F3
+68667.915273,1.655606,state,sysmon,"vv_scale4, label",F4
+68667.927629,1.66873,seed_value,sysmon_vv,,
+68667.927639,1.66873,seed_output,sysmon_vv,,-1
+68667.927661,1.66873,seed_value,sysmon_vv,,
+68667.927667,1.66873,seed_output,sysmon_vv,,-1
+68667.927686,1.66873,seed_value,sysmon_vv,,
+68667.927692,1.66873,seed_output,sysmon_vv,,-1
+68667.927711,1.66873,seed_value,sysmon_vv,,
+68667.927717,1.66873,seed_output,sysmon_vv,,-1
+68667.927739,1.66873,state,sysmon,"vv_scale1, arrow",6
+68667.927863,1.66873,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.927874,1.66873,state,sysmon,"vv_scale2, arrow",4
+68667.927997,1.66873,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.928008,1.66873,state,sysmon,"vv_scale3, arrow",4
+68667.928131,1.66873,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.928141,1.66873,state,sysmon,"vv_scale4, arrow",4
+68667.928247,1.66873,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.92833,1.66873,state,sysmon,"vv_scale1, label",F1
+68667.928404,1.66873,state,sysmon,"vv_scale2, label",F2
+68667.928475,1.66873,state,sysmon,"vv_scale3, label",F3
+68667.928545,1.66873,state,sysmon,"vv_scale4, label",F4
+68667.936023,1.677014,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.936138,1.677014,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.936244,1.677014,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.936348,1.677014,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.936435,1.677014,state,sysmon,"vv_scale1, label",F1
+68667.936508,1.677014,state,sysmon,"vv_scale2, label",F2
+68667.936578,1.677014,state,sysmon,"vv_scale3, label",F3
+68667.936652,1.677014,state,sysmon,"vv_scale4, label",F4
+68667.940329,1.681327,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.940447,1.681327,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.940555,1.681327,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.940671,1.681327,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.940758,1.681327,state,sysmon,"vv_scale1, label",F1
+68667.940832,1.681327,state,sysmon,"vv_scale2, label",F2
+68667.940903,1.681327,state,sysmon,"vv_scale3, label",F3
+68667.940978,1.681327,state,sysmon,"vv_scale4, label",F4
+68667.95272,1.693712,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.952838,1.693712,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.952944,1.693712,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.953064,1.693712,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.953163,1.693712,state,sysmon,"vv_scale1, label",F1
+68667.953236,1.693712,state,sysmon,"vv_scale2, label",F2
+68667.953349,1.693712,state,sysmon,"vv_scale3, label",F3
+68667.95342,1.693712,state,sysmon,"vv_scale4, label",F4
+68667.96104,1.702033,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.961189,1.702033,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.961296,1.702033,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.961399,1.702033,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.961488,1.702033,state,sysmon,"vv_scale1, label",F1
+68667.961561,1.702033,state,sysmon,"vv_scale2, label",F2
+68667.961639,1.702033,state,sysmon,"vv_scale3, label",F3
+68667.961709,1.702033,state,sysmon,"vv_scale4, label",F4
+68667.964847,1.705841,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.964973,1.705841,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.965083,1.705841,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.965177,1.705841,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.965256,1.705841,state,sysmon,"vv_scale1, label",F1
+68667.965321,1.705841,state,sysmon,"vv_scale2, label",F2
+68667.965388,1.705841,state,sysmon,"vv_scale3, label",F3
+68667.965452,1.705841,state,sysmon,"vv_scale4, label",F4
+68667.97771,1.718702,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.977828,1.718702,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.977936,1.718702,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.978057,1.718702,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.978145,1.718702,state,sysmon,"vv_scale1, label",F1
+68667.978218,1.718702,state,sysmon,"vv_scale2, label",F2
+68667.978293,1.718702,state,sysmon,"vv_scale3, label",F3
+68667.978364,1.718702,state,sysmon,"vv_scale4, label",F4
+68667.986068,1.727063,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.986185,1.727063,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.986294,1.727063,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.986402,1.727063,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.986486,1.727063,state,sysmon,"vv_scale1, label",F1
+68667.986561,1.727063,state,sysmon,"vv_scale2, label",F2
+68667.986632,1.727063,state,sysmon,"vv_scale3, label",F3
+68667.986705,1.727063,state,sysmon,"vv_scale4, label",F4
+68667.990041,1.731032,state,sysmon,"vv_scale1, label",F1  NORMAL
+68667.99017,1.731032,state,sysmon,"vv_scale2, label",F2  NORMAL
+68667.990278,1.731032,state,sysmon,"vv_scale3, label",F3  NORMAL
+68667.990383,1.731032,state,sysmon,"vv_scale4, label",F4  NORMAL
+68667.990472,1.731032,state,sysmon,"vv_scale1, label",F1
+68667.990545,1.731032,state,sysmon,"vv_scale2, label",F2
+68667.990616,1.731032,state,sysmon,"vv_scale3, label",F3
+68667.990698,1.731032,state,sysmon,"vv_scale4, label",F4
+68668.002735,1.743727,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.002853,1.743727,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.002961,1.743727,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.003086,1.743727,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.003177,1.743727,state,sysmon,"vv_scale1, label",F1
+68668.00325,1.743727,state,sysmon,"vv_scale2, label",F2
+68668.003324,1.743727,state,sysmon,"vv_scale3, label",F3
+68668.003396,1.743727,state,sysmon,"vv_scale4, label",F4
+68668.011035,1.752027,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.011152,1.752027,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.011261,1.752027,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.011368,1.752027,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.011455,1.752027,state,sysmon,"vv_scale1, label",F1
+68668.011528,1.752027,state,sysmon,"vv_scale2, label",F2
+68668.011603,1.752027,state,sysmon,"vv_scale3, label",F3
+68668.011674,1.752027,state,sysmon,"vv_scale4, label",F4
+68668.014734,1.755744,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.014847,1.755744,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.014944,1.755744,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.01504,1.755744,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.015115,1.755744,state,sysmon,"vv_scale1, label",F1
+68668.015181,1.755744,state,sysmon,"vv_scale2, label",F2
+68668.015247,1.755744,state,sysmon,"vv_scale3, label",F3
+68668.015309,1.755744,state,sysmon,"vv_scale4, label",F4
+68668.027753,1.768745,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.02787,1.768745,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.027978,1.768745,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.028105,1.768745,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.028198,1.768745,state,sysmon,"vv_scale1, label",F1
+68668.028271,1.768745,state,sysmon,"vv_scale2, label",F2
+68668.028342,1.768745,state,sysmon,"vv_scale3, label",F3
+68668.028417,1.768745,state,sysmon,"vv_scale4, label",F4
+68668.036117,1.777112,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.036233,1.777112,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.03634,1.777112,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.036445,1.777112,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.036531,1.777112,state,sysmon,"vv_scale1, label",F1
+68668.036603,1.777112,state,sysmon,"vv_scale2, label",F2
+68668.036679,1.777112,state,sysmon,"vv_scale3, label",F3
+68668.036749,1.777112,state,sysmon,"vv_scale4, label",F4
+68668.040467,1.781475,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.040575,1.781475,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.040671,1.781475,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.040764,1.781475,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.040843,1.781475,state,sysmon,"vv_scale1, label",F1
+68668.04091,1.781475,state,sysmon,"vv_scale2, label",F2
+68668.040978,1.781475,state,sysmon,"vv_scale3, label",F3
+68668.041052,1.781475,state,sysmon,"vv_scale4, label",F4
+68668.052774,1.793782,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.052877,1.793782,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.052972,1.793782,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.05308,1.793782,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.053169,1.793782,state,sysmon,"vv_scale1, label",F1
+68668.053234,1.793782,state,sysmon,"vv_scale2, label",F2
+68668.053301,1.793782,state,sysmon,"vv_scale3, label",F3
+68668.053366,1.793782,state,sysmon,"vv_scale4, label",F4
+68668.061047,1.802054,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.061152,1.802054,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.061248,1.802054,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.061341,1.802054,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.061419,1.802054,state,sysmon,"vv_scale1, label",F1
+68668.061484,1.802054,state,sysmon,"vv_scale2, label",F2
+68668.061551,1.802054,state,sysmon,"vv_scale3, label",F3
+68668.061616,1.802054,state,sysmon,"vv_scale4, label",F4
+68668.065602,1.806609,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.065708,1.806609,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.065804,1.806609,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.065908,1.806609,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.066043,1.806609,state,sysmon,"vv_scale1, label",F1
+68668.066108,1.806609,state,sysmon,"vv_scale2, label",F2
+68668.066176,1.806609,state,sysmon,"vv_scale3, label",F3
+68668.066238,1.806609,state,sysmon,"vv_scale4, label",F4
+68668.077725,1.818733,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.07783,1.818733,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.077926,1.818733,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.078032,1.818733,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.078118,1.818733,state,sysmon,"vv_scale1, label",F1
+68668.078183,1.818733,state,sysmon,"vv_scale2, label",F2
+68668.078249,1.818733,state,sysmon,"vv_scale3, label",F3
+68668.078315,1.818733,state,sysmon,"vv_scale4, label",F4
+68668.086071,1.827066,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.086187,1.827066,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.086295,1.827066,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.0864,1.827066,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.086489,1.827066,state,sysmon,"vv_scale1, label",F1
+68668.086563,1.827066,state,sysmon,"vv_scale2, label",F2
+68668.086639,1.827066,state,sysmon,"vv_scale3, label",F3
+68668.08671,1.827066,state,sysmon,"vv_scale4, label",F4
+68668.089498,1.830493,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.089621,1.830493,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.089727,1.830493,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.089833,1.830493,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.089921,1.830493,state,sysmon,"vv_scale1, label",F1
+68668.089995,1.830493,state,sysmon,"vv_scale2, label",F2
+68668.090078,1.830493,state,sysmon,"vv_scale3, label",F3
+68668.090152,1.830493,state,sysmon,"vv_scale4, label",F4
+68668.102732,1.843723,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.102847,1.843723,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.102953,1.843723,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.103079,1.843723,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.103171,1.843723,state,sysmon,"vv_scale1, label",F1
+68668.103244,1.843723,state,sysmon,"vv_scale2, label",F2
+68668.103314,1.843723,state,sysmon,"vv_scale3, label",F3
+68668.103389,1.843723,state,sysmon,"vv_scale4, label",F4
+68668.111125,1.85212,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.111242,1.85212,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.111349,1.85212,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.111453,1.85212,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.111541,1.85212,state,sysmon,"vv_scale1, label",F1
+68668.111614,1.85212,state,sysmon,"vv_scale2, label",F2
+68668.111688,1.85212,state,sysmon,"vv_scale3, label",F3
+68668.111758,1.85212,state,sysmon,"vv_scale4, label",F4
+68668.115703,1.856714,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.115808,1.856714,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.115903,1.856714,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.115996,1.856714,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.116074,1.856714,state,sysmon,"vv_scale1, label",F1
+68668.116139,1.856714,state,sysmon,"vv_scale2, label",F2
+68668.116206,1.856714,state,sysmon,"vv_scale3, label",F3
+68668.116269,1.856714,state,sysmon,"vv_scale4, label",F4
+68668.127663,1.868763,seed_value,sysmon_vv,,
+68668.127673,1.868763,seed_output,sysmon_vv,,1
+68668.127694,1.868763,seed_value,sysmon_vv,,
+68668.1277,1.868763,seed_output,sysmon_vv,,1
+68668.127719,1.868763,seed_value,sysmon_vv,,
+68668.127725,1.868763,seed_output,sysmon_vv,,-1
+68668.127743,1.868763,seed_value,sysmon_vv,,
+68668.127749,1.868763,seed_output,sysmon_vv,,1
+68668.127772,1.868763,state,sysmon,"vv_scale1, arrow",7
+68668.127896,1.868763,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.127907,1.868763,state,sysmon,"vv_scale2, arrow",5
+68668.128015,1.868763,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.128027,1.868763,state,sysmon,"vv_scale3, arrow",3
+68668.128153,1.868763,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.128163,1.868763,state,sysmon,"vv_scale4, arrow",5
+68668.128269,1.868763,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.128352,1.868763,state,sysmon,"vv_scale1, label",F1
+68668.128424,1.868763,state,sysmon,"vv_scale2, label",F2
+68668.128497,1.868763,state,sysmon,"vv_scale3, label",F3
+68668.128567,1.868763,state,sysmon,"vv_scale4, label",F4
+68668.136053,1.877047,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.136169,1.877047,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.136276,1.877047,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.136379,1.877047,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.136467,1.877047,state,sysmon,"vv_scale1, label",F1
+68668.13654,1.877047,state,sysmon,"vv_scale2, label",F2
+68668.13661,1.877047,state,sysmon,"vv_scale3, label",F3
+68668.136683,1.877047,state,sysmon,"vv_scale4, label",F4
+68668.140763,1.881771,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.140867,1.881771,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.140962,1.881771,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.141067,1.881771,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.14114,1.881771,state,sysmon,"vv_scale1, label",F1
+68668.141206,1.881771,state,sysmon,"vv_scale2, label",F2
+68668.141269,1.881771,state,sysmon,"vv_scale3, label",F3
+68668.141332,1.881771,state,sysmon,"vv_scale4, label",F4
+68668.152715,1.893723,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.152819,1.893723,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.152914,1.893723,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.15302,1.893723,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.153105,1.893723,state,sysmon,"vv_scale1, label",F1
+68668.15317,1.893723,state,sysmon,"vv_scale2, label",F2
+68668.153233,1.893723,state,sysmon,"vv_scale3, label",F3
+68668.153299,1.893723,state,sysmon,"vv_scale4, label",F4
+68668.161019,1.902027,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.161123,1.902027,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.161222,1.902027,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.161314,1.902027,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.161391,1.902027,state,sysmon,"vv_scale1, label",F1
+68668.161455,1.902027,state,sysmon,"vv_scale2, label",F2
+68668.16152,1.902027,state,sysmon,"vv_scale3, label",F3
+68668.161586,1.902027,state,sysmon,"vv_scale4, label",F4
+68668.165006,1.906001,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.165111,1.906001,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.165206,1.906001,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.165302,1.906001,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.165381,1.906001,state,sysmon,"vv_scale1, label",F1
+68668.165446,1.906001,state,sysmon,"vv_scale2, label",F2
+68668.165513,1.906001,state,sysmon,"vv_scale3, label",F3
+68668.165586,1.906001,state,sysmon,"vv_scale4, label",F4
+68668.177757,1.918765,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.177861,1.918765,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.177955,1.918765,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.178067,1.918765,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.178156,1.918765,state,sysmon,"vv_scale1, label",F1
+68668.178222,1.918765,state,sysmon,"vv_scale2, label",F2
+68668.178286,1.918765,state,sysmon,"vv_scale3, label",F3
+68668.178351,1.918765,state,sysmon,"vv_scale4, label",F4
+68668.186053,1.927062,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.186156,1.927062,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.186251,1.927062,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.186342,1.927062,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.18642,1.927062,state,sysmon,"vv_scale1, label",F1
+68668.186486,1.927062,state,sysmon,"vv_scale2, label",F2
+68668.18655,1.927062,state,sysmon,"vv_scale3, label",F3
+68668.186615,1.927062,state,sysmon,"vv_scale4, label",F4
+68668.190236,1.931246,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.190341,1.931246,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.190436,1.931246,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.190527,1.931246,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.19061,1.931246,state,sysmon,"vv_scale1, label",F1
+68668.190682,1.931246,state,sysmon,"vv_scale2, label",F2
+68668.190778,1.931246,state,sysmon,"vv_scale3, label",F3
+68668.190843,1.931246,state,sysmon,"vv_scale4, label",F4
+68668.202755,1.943767,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.202859,1.943767,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.202954,1.943767,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.203061,1.943767,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.203148,1.943767,state,sysmon,"vv_scale1, label",F1
+68668.203212,1.943767,state,sysmon,"vv_scale2, label",F2
+68668.20328,1.943767,state,sysmon,"vv_scale3, label",F3
+68668.203344,1.943767,state,sysmon,"vv_scale4, label",F4
+68668.211035,1.952041,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.21114,1.952041,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.211236,1.952041,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.211329,1.952041,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.211409,1.952041,state,sysmon,"vv_scale1, label",F1
+68668.211482,1.952041,state,sysmon,"vv_scale2, label",F2
+68668.211552,1.952041,state,sysmon,"vv_scale3, label",F3
+68668.211626,1.952041,state,sysmon,"vv_scale4, label",F4
+68668.214599,1.955603,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.214707,1.955603,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.214802,1.955603,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.214893,1.955603,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.21497,1.955603,state,sysmon,"vv_scale1, label",F1
+68668.215035,1.955603,state,sysmon,"vv_scale2, label",F2
+68668.215098,1.955603,state,sysmon,"vv_scale3, label",F3
+68668.215175,1.955603,state,sysmon,"vv_scale4, label",F4
+68668.227728,1.968735,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.227832,1.968735,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.227927,1.968735,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.22802,1.968735,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.228097,1.968735,state,sysmon,"vv_scale1, label",F1
+68668.228163,1.968735,state,sysmon,"vv_scale2, label",F2
+68668.22823,1.968735,state,sysmon,"vv_scale3, label",F3
+68668.228293,1.968735,state,sysmon,"vv_scale4, label",F4
+68668.231277,1.972276,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.231385,1.972276,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.231485,1.972276,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.231578,1.972276,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.231656,1.972276,state,sysmon,"vv_scale1, label",F1
+68668.231721,1.972276,state,sysmon,"vv_scale2, label",F2
+68668.231799,1.972276,state,sysmon,"vv_scale3, label",F3
+68668.231863,1.972276,state,sysmon,"vv_scale4, label",F4
+68668.24437,1.985377,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.244474,1.985377,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.244571,1.985377,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.244679,1.985377,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.244768,1.985377,state,sysmon,"vv_scale1, label",F1
+68668.244833,1.985377,state,sysmon,"vv_scale2, label",F2
+68668.244899,1.985377,state,sysmon,"vv_scale3, label",F3
+68668.244965,1.985377,state,sysmon,"vv_scale4, label",F4
+68668.252955,1.993882,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.253065,1.993882,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.253171,1.993882,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.253271,1.993882,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.253377,1.993882,state,sysmon,"vv_scale1, label",F1
+68668.25344,1.993882,state,sysmon,"vv_scale2, label",F2
+68668.253502,1.993882,state,sysmon,"vv_scale3, label",F3
+68668.253563,1.993882,state,sysmon,"vv_scale4, label",F4
+68668.256338,1.997325,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.256439,1.997325,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.256524,1.997325,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.256616,1.997325,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.256702,1.997325,state,sysmon,"vv_scale1, label",F1
+68668.256762,1.997325,state,sysmon,"vv_scale2, label",F2
+68668.256821,1.997325,state,sysmon,"vv_scale3, label",F3
+68668.256882,1.997325,state,sysmon,"vv_scale4, label",F4
+68668.269752,2.010648,state,sysmon,"vv_scale1, label",F1  NORMAL
+68668.269876,2.010648,state,sysmon,"vv_scale2, label",F2  NORMAL
+68668.269978,2.010648,state,sysmon,"vv_scale3, label",F3  NORMAL
+68668.270071,2.010648,state,sysmon,"vv_scale4, label",F4  NORMAL
+68668.270173,2.010648,state,sysmon,"vv_scale1, label",F1
+68668.27023,2.010648,state,sysmon,"vv_scale2, label",F2
+68668.270287,2.010648,state,sysmon,"vv_scale3, label",F3
+68668.270343,2.010648,state,sysmon,"vv_scale4, label",F4
+68668.27096,2.010648,state,sysmon,"vv_foreground, visibility",1
+68668.270972,2.010648,event,sysmon_vv,self,stop
+68668.277997,2.018748,state,communications,"vv_foreground, visibility",1
+68668.278009,2.018748,event,communications_vv,self,stop
+68668.2822,2.022746,state,resman,"vv_foreground, visibility",1
+68668.282224,2.022746,state,resman,"vv_status_foreground, visibility",1
+68668.282232,2.022746,event,resman_vv,self,stop
+68668.294279,2.035395,event,genericscales,filename,newquestion.txt
+68668.302745,2.043707,aoi,genericscales,background,"(0, 988, 1728, 0)"
+68668.303455,2.043707,parameter,genericscales,title,
+68668.303472,2.043707,parameter,genericscales,taskplacement,fullscreen
+68668.30348,2.043707,parameter,genericscales,taskupdatetime,15
+68668.303489,2.043707,parameter,genericscales,taskfeedback-overdue-active,0
+68668.303496,2.043707,parameter,genericscales,taskfeedback-overdue-color,"(241, 100, 100, 255)"
+68668.303504,2.043707,parameter,genericscales,taskfeedback-overdue-delayms,2000
+68668.30351,2.043707,parameter,genericscales,taskfeedback-overdue-blinkdurationms,1000
+68668.303516,2.043707,parameter,genericscales,taskfeedback-overdue-_nexttoggletime,0
+68668.303522,2.043707,parameter,genericscales,taskfeedback-overdue-_is_visible,0
+68668.303529,2.043707,parameter,genericscales,boldtitle,0
+68668.303535,2.043707,parameter,genericscales,filename,newquestion.txt
+68668.30354,2.043707,parameter,genericscales,pointsize,0
+68668.303546,2.043707,parameter,genericscales,maxdurationsec,0
+68668.303554,2.043707,parameter,genericscales,response-text,Press SPACE to validate
+68668.303559,2.043707,parameter,genericscales,response-key,SPACE
+68668.303565,2.043707,parameter,genericscales,allowkeypress,1
+68668.303683,2.043707,state,genericscales,"background, visibility",1
+68668.303701,2.043707,event,genericscales,self,start
+68668.307834,2.048933,state,genericscales,"background, visibility",0
+68668.312144,2.048933,aoi,genericscales,press_space,"(0, 988, 1728, 0)"
+68668.315329,2.048933,aoi,genericscales,label_2,"(0.0, 837.824, 1728.0, 806.208)"
+68668.317163,2.048933,aoi,genericscales,slider_2,"(0.0, 806.208, 1728.0, 758.784)"
+68668.318541,2.048933,aoi,genericscales,label_3,"(0.0, 761.7479999999999, 1728.0, 730.132)"
+68668.320047,2.048933,aoi,genericscales,slider_3,"(0.0, 730.132, 1728.0, 682.708)"
+68668.321352,2.048933,aoi,genericscales,label_4,"(0.0, 685.6719999999999, 1728.0, 654.0559999999999)"
+68668.323,2.048933,aoi,genericscales,slider_4,"(0.0, 654.0559999999999, 1728.0, 606.632)"
+68668.324274,2.048933,aoi,genericscales,label_5,"(0.0, 609.596, 1728.0, 577.98)"
+68668.325692,2.048933,aoi,genericscales,slider_5,"(0.0, 577.98, 1728.0, 530.556)"
+68668.32676,2.048933,aoi,genericscales,label_6,"(0.0, 533.52, 1728.0, 501.904)"
+68668.328213,2.048933,aoi,genericscales,slider_6,"(0.0, 501.904, 1728.0, 454.48)"
+68668.329477,2.048933,aoi,genericscales,label_7,"(0.0, 457.44399999999996, 1728.0, 425.828)"
+68668.330888,2.048933,aoi,genericscales,slider_7,"(0.0, 425.8279999999999, 1728.0, 378.40399999999994)"
+68668.331621,2.048933,aoi,genericscales,label_8,"(0.0, 381.36799999999994, 1728.0, 349.75199999999995)"
+68668.332961,2.048933,aoi,genericscales,slider_8,"(0.0, 349.7519999999999, 1728.0, 302.3279999999999)"
+68668.333702,2.048933,aoi,genericscales,label_9,"(0.0, 305.2919999999999, 1728.0, 273.67599999999993)"
+68668.33548,2.048933,aoi,genericscales,slider_9,"(0.0, 273.67599999999993, 1728.0, 226.25199999999995)"
+68668.336246,2.048933,aoi,genericscales,label_10,"(0.0, 229.21599999999995, 1728.0, 197.59999999999994)"
+68668.337624,2.048933,aoi,genericscales,slider_10,"(0.0, 197.59999999999994, 1728.0, 150.17599999999993)"
+68668.337674,2.048933,state,genericscales,"background, visibility",1
+68676.822484,2.048933,state,genericscales,"slider_2, value",4
+68677.197439,2.048933,state,genericscales,"slider_2, value",3
+68681.68014,2.048933,state,genericscales,"slider_3, value",4
+68686.179372,2.048933,input,keyboard,SPACE,press
+68686.353184,2.048933,input,keyboard,SPACE,release
+68686.353568,2.048933,performance,genericscales,EQ1,3
+68686.353581,2.048933,performance,genericscales,EQ2,4
+68686.353588,2.048933,performance,genericscales,EQ3,5
+68686.353596,2.048933,performance,genericscales,T1,5
+68686.353603,2.048933,performance,genericscales,T2,5
+68686.353609,2.048933,performance,genericscales,T3,5
+68686.353614,2.048933,performance,genericscales,CL1,5
+68686.353621,2.048933,performance,genericscales,CL2,5
+68686.353627,2.048933,performance,genericscales,CL3,5
+68686.353674,2.048933,state,genericscales,"background, visibility",0
+68686.361852,2.048933,manual,,,end
