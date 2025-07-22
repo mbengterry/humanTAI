@@ -12,7 +12,7 @@ from core.container import Container
 from core.constants import PATHS as P, COLORS as C, REPLAY_MODE
 from core.pseudorandom import randint, uniform, choice, xeger
 from core import validation
-
+from pyglet import clock
 
 class Communications_vv(AbstractPlugin):
     def __init__(self, label='', taskplacement='bottomleft', taskupdatetime=80):
@@ -189,9 +189,8 @@ class Communications_vv(AbstractPlugin):
         if destination == 'own':
             radio['targetfreq'] = random_frequency
             radio['is_prompting'] = True
-        self.target_instruction.set_text(
-            f"[{callsign}] Adjust {radio_name} to {random_frequency} MHz"
-        )
+        instruction_text = f"[{callsign}] Adjust {radio_name} to {random_frequency} MHz"
+        clock.schedule_once(lambda dt: self.target_instruction.set_text(instruction_text), 16)
 
         # 清除旧高亮
         for _, r in self.parameters['radios'].items():

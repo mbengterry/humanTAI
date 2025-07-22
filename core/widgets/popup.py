@@ -4,7 +4,7 @@ import pyglet
 from core.constants import COLORS as C
 
 class PopUp:
-    def __init__(self, name, title='提示', text='', width=300, height=100, font_size=14, color=(255, 0, 0, 255)):
+    def __init__(self, name, title='提示', text='', width=300, height=100, font_size=20, color=(255, 0, 0, 255)):
         self.window = pyglet.window.Window(width=width, height=height, caption=title, visible=False)
         self.label = pyglet.text.Label(
             text,
