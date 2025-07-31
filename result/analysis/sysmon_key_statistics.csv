@@ -1,0 +1,5 @@
+scenario,hits_mean,hits_std,misses_mean,misses_std,response_time_mean,response_time_std
+no,0.669,0.217,0.231,0.205,3652.048,1380.836
+visual,0.667,0.223,0.226,0.202,3568.009,1017.761
+vocal,0.487,0.262,0.264,0.176,4186.147,1316.114
+vv,0.613,0.315,0.198,0.297,3491.619,909.74
